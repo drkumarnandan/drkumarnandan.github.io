@@ -4,49 +4,130 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nandan Kumar, Ph.D.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <style>
-    :root{--blue:#1d4ed8;--light:#f8fafc;--dark:#1e293b;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:var(--light);color:#333;line-height:1.7;}
-    nav{position:fixed;top:0;width:100%;background:white;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,0.1);padding:20px 0;}
-    .nav{max-width:1400px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center;}
-    .logo{font-size:1.8rem;font-weight:700;color:var(--blue);}
-    .links a{margin:0 20px;text-decoration:none;color:#333;font-weight:500;}
-    .links a:hover{color:var(--blue);}
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#2563eb,#1e40af);color:white;}
-    .hero h1{font-size:4.8rem;margin-bottom:20px;}
-    .hero p{font-size:1.6rem;max-width:900px;margin:20px auto;}
-    .btn{background:white;color:var(--blue);padding:16px 40px;border-radius:50px;font-weight:600;margin-top:30px;display:inline-block;text-decoration:none;}
-    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.2);}
-    footer{background:var(--dark);color:#94a3b8;padding:50px;text-align:center;}
-    footer a{color:#1d4ed8;text-decoration:none;}
+    :root{
+      --blue: #1e40af;
+      --sky: #3b82f6;
+      --teal: #0d9488;
+      --purple: #7c3aed;
+      --orange: #ea580c;
+      --gray: #64748b;
+    }
+    body{margin:0;background:#fdfdfd;font-family:'Inter',sans-serif;color:#222;line-height:1.8;}
+    
+    /* Clean white nav with colored hover only */
+    nav{position:fixed;top:0;width:100%;background:white;z-index:100;box-shadow:0 4px 30px rgba(0,0,0,0.07);padding:20px 0;}
+    nav ul{max-width:900px;margin:auto;display:flex;justify-content:center;gap:60px;list-style:none;}
+    nav a{color:#333;text-decoration:none;font-weight:500;font-size:1.05rem;transition:0.3s;}
+    nav a:hover{color:var(--sky);}
+
+    .wrapper{max-width:860px;margin:0 auto;padding:160px 30px 100px;text-align:center;}
+    h1{font-family:Georgia,serif;font-size:4.4rem;margin:0 0 12px;
+        background:linear-gradient(90deg,var(--blue),var(--purple));
+        -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+    .tagline{font-size:1.4rem;color:var(--gray);margin:16px 0 48px;}
+
+    .photo{width:280px;height:280px;border-radius:50%;object-fit:cover;
+           border:10px solid white;box-shadow:0 25px 70px rgba(0,0,0,0.16);margin:35px auto;transition:0.4s;}
+    .photo:hover{transform:scale(1.03);}
+
+    .intro{max-width:740px;margin:60px auto;font-size:1.25rem;color:#333;line-height:1.98;text-align:left;}
+    .intro p{margin:28px 0;}
+
+    .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:26px;max-width:760px;margin:80px auto;}
+    .metric{background:white;padding:32px 20px;border-radius:20px;
+            box-shadow:0 10px 35px rgba(0,0,0,0.09);text-align:center;transition:0.4s;
+            border-top:5px solid;}
+    .metric:nth-child(1){border-color:var(--blue);}
+    .metric:nth-child(2){border-color:var(--teal);}
+    .metric:nth-child(3){border-color:var(--purple);}
+    .metric:nth-child(4){border-color:var(--orange);}
+    .metric:hover{transform:translateY(-8px);}
+    .metric i{font-size:2rem;margin-bottom:14px;}
+    .metric .num{font-size:2.4rem;font-weight:700;margin:10px 0;}
+    .metric .label{color:var(--gray);font-size:1.05rem;}
+
+    .links{margin:90px 0 60px;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+    .link{display:inline-flex;align-items:center;gap:14px;padding:18px 34px;
+          background:white;border-radius:16px;color:#1e293b;text-decoration:none;font-weight:600;
+          box-shadow:0 8px 30px rgba(0,0,0,0.12);transition:0.4s;border:2px solid transparent;}
+    .link:hover{transform:translateY(-6px);box-shadow:0 18px 45px rgba(0,0,0,0.18);}
+    .link:nth-child(1):hover{border-color:var(--blue);color:var(--blue);}
+    .link:nth-child(2):hover{border-color:var(--teal);color:var(--teal);}
+    .link:nth-child(3):hover{border-color:var(--purple);color:var(--purple);}
+    .link:nth-child(4):hover{border-color:var(--orange);color:var(--orange);}
+    .link:nth-child(5):hover{border-color:#1f2937;color:#1f2937;}
+    .link:nth-child(6):hover{border-color:var(--teal);color:var(--teal);}
+    .link i{font-size:1.4rem;color:inherit;}
+
+    /* Tight, elegant footer */
+    footer{background:#1e293b;color:#cbd5e1;padding:40px 20px 30px;font-size:0.95rem;text-align:center;}
+    footer a{color:#94a3b8;text-decoration:none;}
+    footer a:hover{color:white;}
   </style>
 </head>
 <body>
+
 <nav>
-  <div class="nav">
-    <div class="logo">Nandan Kumar</div>
-    <div class="links">
-      <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
-      <a href="research.html">Research</a>
-      <a href="conferences.html">Conferences</a>
-      <a href="cv.html">CV</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
-<div class="hero">
-  <div>
-    <h1>Nandan Kumar, Ph.D.</h1>
-    <p>Postdoctoral Research Associate • Kansas State University</p>
-    <p>AI for Protein Design • Molecular Dynamics • Bioactive Peptides • Food Proteins</p>
-    <a href="publications.html" class="btn">View Publications</a>
+<div class="wrapper">
+  <h1>Nandan Kumar</h1>
+  <p class="tagline">Postdoctoral Research Associate — Kansas State University</p>
+
+  <img src="https://via.placeholder.com/560x560/1e40af/ffffff?text=Nandan+Kumar" alt="Nandan Kumar" class="photo">
+
+  <div class="intro">
+    <p>I am a computational structural biologist driven by the belief that understanding proteins at the atomic level can transform medicine, food science, and biotechnology.</p>
+    <p>Over the past decade, I’ve worked at the intersection of artificial intelligence, molecular dynamics, and experimental biochemistry — using tools like protein language models, graph neural networks, and multiscale simulations to design bioactive peptides, study membrane interactions, and unravel the structural secrets of food proteins.</p>
+    <p>My research spans personalized therapeutics, food protein functionality, and non-covalent interactions in complex systems. I’m particularly passionate about building open tools and frameworks that make cutting-edge computational biology accessible to the broader scientific community.</p>
+    <p>Recipient of the <strong>2025 Outstanding Postdoctoral Research Award</strong> at Kansas State University.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric">
+      <i class="fas fa-book" style="color:var(--blue);"></i>
+      <div class="num">29</div>
+      <div class="label">Peer-reviewed papers</div>
+    </div>
+    <div class="metric">
+      <i class="fas fa-scroll" style="color:var(--teal);"></i>
+      <div class="num">7</div>
+      <div class="label">Book chapters</div>
+    </div>
+    <div class="metric">
+      <i class="fas fa-chart-bar" style="color:var(--purple);"></i>
+      <div class="num">8</div>
+      <div class="label">h-index (Scopus)</div>
+    </div>
+    <div class="metric">
+      <i class="fas fa-quote-left" style="color:var(--orange);"></i>
+      <div class="num">250+</div>
+      <div class="label">Citations</div>
+    </div>
+  </div>
+
+  <div class="links">
+    <a href="publications.html" class="link"><i class="fas fa-book-open"></i> Publications (29)</a>
+    <a href="research.html" class="link"><i class="fas fa-flask"></i> Research Interests</a>
+    <a href="cv.html" class="link"><i class="fas fa-file-pdf"></i> Curriculum Vitae</a>
+    <a href="mailto:nandan@ksu.edu" class="link"><i class="fas fa-envelope"></i> nandan@ksu.edu</a>
+    <a href="https://github.com/drkumarnandan" target="_blank" class="link"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
   </div>
 </div>
 
-<footer>© 2025 Nandan Kumar • Manhattan, Kansas</footer>
+<footer>
+  © 2025 Nandan Kumar • <a href="https://github.com/drkumarnandan">GitHub</a> • Manhattan, Kansas
+</footer>
 </body>
 </html>
