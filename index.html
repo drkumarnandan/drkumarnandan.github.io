@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nandan Kumar, Ph.D.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#1d4ed8;--light:#f8fafc;--dark:#1e293b;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--light);color:#333;line-height:1.7;}
+    nav{position:fixed;top:0;width:100%;background:white;z-index:1000;box-shadow:0 2px 15px rgba(0,0,0,0.1);padding:20px 0;}
+    .nav{max-width:1400px;margin:auto;padding:0 5%;display:flex;justify-content:space-between;align-items:center;}
+    .logo{font-size:1.8rem;font-weight:700;color:var(--blue);}
+    .links a{margin:0 20px;text-decoration:none;color:#333;font-weight:500;}
+    .links a:hover{color:var(--blue);}
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#2563eb,#1e40af);color:white;}
+    .hero h1{font-size:4.8rem;margin-bottom:20px;}
+    .hero p{font-size:1.6rem;max-width:900px;margin:20px auto;}
+    .btn{background:white;color:var(--blue);padding:16px 40px;border-radius:50px;font-weight:600;margin-top:30px;display:inline-block;text-decoration:none;}
+    .btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+    footer{background:var(--dark);color:#94a3b8;padding:50px;text-align:center;}
+    footer a{color:#1d4ed8;text-decoration:none;}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav">
+    <div class="logo">Nandan Kumar</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="research.html">Research</a>
+      <a href="conferences.html">Conferences</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
 
+<div class="hero">
+  <div>
+    <h1>Nandan Kumar, Ph.D.</h1>
+    <p>Postdoctoral Research Associate • Kansas State University</p>
+    <p>AI for Protein Design • Molecular Dynamics • Bioactive Peptides • Food Proteins</p>
+    <a href="publications.html" class="btn">View Publications</a>
+  </div>
+</div>
+
+<footer>© 2025 Nandan Kumar • Manhattan, Kansas</footer>
+</body>
+</html>
