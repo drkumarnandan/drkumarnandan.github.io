@@ -1,157 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Databases & Servers – Nandan Kumar</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Databases &amp; Servers – Nandan Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="styles.css">
 
-<style>
-.page-container { max-width: 1200px; margin: auto; padding: 40px 20px; }
-.section-title { font-size: 2rem; margin-bottom: 20px; }
-.tool-card {
-    display: flex;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-.tool-img {
-    width: 160px;
-    height: 120px;
-    background: #e8e8e8;
-    border-radius: 8px;
-    margin-right: 20px;
-    object-fit: cover;
-}
-.tool-content h3 { margin: 0 0 10px; }
-.tool-content p { margin: 0 0 12px; line-height: 1.5; }
-.tool-links a {
-    display: inline-block;
-    margin-right: 12px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: #0077ff;
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-.navbar {
-  width: 100%;
-  background: #f8f9fa;
-  padding: 12px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.nav-inner {
-  max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between;
-}
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-.nav-links a.active { color: #0077ff; }
-</style>
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
 
+  <style>
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.2rem 1.4rem 3.4rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tool-card {
+      display: flex;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .tool-img {
+      width: 160px;
+      height: 120px;
+      background: #e8e8e8;
+      border-radius: 8px;
+      margin-right: 20px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .tool-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .tool-content p {
+      margin: 0 0 12px;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .tool-links a {
+      display: inline-block;
+      margin-right: 12px;
+      margin-top: 4px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .tool-links a i {
+      margin-right: 4px;
+    }
+
+    .tool-links a:hover {
+      background: #1d4ed8;
+    }
+  </style>
 </head>
 
 <body>
-
-<!-- NAVIGATION -->
-<div class="navbar">
-  <div class="nav-inner">
-    <div class="site-title"><a href="index.html" style="text-decoration:none;font-weight:700;font-size:1.3rem;">NANDAN KUMAR</a></div>
-    <nav class="nav-links">
-    <a class="nav-link active" href="index.html">Home</a>
-    <a class="nav-link" href="publications.html">Publications</a>
-    <a class="nav-link" href="research.html">Research</a>
-    <a class="nav-link" href="conferences.html">Conferences</a>
-    <a class="nav-link" href="conferences.html">Databases</a>
-    <a class="nav-link" href="activities.html">Activities</a>
-    <a class="nav-link" href="gallery.html">Gallery</a>
-    <a class="nav-link" href="contact.html">Contact</a>
-    <a class="nav-link" href="databases.html">More</a>
-    </nav>
-  </div>
-</div>
-
-<div class="page-container">
-
-<h1 class="section-title">Databases & Servers</h1>
-
-<!-- MPDS COVID-19 -->
-<div class="tool-card">
-  <img src="img/mpds-covid.png" class="tool-img" alt="">
-  <div class="tool-content">
-    <h3>MPDS COVID-19 Web Portal</h3>
-    <p>An open-source drug discovery portal integrating genes, proteins, pathways, binding sites, and AI-powered compound analysis with a database of 149M molecules + 107k fragments.</p>
-    <p><strong>GigaByte 2024</strong> — https://doi.org/10.1101/2023.08.29.555437</p>
-    <div class="tool-links">
-      <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal</a>
+  <!-- Top navigation (same as other pages) -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link" href="conferences.html">Conferences</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link active" href="databases.html">Databases</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
     </div>
   </div>
-</div>
 
-<!-- MPDS TB -->
-<div class="tool-card">
-  <img src="img/mpds-tb.png" class="tool-img" alt="">
-  <div class="tool-content">
-    <h3>MPDS TB Web Portal</h3>
-    <p>An integrated computational suite for tuberculosis research, offering cheminformatics, CADD tools, and unique MPDS IDs for all compounds.</p>
-    <div class="tool-links">
-      <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal</a>
+  <main class="page-container">
+    <h1 class="section-title">Databases &amp; Servers</h1>
+
+    <!-- MPDS COVID-19 -->
+    <section class="tool-card">
+      <img src="img/mpds-covid.png" class="tool-img" alt="MPDS COVID-19 portal screenshot">
+      <div class="tool-content">
+        <h3>MPDS COVID-19 Web Portal</h3>
+        <p>
+          An open-source drug discovery portal integrating genes, proteins, pathways, binding sites,
+          and AI-powered compound analysis with a database of 149M molecules and 107k fragments.
+        </p>
+        <p>
+          <strong>GigaByte 2024</strong> — https://doi.org/10.1101/2023.08.29.555437
+        </p>
+        <div class="tool-links">
+          <a href="#" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MPDS TB -->
+    <section class="tool-card">
+      <img src="img/mpds-tb.png" class="tool-img" alt="MPDS TB portal screenshot">
+      <div class="tool-content">
+        <h3>MPDS TB Web Portal</h3>
+        <p>
+          An integrated computational suite for tuberculosis research, offering cheminformatics, CADD tools,
+          and unique MPDS IDs for all compounds.
+        </p>
+        <div class="tool-links">
+          <a href="#" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- A2ID -->
+    <section class="tool-card">
+      <img src="img/a2id.png" class="tool-img" alt="A2ID database screenshot">
+      <div class="tool-content">
+        <h3>Aromatic–Aromatic Interactions Database (A2ID)</h3>
+        <p>
+          A systematic analysis of π–π motifs in proteins involving Trp, Tyr, Phe, and His,
+          advancing understanding of aromatic stabilization in protein structures.
+        </p>
+        <p>
+          <strong>Int. J. Biol. Macromol. 2023</strong> — https://doi.org/10.1016/j.ijbiomac.2023.127207
+        </p>
+        <div class="tool-links">
+          <a href="#" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore Database
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAD -->
+    <section class="tool-card">
+      <img src="img/cad.png" class="tool-img" alt="CAD 2.0 database screenshot">
+      <div class="tool-content">
+        <h3>Cation–Aromatic Database (CAD 2.0)</h3>
+        <p>
+          A comprehensive database of 27.26M cation–aromatic motifs with geometric parameters,
+          residue preferences, and classification of cation–π vs cation–σ interactions.
+        </p>
+        <p>
+          <strong>Proteins 2023</strong> — https://doi.org/10.1002/prot.26600
+        </p>
+        <div class="tool-links">
+          <a href="#" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore CAD
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- pLM4CPPs -->
+    <section class="tool-card">
+      <img src="img/plm4cpps.png" class="tool-img" alt="pLM4CPPs server screenshot">
+      <div class="tool-content">
+        <h3>pLM4CPPs — AI/ML Predictor for CPPs</h3>
+        <p>
+          Deep learning architecture combining protein language models and CNNs for high-accuracy
+          cell-penetrating peptide prediction.
+        </p>
+        <p>
+          <strong>J. Chem. Inf. Model. 2025</strong> — https://doi.org/10.1021/acs.jcim.4c01338
+        </p>
+        <div class="tool-links">
+          <a href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Try Server
+          </a>
+          <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>© 2025 Nandan Kumar.</span>
+      <span class="footer-sep">·</span>
+      <span>Visits (this browser): <span id="visitor-count">—</span></span>
     </div>
-  </div>
-</div>
 
-<!-- A2ID -->
-<div class="tool-card">
-  <img src="img/a2id.png" class="tool-img" alt="">
-  <div class="tool-content">
-    <h3>Aromatic–Aromatic Interactions Database (A2ID)</h3>
-    <p>A systematic analysis of π–π motifs in proteins involving Trp, Tyr, Phe, and His, advancing understanding of aromatic stabilization in protein structures.</p>
-    <p><strong>Int. J. Biol. Macromol. 2023</strong> — https://doi.org/10.1016/j.ijbiomac.2023.127207</p>
-    <div class="tool-links">
-      <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explore Database</a>
-    </div>
-  </div>
-</div>
-
-<!-- CAD -->
-<div class="tool-card">
-  <img src="img/cad.png" class="tool-img" alt="">
-  <div class="tool-content">
-    <h3>Cation–Aromatic Database (CAD 2.0)</h3>
-    <p>A comprehensive database of 27.26M cation–aromatic motifs with geometric parameters, residue preferences, and classification of cation-π vs cation-σ interactions.</p>
-    <p><strong>Proteins 2023</strong> — https://doi.org/10.1002/prot.26600</p>
-    <div class="tool-links">
-      <a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explore CAD</a>
-    </div>
-  </div>
-</div>
-
-<!-- pLM4CPPs -->
-<div class="tool-card">
-  <img src="img/plm4cpps.png" class="tool-img" alt="">
-  <div class="tool-content">
-    <h3>pLM4CPPs — AI/ML Predictor for CPPs</h3>
-    <p>Deep learning architecture combining protein language models and CNNs for high-accuracy cell-penetrating peptide prediction.</p>
-    <p><strong>J. Chem. Inf. Model. 2025</strong> — https://doi.org/10.1021/acs.jcim.4c01338</p>
-
-    <div class="tool-links">
-      <a href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Try Server</a>
-      <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-    </div>
-  </div>
-</div>
-
-</div>
-
+    <!-- simple local visitor counter -->
+    <script>
+      (function () {
+        const el = document.getElementById('visitor-count');
+        if (!el) return;
+        const key = 'nk_site_visit_count';
+        let count = parseInt(localStorage.getItem(key) || '0', 10);
+        count += 1;
+        localStorage.setItem(key, String(count));
+        el.textContent = count.toLocaleString();
+      })();
+    </script>
+  </main>
 </body>
 </html>
-
