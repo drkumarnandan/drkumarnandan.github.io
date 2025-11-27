@@ -2,81 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Conferences & Workshops – Nandan Kumar</title>
+  <title>Conferences &amp; Workshops – Nandan Kumar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  >
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* NAVBAR – consistent */
-    .navbar {
-      width: 100%;
-      background: #f8fafc;
-      padding: 12px 0;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .site-title a {
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.3rem;
-      letter-spacing: 0.08em;
-      color: #111827;
-    }
-    .nav-links a {
-      margin-left: 18px;
-      text-decoration: none;
-      color: #374151;
-      font-weight: 500;
-      font-size: 0.95rem;
-      position: relative;
-      padding-bottom: 2px;
-    }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0;
-      background: #2563eb;
-      transition: width 0.2s ease-out;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    .nav-links a.active {
-      color: #2563eb;
-    }
-    .nav-links a.active::after {
-      width: 100%;
-    }
-
-    /* PAGE LAYOUT */
+    /* PAGE LAYOUT (no navbar overrides here) */
     .conf-page {
       max-width: 1200px;
       margin: 0 auto;
       padding: 32px 16px 52px;
     }
+
     .page-header h1 {
       font-size: 2.1rem;
       margin-bottom: 0.4rem;
       letter-spacing: 0.02em;
     }
+
     .page-header p {
       max-width: 680px;
       color: #6b7280;
@@ -87,6 +40,7 @@
     .conf-section {
       margin-bottom: 28px;
     }
+
     .conf-section-title {
       font-size: 1.25rem;
       margin-bottom: 10px;
@@ -94,6 +48,7 @@
       align-items: center;
       gap: 8px;
     }
+
     .conf-section-title i {
       color: #2563eb;
     }
@@ -110,6 +65,7 @@
       row-gap: 6px;
       font-size: 0.95rem;
     }
+
     @media (max-width: 800px) {
       .conf-card {
         grid-template-columns: 1fr;
@@ -120,9 +76,11 @@
       font-weight: 600;
       color: #111827;
     }
+
     .conf-location {
       color: #4b5563;
     }
+
     .conf-meta {
       display: flex;
       flex-wrap: wrap;
@@ -132,6 +90,7 @@
       align-items: center;
       justify-content: flex-end;
     }
+
     @media (max-width: 800px) {
       .conf-meta {
         justify-content: flex-start;
@@ -150,9 +109,11 @@
       font-size: 0.78rem;
       font-weight: 500;
     }
+
     .conf-year {
       font-weight: 500;
     }
+
     .conf-type {
       display: inline-flex;
       align-items: center;
@@ -162,27 +123,26 @@
 </head>
 
 <body>
-
-  <!-- NAV -->
-  <div class="navbar">
-    <div class="nav-inner">
+  <!-- NAV – same structure as other pages -->
+  <div class="topbar">
+    <div class="topbar-inner">
       <div class="site-title">
         <a href="index.html">NANDAN KUMAR</a>
       </div>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="publications.html">Publications</a>
-        <a class="active" href="conferences.html">Conferences</a>
-        <a href="research.html">Research</a>
-        <a href="activities.html">Activities</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-        <a href="databases.html">More</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link active" href="conferences.html">Conferences</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="databases.html">Databases</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
 
-  <main class="conf-page">
+  <main class="page conf-page">
     <header class="page-header">
       <h1>Conferences &amp; Workshops</h1>
       <p>
@@ -430,7 +390,5 @@
       </article>
     </section>
   </main>
-
 </body>
 </html>
-
