@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Nandan Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <style>
+    /* NAVBAR – keep consistent with rest of site */
+    .navbar {
+      width: 100%;
+      background: #f8fafc;
+      padding: 12px 0;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-title a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+      color: #111827;
+    }
+    .nav-links a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: #2563eb;
+      transition: width 0.2s ease-out;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-links a.active {
+      color: #2563eb;
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* PAGE LAYOUT */
+    .contact-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px 52px;
+    }
+
+    .page-header {
+      margin-bottom: 28px;
+    }
+    .page-header h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .page-header p {
+      max-width: 650px;
+      color: #6b7280;
+      font-size: 0.98rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+      padding: 20px 18px;
+    }
+
+    .card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-section-title {
+      font-weight: 600;
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.98rem;
+    }
+
+    .contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #111827;
+    }
+
+    .contact-line i {
+      margin-top: 2px;
+      color: #2563eb;
+      min-width: 16px;
+    }
+
+    .contact-line a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .contact-line a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* SOCIAL LINKS BLOCK */
+    .social-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      font-size: 0.86rem;
+      color: #111827;
+      text-decoration: none;
+    }
+    .social-pill i {
+      color: #2563eb;
+    }
+    .social-pill:hover {
+      background: #eef2ff;
+      border-color: #c7d2fe;
+    }
+
+    /* FORM */
+    .contact-form label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+    }
+    .contact-form button {
+      border: none;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      background: #2563eb;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .contact-form button:hover {
+      background: #1d4ed8;
+    }
+    .small-muted {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="nav-inner">
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="conferences.html">Conferences</a>
+        <a href="research.html">Research</a>
+        <a href="activities.html">Activities</a>
+        <a href="gallery.html">Gallery</a>
+        <a class="active" href="contact.html">Contact</a>
+        <a href="databases.html">More</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="contact-page">
+    <header class="page-header">
+      <h1>Contact</h1>
+      <p>
+        For collaborations, student mentoring, invited talks, or enquiries related to bioinformatics,
+        protein language models, and food protein simulations, you are welcome to reach out by email.
+      </p>
+    </header>
+
+    <section class="contact-grid">
+      <!-- LEFT: DETAILS -->
+      <article class="card">
+        <h2><i class="fa-solid fa-user"></i> Contact information</h2>
+
+        <div class="contact-line">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            Department of Grain Science &amp; Industry<br>
+            Kansas State University<br>
+            Manhattan, KS, USA
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <a href="mailto:mr.kumarnandan@gmail.com">mr.kumarnandan@gmail.com</a><br>
+            <a href="mailto:nandan@ksu.edu">nandan@ksu.edu</a>
+          </div>
+        </div>
+
+        <div class="contact-line">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            +1 (785) 787-4041
+          </div>
+        </div>
+
+        <p class="contact-note">
+          Email is the best way to reach me. I am happy to discuss collaborative projects at the
+          interface of <strong>AI/ML, molecular simulations, and food/health applications</strong>.
+        </p>
+
+        <h3 class="card-section-title">Research profiles</h3>
+        <div class="social-row">
+          <a href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" class="social-pill">
+            <i class="fa-brands fa-google-scholar"></i> Google Scholar
+          </a>
+          <a href="https://orcid.org/0000-0001-6915-708X" target="_blank" rel="noopener" class="social-pill">
+            <i class="fa-brands fa-orcid"></i> ORCID
+          </a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=57214110355" target="_blank" rel="noopener" class="social-pill">
+            <i class="fa-solid fa-database"></i> Scopus
+          </a>
+          <a href="https://github.com/drkumarnandan" target="_blank" rel="noopener" class="social-pill">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/nandan-kumar-ph-d-5574b5141/" target="_blank" rel="noopener" class="social-pill">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </article>
+
+      <!-- RIGHT: FORM (non-functional, for appearance) -->
+      <article class="card">
+        <h2><i class="fa-solid fa-paper-plane"></i> Send a message</h2>
+        <p class="contact-note" style="margin-top:0;">
+          You can use this form template on your site (or adapt it to any backend/email service).  
+          For now, it serves as a structured way for visitors to see how to contact you.
+        </p>
+
+        <form class="contact-form" onsubmit="return false;">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your full name">
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="your.email@example.com">
+
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="Collaboration, student opportunity, talk, etc.">
+
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Briefly describe your query or idea..."></textarea>
+
+          <button type="submit">
+            <i class="fa-solid fa-envelope-open-text"></i> Send (template only)
+          </button>
+          <div class="small-muted">
+            This form is a front-end template. You can later connect it to an email service or backend of your choice.
+          </div>
+        </form>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
+

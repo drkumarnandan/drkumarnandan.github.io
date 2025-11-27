@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conferences & Workshops – Nandan Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <style>
+    /* NAVBAR – consistent */
+    .navbar {
+      width: 100%;
+      background: #f8fafc;
+      padding: 12px 0;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-title a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+      color: #111827;
+    }
+    .nav-links a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: #2563eb;
+      transition: width 0.2s ease-out;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-links a.active {
+      color: #2563eb;
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* PAGE LAYOUT */
+    .conf-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px 52px;
+    }
+    .page-header h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+    .page-header p {
+      max-width: 680px;
+      color: #6b7280;
+      font-size: 0.98rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .conf-section {
+      margin-bottom: 28px;
+    }
+    .conf-section-title {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .conf-section-title i {
+      color: #2563eb;
+    }
+
+    .conf-card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      column-gap: 16px;
+      row-gap: 6px;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 800px) {
+      .conf-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .conf-title {
+      font-weight: 600;
+      color: #111827;
+    }
+    .conf-location {
+      color: #4b5563;
+    }
+    .conf-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      font-size: 0.85rem;
+      color: #6b7280;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    @media (max-width: 800px) {
+      .conf-meta {
+        justify-content: flex-start;
+      }
+    }
+
+    .conf-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #dbeafe;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .conf-year {
+      font-weight: 500;
+    }
+    .conf-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="nav-inner">
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a class="active" href="conferences.html">Conferences</a>
+        <a href="research.html">Research</a>
+        <a href="activities.html">Activities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="databases.html">More</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="conf-page">
+    <header class="page-header">
+      <h1>Conferences &amp; Workshops</h1>
+      <p>
+        Selected conferences, workshops, and seminars where I have presented my work through
+        invited talks, oral presentations, and posters in computational chemistry, bioinformatics,
+        and food protein research.
+      </p>
+    </header>
+
+    <!-- POWERPOINT / ORAL PRESENTATIONS -->
+    <section class="conf-section">
+      <h2 class="conf-section-title">
+        <i class="fa-solid fa-chalkboard-user"></i> PowerPoint / Oral Presentations
+      </h2>
+
+      <!-- 1 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Cereals &amp; Grains – Chemistry, Quality, and Technology Conference
+          </div>
+          <div class="conf-location">
+            Hyatt Regency, Schaumburg, Illinois, USA
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> October 16–17, 2024</span>
+          <span class="conf-tag"><i class="fa-solid fa-person-chalkboard"></i> PowerPoint presentation</span>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Foods2024: The 5th Electronic Conference on Foods – The Future of Technology, Sustainability, and Nutrition in the Food Domain
+          </div>
+          <div class="conf-location">
+            Online
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> October 28–30, 2024</span>
+          <span class="conf-tag"><i class="fa-solid fa-person-chalkboard"></i> PowerPoint presentation</span>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Seminar on Status and Need of Bioinformatics in Northeast Region
+          </div>
+          <div class="conf-location">
+            CSIR-NEIST, Jorhat, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2022</span>
+          <span class="conf-tag"><i class="fa-solid fa-person-chalkboard"></i> Invited seminar</span>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            The Second Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences
+          </div>
+          <div class="conf-location">
+            Ibaraki University, Mito, Japan
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2019</span>
+          <span class="conf-tag"><i class="fa-solid fa-person-chalkboard"></i> PowerPoint presentation</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- POSTER PRESENTATIONS -->
+    <section class="conf-section">
+      <h2 class="conf-section-title">
+        <i class="fa-solid fa-image"></i> Poster Presentations
+      </h2>
+
+      <!-- 5 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            International Bioresources Conclave and Ethnopharmacology Congress
+          </div>
+          <div class="conf-location">
+            City Convention Centre, Imphal, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2023</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Internal Seminar and Workshop on CRISPR/Cas-based Plant Functional Genomics and Computational Modeling
+          </div>
+          <div class="conf-location">
+            CSIR-NEIST, Jorhat, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2023</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            International Conference on Advances in Chemical Biology and Biologics
+          </div>
+          <div class="conf-location">
+            CSIR-IICT, Hyderabad, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2019</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            OpenTox Asia
+          </div>
+          <div class="conf-location">
+            CSIR-Indian Institute of Chemical Technology, Hyderabad, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2019</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            International Conference on Advanced Chemical and Structural Biology
+          </div>
+          <div class="conf-location">
+            PRIST University, Chennai, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2019</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Asia-Pacific Conference of Theoretical and Computational Chemistry (APCTCC8)
+          </div>
+          <div class="conf-location">
+            IIT Bombay, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2017</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Protein Structure and Drug Discovery (PSDD)
+          </div>
+          <div class="conf-location">
+            University of Hyderabad, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2017</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            21st CRSI-ACS
+          </div>
+          <div class="conf-location">
+            CSIR-Indian Institute of Chemical Technology, Hyderabad, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2017</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 13 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            International Conference on Computational Modeling of Molecules and Materials
+          </div>
+          <div class="conf-location">
+            The River View Retreat at Corbett National Park, Nainital, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2016</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+
+      <!-- 14 -->
+      <article class="conf-card">
+        <div>
+          <div class="conf-title">
+            Current Trends in Life Science
+          </div>
+          <div class="conf-location">
+            Central University of South Bihar, Patna, India
+          </div>
+        </div>
+        <div class="conf-meta">
+          <span class="conf-year"><i class="fa-regular fa-calendar"></i> 2013</span>
+          <span class="conf-tag"><i class="fa-solid fa-scroll"></i> Poster presentation</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
+

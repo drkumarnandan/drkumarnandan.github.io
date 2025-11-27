@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery – Nandan Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  >
+
+  <style>
+    /* NAVBAR – keep consistent with rest of site */
+    .navbar {
+      width: 100%;
+      background: #f8fafc;
+      padding: 12px 0;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-title a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.08em;
+      color: #111827;
+    }
+    .nav-links a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: #2563eb;
+      transition: width 0.2s ease-out;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-links a.active {
+      color: #2563eb;
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    /* PAGE LAYOUT */
+    .gallery-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px 52px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .page-header h1 {
+      font-size: 2.1rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+    .page-header p {
+      max-width: 700px;
+      margin: 0.25rem auto 0;
+      color: #6b7280;
+      font-size: 0.98rem;
+    }
+
+    /* GALLERY GRID */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 1000px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0f172a;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+    }
+
+    .gallery-img-wrapper {
+      position: relative;
+      flex: 1 1 auto;
+      overflow: hidden;
+      background: #1f2937;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease-out;
+    }
+
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.05);
+    }
+
+    /* OVERLAY + CAPTION */
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 12px 14px 14px;
+      background: linear-gradient(to top, rgba(15,23,42,0.9), rgba(15,23,42,0.05));
+      color: #f9fafb;
+      font-size: 0.9rem;
+    }
+
+    .gallery-title {
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .gallery-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .gallery-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: rgba(59,130,246,0.18);
+      color: #e5edff;
+      font-size: 0.75rem;
+      font-weight: 500;
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-year {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="nav-inner">
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="conferences.html">Conferences</a>
+        <a href="research.html">Research</a>
+        <a href="activities.html">Activities</a>
+        <a class="active" href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="databases.html">More</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="gallery-page">
+    <header class="page-header">
+      <h1>Gallery</h1>
+      <p>
+        A few moments with mentors, collaborators, and colleagues – spanning conferences, invited talks,
+        awards, and international research visits.
+      </p>
+    </header>
+
+    <section class="gallery-grid">
+      <!-- 1: CM3 conference -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/cm3-2016.jpg" alt="With eminent scientists during CM3 conference 2016" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              With eminent scientists during CM3 conference
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-people-group"></i> Conference
+              </span>
+              <span class="gallery-year">2016</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: CNR Rao -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/cnr-rao-2017.jpg" alt="With Bharat Ratna Prof. C. N. R. Rao during CRSI-ACS 2017" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              With Bharat Ratna Prof. C. N. R. Rao during CRSI-ACS
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-award"></i> Inspiration
+              </span>
+              <span class="gallery-year">2017</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: Kurt Wuthrich -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/kurt-wuthrich-2017.jpg" alt="With Nobel laureate Prof. Kurt Wüthrich at CSIR-IICT 2017" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              With Nobel laureate Prof. Kurt Wüthrich at CSIR-IICT
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-medal"></i> Nobel laureate
+              </span>
+              <span class="gallery-year">2017</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4: Ibaraki talk -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/ibaraki-talk-2019.jpg" alt="Invited talk at Ibaraki University Japan 2019" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              Invited talk at Ibaraki University, Japan
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-chalkboard-user"></i> Invited talk
+              </span>
+              <span class="gallery-year">2019</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5: PSDD award -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/psdd-award-2017.jpg" alt="Receiving award from Dr. Rami Reddy during PSDD-2017" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              Receiving award from Dr. Rami Reddy during PSDD-2017, UoH
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-trophy"></i> Award
+              </span>
+              <span class="gallery-year">2017</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6: NEIST award -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/neist-award-2020.jpg" alt="Receiving award at CSIR-NEIST 2020" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              Receiving award from Prof. R. Sangwan &amp; Prof. G. N. Sastry at CSIR-NEIST
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-trophy"></i> Award
+              </span>
+              <span class="gallery-year">2020</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7: APCTCC-8 -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/apctcc8-iitb-2017.jpg" alt="APCTCC-8 IIT Bombay 2017" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              APCTCC-8, IIT Bombay
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-flask"></i> Conference
+              </span>
+              <span class="gallery-year">2017</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8: Quantum Beam -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/quantum-beam-2019.jpg" alt="Quantum Beam Molecular Science conference Mito 2019" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              Experiment and Theory in Quantum Beam Molecular Science, Mito, Japan
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-atom"></i> Conference
+              </span>
+              <span class="gallery-year">2019</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9: J-PARC -->
+      <article class="gallery-card">
+        <div class="gallery-img-wrapper">
+          <img src="img/gallery/jparc-2019.jpg" alt="J-PARC Center Tokai Japan 2019" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="gallery-title">
+              J-PARC Center, Tokai, Japan
+            </div>
+            <div class="gallery-meta">
+              <span class="gallery-tag">
+                <i class="fa-solid fa-building-columns"></i> Research visit
+              </span>
+              <span class="gallery-year">2019</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+</body>
+</html>
+
