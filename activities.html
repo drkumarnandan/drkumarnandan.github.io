@@ -16,7 +16,6 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* PAGE LAYOUT */
     .activities-page{
       max-width: 1200px;
       margin: 0 auto;
@@ -65,40 +64,39 @@
       border-color: rgba(59,130,246,.35);
     }
 
-    /* ====== REVIEW SECTION ====== */
-    .service-wrap{
+    /* SECTION CARD (used for Peer Review + News heading blocks) */
+    .section-wrap{
       max-width: 1200px;
       margin: 0 auto 20px;
     }
-    .service-card{
+    .section-card{
       border-radius: 16px;
       border: 1px solid rgba(15,23,42,.10);
       background: rgba(255,255,255,.72);
       box-shadow: 0 10px 22px rgba(15,23,42,.10);
       padding: 16px;
     }
-    .service-head{
+    .section-head{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
       gap:14px;
       flex-wrap:wrap;
-      margin-bottom: 12px;
     }
-    .service-head h2{
+    .section-head h2{
       margin:0;
       color:#0f172a;
       font-size: 1.12rem;
       letter-spacing:.01em;
     }
-    .service-head p{
+    .section-head p{
       margin: 6px 0 0;
       color:#475569;
       font-size:.95rem;
       line-height:1.55;
       max-width: 900px;
     }
-    .service-pill{
+    .section-pill{
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -112,10 +110,12 @@
       white-space: nowrap;
     }
 
+    /* JOURNAL GRID */
     .journal-grid{
       display:grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
+      margin-top: 14px;
     }
     @media (max-width: 980px){
       .journal-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -132,6 +132,7 @@
       display:flex;
       flex-direction:column;
       min-height: 215px;
+      position: relative;
     }
     .journal-img{
       height: 110px;
@@ -141,12 +142,27 @@
       justify-content:center;
       overflow:hidden;
       padding: 10px;
+      position: relative;
     }
     .journal-img img{
       width: 100%;
       height: 100%;
-      object-fit: contain; /* show full logo/cover */
+      object-fit: contain;
       display:block;
+    }
+    .img-fallback{
+      position:absolute;
+      inset: 0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 10px;
+      text-align:center;
+      color: rgba(229,231,235,.9);
+      font-weight: 800;
+      letter-spacing:.02em;
+      font-size:.85rem;
+      background: #111827;
     }
     .journal-body{
       padding: 12px;
@@ -199,11 +215,12 @@
     }
     .journal-link:hover{ background: rgba(255,255,255,.12); }
 
-    /* ====== MAIN GRID ====== */
+    /* ACTIVITY GRID */
     .activity-grid{
       display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
+      margin-top: 14px;
     }
     @media (max-width: 1000px){
       .activity-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -223,7 +240,7 @@
       min-height: 330px;
     }
 
-    /* OPTION A: SHOW FULL CLIP (NO CROPPING) */
+    /* OPTION A: FULL IMAGE ALWAYS */
     .img-wrap{
       position: relative;
       height: 260px;
@@ -466,31 +483,37 @@
       </div>
     </header>
 
-    <!-- REVIEW SECTION (FAST STATIC IMAGES) -->
-    <section class="service-wrap" id="serviceSection">
-      <div class="service-card">
-        <div class="service-head">
+    <!-- ✅ PEER REVIEW (LOCAL IMAGES) -->
+    <section class="section-wrap" id="serviceSection">
+      <div class="section-card">
+        <div class="section-head">
           <div>
             <h2>Peer Review Service (2022–Present)</h2>
-            <p>
-              Reviewer for <strong>30+ manuscripts</strong> across journals in food science,
-              biomolecular research, and computational biology.
-            </p>
+            <p>Reviewer for 30+ manuscripts across journals in food science, biomolecular research, and computational biology.</p>
           </div>
-          <div class="service-pill">
-            <i class="fa-solid fa-shield-halved"></i> 30+ Reviews
-          </div>
+          <div class="section-pill"><i class="fa-solid fa-shield-halved"></i> 30+ Reviews</div>
         </div>
 
         <div class="journal-grid" id="journalGrid"></div>
       </div>
     </section>
 
-    <section class="activity-grid" id="grid"></section>
+    <!-- ✅ NEWS / MEDIA (same style as peer review heading) -->
+    <section class="section-wrap" id="newsSection">
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <h2>News &amp; Media Coverage</h2>
+            <p>Selected press clips and online mentions highlighting academic awards, outreach, and training activities.</p>
+          </div>
+          <div class="section-pill"><i class="fa-solid fa-newspaper"></i> Media Highlights</div>
+        </div>
 
-    <p class="muted-note">
-      Tip: Click any clip to view it in full (no cropping).
-    </p>
+        <section class="activity-grid" id="grid"></section>
+      </div>
+
+      <p class="muted-note">Tip: Click any clip to view it in full (no cropping).</p>
+    </section>
 
     <div class="footer">
       <span>© 2025 Nandan Kumar.</span>
@@ -513,7 +536,6 @@
       </div>
     </div>
 
-    <!-- Visitor counter -->
     <script>
       (function () {
         const el = document.getElementById('visitor-count');
@@ -536,59 +558,18 @@
           .replaceAll("'", "&#039;");
       }
 
-      /* ===== PEER REVIEW JOURNALS (FAST STATIC IMAGES) =====
-         Uses reliable logos (fast, no scraping, no slow load).
-         If you want custom "journal covers", you can replace img with local PNGs later.
+      /* ✅ JOURNAL IMAGES (LOCAL) — Put these PNGs in: assets/journals/
+         You can use any decent journal cover/logo image and name it like below.
       */
       const reviewJournals = [
-        {
-          name: "International Journal of Biological Macromolecules",
-          count: 7,
-          url: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules",
-          img: "https://logo.clearbit.com/sciencedirect.com"
-        },
-        {
-          name: "Food Research International",
-          count: 2,
-          url: "https://www.sciencedirect.com/journal/food-research-international",
-          img: "https://logo.clearbit.com/sciencedirect.com"
-        },
-        {
-          name: "Journal of Food Science",
-          count: 8,
-          url: "https://ift.onlinelibrary.wiley.com/journal/17503841",
-          img: "https://logo.clearbit.com/wiley.com"
-        },
-        {
-          name: "Frontiers in Microbiology",
-          count: 1,
-          url: "https://www.frontiersin.org/journals/microbiology",
-          img: "https://logo.clearbit.com/frontiersin.org"
-        },
-        {
-          name: "Frontiers in Genetics (Computational Genomics)",
-          count: 1,
-          url: "https://www.frontiersin.org/journals/genetics",
-          img: "https://logo.clearbit.com/frontiersin.org"
-        },
-        {
-          name: "Frontiers in Molecular Biosciences (Biophysics)",
-          count: 1,
-          url: "https://www.frontiersin.org/journals/molecular-biosciences",
-          img: "https://logo.clearbit.com/frontiersin.org"
-        },
-        {
-          name: "Frontiers in Sustainable Food Systems (Nutrition & Sustainable Diets)",
-          count: 1,
-          url: "https://www.frontiersin.org/journals/sustainable-food-systems",
-          img: "https://logo.clearbit.com/frontiersin.org"
-        },
-        {
-          name: "Frontiers in Pharmacology (Translational Pharmacology)",
-          count: 1,
-          url: "https://www.frontiersin.org/journals/pharmacology",
-          img: "https://logo.clearbit.com/frontiersin.org"
-        }
+        { name: "International Journal of Biological Macromolecules", count: 7, url: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules", img: "assets/journals/ijbm.png" },
+        { name: "Food Research International", count: 2, url: "https://www.sciencedirect.com/journal/food-research-international", img: "assets/journals/fri.png" },
+        { name: "Journal of Food Science", count: 8, url: "https://ift.onlinelibrary.wiley.com/journal/17503841", img: "assets/journals/jfs.png" },
+        { name: "Frontiers in Microbiology", count: 1, url: "https://www.frontiersin.org/journals/microbiology", img: "assets/journals/frontiers_microbiology.png" },
+        { name: "Frontiers in Genetics (Computational Genomics)", count: 1, url: "https://www.frontiersin.org/journals/genetics", img: "assets/journals/frontiers_genetics.png" },
+        { name: "Frontiers in Molecular Biosciences (Biophysics)", count: 1, url: "https://www.frontiersin.org/journals/molecular-biosciences", img: "assets/journals/frontiers_molbio.png" },
+        { name: "Frontiers in Sustainable Food Systems", count: 1, url: "https://www.frontiersin.org/journals/sustainable-food-systems", img: "assets/journals/frontiers_sffs.png" },
+        { name: "Frontiers in Pharmacology", count: 1, url: "https://www.frontiersin.org/journals/pharmacology", img: "assets/journals/frontiers_pharmacology.png" }
       ];
 
       function renderJournals(){
@@ -596,12 +577,20 @@
         if (!journalGrid) return;
         journalGrid.innerHTML = "";
 
-        reviewJournals.forEach(j => {
+        reviewJournals.forEach((j, idx) => {
           const tile = document.createElement("div");
           tile.className = "journal-tile";
+          const fallbackText = j.name.replace(/\s*\(.*?\)\s*/g, "");
+
           tile.innerHTML = `
             <div class="journal-img">
-              <img src="${escapeHtml(j.img)}" alt="${escapeHtml(j.name)}" loading="lazy" referrerpolicy="no-referrer">
+              <img
+                src="${escapeHtml(j.img)}"
+                alt="${escapeHtml(j.name)}"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div class="img-fallback">${escapeHtml(fallbackText)}</div>
             </div>
             <div class="journal-body">
               <p class="journal-title">${escapeHtml(j.name)}</p>
@@ -618,7 +607,7 @@
         });
       }
 
-      /* ===== YOUR ACTIVITY / NEWS ITEMS ===== */
+      /* YOUR NEWS/ACTIVITY ITEMS */
       const items = [
         {
           id: "prabhat-convocation-2018",
@@ -673,13 +662,13 @@
         {
           id: "toi-convocation-2018",
           tags: ["news","award"],
-          badge: "News · Award",
+          badge: "Online · Award",
           title: "CUSB Convocation Coverage (Times of India)",
           desc: "The Times of India reported on the CUSB convocation ceremony, during which gold medals were awarded to academic toppers, including me, alongside degree awards to graduating students.",
           date: "2018",
           place: "Patna, India",
           sourceLabel: "Times of India",
-          img: "https://logo.clearbit.com/indiatimes.com",
+          img: "assets/journals/toi.png",
           links: [
             { label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }
           ]
@@ -687,13 +676,13 @@
         {
           id: "hans-nobel-outreach",
           tags: ["news","outreach"],
-          badge: "News · Outreach",
+          badge: "Online · Outreach",
           title: "Nobel Laureate Outreach Highlight (The Hans India)",
           desc: "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich, highlighting student interaction and science inspiration activities.",
           date: "2017",
           place: "India",
           sourceLabel: "The Hans India",
-          img: "https://logo.clearbit.com/thehansindia.com",
+          img: "assets/journals/hansindia.png",
           links: [
             { label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }
           ]
@@ -710,13 +699,15 @@
       }
 
       function render(filter="all"){
-        // service section behavior
         const serviceSection = document.getElementById("serviceSection");
+        const newsSection = document.getElementById("newsSection");
+
         if (filter === "service"){
           serviceSection.style.display = "block";
-          grid.innerHTML = "";
+          newsSection.style.display = "none";
           return;
         } else {
+          newsSection.style.display = "block";
           serviceSection.style.display = (filter === "all") ? "block" : "none";
         }
 
@@ -740,20 +731,19 @@
             : "";
 
           card.innerHTML = `
-            <div class="img-wrap" data-full="${escapeHtml(item.img)}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0" aria-label="Open full preview">
+            <div class="img-wrap" data-full="${escapeHtml(item.img)}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0">
               <div class="badge-row">
                 <span class="badge"><i class="fa-solid ${iconFor(item.tags)}"></i> ${escapeHtml(item.badge)}</span>
               </div>
               <div class="zoom-hint" title="View full">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
               </div>
-              <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="no-referrer">
+              <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.title)}" loading="lazy">
             </div>
 
             <div class="card-body">
               <h3 class="card-title">${escapeHtml(item.title)}</h3>
               <p class="card-desc">${escapeHtml(item.desc)}</p>
-
               ${linksHtml}
 
               <div class="meta-row">
@@ -774,7 +764,7 @@
         bindPreviewHandlers();
       }
 
-      /* MODAL PREVIEW */
+      /* MODAL */
       const modal = document.getElementById("modal");
       const modalImg = document.getElementById("modalImg");
       const modalTitle = document.getElementById("modalTitle");
@@ -821,6 +811,36 @@
       /* INIT */
       renderJournals();
       render("all");
+
+      function renderJournals(){ renderJournals = () => {}; } // noop guard
+      // actual journal render
+      (function(){
+        const journalGrid = document.getElementById("journalGrid");
+        journalGrid.innerHTML = "";
+        reviewJournals.forEach(j => {
+          const tile = document.createElement("div");
+          tile.className = "journal-tile";
+          const fallbackText = j.name.replace(/\s*\(.*?\)\s*/g, "");
+          tile.innerHTML = `
+            <div class="journal-img">
+              <img src="${escapeHtml(j.img)}" alt="${escapeHtml(j.name)}" loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="img-fallback">${escapeHtml(fallbackText)}</div>
+            </div>
+            <div class="journal-body">
+              <p class="journal-title">${escapeHtml(j.name)}</p>
+              <a class="journal-link" href="${escapeHtml(j.url)}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Journal page
+              </a>
+              <div class="journal-meta">
+                <span class="journal-badge"><i class="fa-solid fa-hashtag"></i> ${j.count}</span>
+                <span style="opacity:.92;"><i class="fa-regular fa-calendar"></i> 2022–Present</span>
+              </div>
+            </div>
+          `;
+          journalGrid.appendChild(tile);
+        });
+      })();
     </script>
   </main>
 </body>
