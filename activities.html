@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* PAGE LAYOUT (matches your gallery style) */
+    /* PAGE LAYOUT */
     .activities-page{
       max-width: 1200px;
       margin: 0 auto;
@@ -65,7 +65,7 @@
       border-color: rgba(59,130,246,.35);
     }
 
-    /* ====== SERVICE / REVIEW SECTION ====== */
+    /* ====== REVIEW SECTION ====== */
     .service-wrap{
       max-width: 1200px;
       margin: 0 auto 20px;
@@ -96,6 +96,7 @@
       color:#475569;
       font-size:.95rem;
       line-height:1.55;
+      max-width: 900px;
     }
     .service-pill{
       display:inline-flex;
@@ -130,25 +131,25 @@
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
       display:flex;
       flex-direction:column;
-      min-height: 220px;
+      min-height: 215px;
     }
     .journal-img{
-      height: 120px;
+      height: 110px;
       background: #111827;
       display:flex;
       align-items:center;
       justify-content:center;
       overflow:hidden;
-      position: relative;
+      padding: 10px;
     }
     .journal-img img{
       width: 100%;
       height: 100%;
-      object-fit: contain;     /* show full “cover/hero” */
+      object-fit: contain; /* show full logo/cover */
       display:block;
     }
     .journal-body{
-      padding: 12px 12px 12px;
+      padding: 12px;
       color:#f9fafb;
       display:flex;
       flex-direction:column;
@@ -196,9 +197,7 @@
       text-decoration:none;
       width: fit-content;
     }
-    .journal-link:hover{
-      background: rgba(255,255,255,.12);
-    }
+    .journal-link:hover{ background: rgba(255,255,255,.12); }
 
     /* ====== MAIN GRID ====== */
     .activity-grid{
@@ -237,14 +236,12 @@
     .img-wrap img{
       width: 100%;
       height: 100%;
-      object-fit: contain;  /* ✅ full image */
+      object-fit: contain;
       display:block;
       transform: scale(1);
       transition: transform .25s ease;
     }
-    .activity-card:hover .img-wrap img{
-      transform: scale(1.01);
-    }
+    .activity-card:hover .img-wrap img{ transform: scale(1.01); }
 
     .badge-row{
       position:absolute;
@@ -288,7 +285,7 @@
     }
 
     .card-body{
-      padding: 14px 14px 14px;
+      padding: 14px;
       color:#f9fafb;
       display:flex;
       flex-direction:column;
@@ -390,7 +387,7 @@
       justify-content:space-between;
       align-items:center;
       gap:12px;
-      padding: 12px 12px;
+      padding: 12px;
       color:#e5e7eb;
       border-bottom: 1px solid rgba(255,255,255,.10);
     }
@@ -469,7 +466,7 @@
       </div>
     </header>
 
-    <!-- ✅ REVIEW SECTION -->
+    <!-- REVIEW SECTION (FAST STATIC IMAGES) -->
     <section class="service-wrap" id="serviceSection">
       <div class="service-card">
         <div class="service-head">
@@ -484,6 +481,7 @@
             <i class="fa-solid fa-shield-halved"></i> 30+ Reviews
           </div>
         </div>
+
         <div class="journal-grid" id="journalGrid"></div>
       </div>
     </section>
@@ -528,63 +526,7 @@
       })();
     </script>
 
-    <!-- DATA + RENDER -->
     <script>
-      /**
-       * ✅ Cover image resolver:
-       * For any item with `articleUrl`, we fetch og:image/twitter:image and use it as the image.
-       * Uses https://r.jina.ai proxy to avoid browser CORS blocks.
-       */
-      const OG_CACHE_KEY = "nk_ogimg_cache_v1";
-
-      function getCache(){
-        try { return JSON.parse(localStorage.getItem(OG_CACHE_KEY) || "{}"); }
-        catch(e){ return {}; }
-      }
-      function setCache(cache){
-        try { localStorage.setItem(OG_CACHE_KEY, JSON.stringify(cache)); } catch(e){}
-      }
-
-      async function resolveOGImage(articleUrl){
-        if (!articleUrl) return null;
-
-        const cache = getCache();
-        if (cache[articleUrl] && cache[articleUrl].value !== undefined){
-          return cache[articleUrl].value; // can be null
-        }
-
-        try{
-          const proxied = "https://r.jina.ai/http://" + articleUrl.replace(/^https?:\/\//, "");
-          const res = await fetch(proxied);
-          if (!res.ok) throw new Error("proxy fetch failed");
-          const html = await res.text();
-
-          const og1 = html.match(/property=["']og:image["'][^>]*content=["']([^"']+)["']/i);
-          const og2 = html.match(/name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i);
-          const og3 = html.match(/property=["']twitter:image["'][^>]*content=["']([^"']+)["']/i);
-
-          const img = (og1 && og1[1]) || (og2 && og2[1]) || (og3 && og3[1]) || null;
-
-          cache[articleUrl] = { value: img, t: Date.now() };
-          setCache(cache);
-          return img;
-        }catch(e){
-          const cache2 = getCache();
-          cache2[articleUrl] = { value: null, t: Date.now() };
-          setCache(cache2);
-          return null;
-        }
-      }
-
-      function fallbackLogoFromUrl(articleUrl){
-        try{
-          const domain = new URL(articleUrl).hostname.replace(/^www\./, "");
-          return "https://logo.clearbit.com/" + domain;
-        }catch(e){
-          return "https://logo.clearbit.com/example.com";
-        }
-      }
-
       function escapeHtml(str){
         return String(str || "")
           .replaceAll("&", "&amp;")
@@ -594,16 +536,96 @@
           .replaceAll("'", "&#039;");
       }
 
-      /* ========= YOUR NEWS/ACTIVITY ITEMS ========= */
+      /* ===== PEER REVIEW JOURNALS (FAST STATIC IMAGES) =====
+         Uses reliable logos (fast, no scraping, no slow load).
+         If you want custom "journal covers", you can replace img with local PNGs later.
+      */
+      const reviewJournals = [
+        {
+          name: "International Journal of Biological Macromolecules",
+          count: 7,
+          url: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules",
+          img: "https://logo.clearbit.com/sciencedirect.com"
+        },
+        {
+          name: "Food Research International",
+          count: 2,
+          url: "https://www.sciencedirect.com/journal/food-research-international",
+          img: "https://logo.clearbit.com/sciencedirect.com"
+        },
+        {
+          name: "Journal of Food Science",
+          count: 8,
+          url: "https://ift.onlinelibrary.wiley.com/journal/17503841",
+          img: "https://logo.clearbit.com/wiley.com"
+        },
+        {
+          name: "Frontiers in Microbiology",
+          count: 1,
+          url: "https://www.frontiersin.org/journals/microbiology",
+          img: "https://logo.clearbit.com/frontiersin.org"
+        },
+        {
+          name: "Frontiers in Genetics (Computational Genomics)",
+          count: 1,
+          url: "https://www.frontiersin.org/journals/genetics",
+          img: "https://logo.clearbit.com/frontiersin.org"
+        },
+        {
+          name: "Frontiers in Molecular Biosciences (Biophysics)",
+          count: 1,
+          url: "https://www.frontiersin.org/journals/molecular-biosciences",
+          img: "https://logo.clearbit.com/frontiersin.org"
+        },
+        {
+          name: "Frontiers in Sustainable Food Systems (Nutrition & Sustainable Diets)",
+          count: 1,
+          url: "https://www.frontiersin.org/journals/sustainable-food-systems",
+          img: "https://logo.clearbit.com/frontiersin.org"
+        },
+        {
+          name: "Frontiers in Pharmacology (Translational Pharmacology)",
+          count: 1,
+          url: "https://www.frontiersin.org/journals/pharmacology",
+          img: "https://logo.clearbit.com/frontiersin.org"
+        }
+      ];
+
+      function renderJournals(){
+        const journalGrid = document.getElementById("journalGrid");
+        if (!journalGrid) return;
+        journalGrid.innerHTML = "";
+
+        reviewJournals.forEach(j => {
+          const tile = document.createElement("div");
+          tile.className = "journal-tile";
+          tile.innerHTML = `
+            <div class="journal-img">
+              <img src="${escapeHtml(j.img)}" alt="${escapeHtml(j.name)}" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="journal-body">
+              <p class="journal-title">${escapeHtml(j.name)}</p>
+              <a class="journal-link" href="${escapeHtml(j.url)}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Journal page
+              </a>
+              <div class="journal-meta">
+                <span class="journal-badge"><i class="fa-solid fa-hashtag"></i> ${j.count}</span>
+                <span style="opacity:.92;"><i class="fa-regular fa-calendar"></i> 2022–Present</span>
+              </div>
+            </div>
+          `;
+          journalGrid.appendChild(tile);
+        });
+      }
+
+      /* ===== YOUR ACTIVITY / NEWS ITEMS ===== */
       const items = [
-        /* === PRINT CLIPS (YOUR PNGs) === */
         {
           id: "prabhat-convocation-2018",
           tags: ["news","award"],
           badge: "News · Award",
           title: "CUSB Convocation & Gold Medals (Prabhat Khabar)",
-          desc:
-            "Hindi daily Prabhat Khabar covered the CUSB convocation and gold medal awards, including my recognition among the gold medal recipients.",
+          desc: "Hindi daily Prabhat Khabar covered the CUSB convocation and gold medal awards, including my recognition among the gold medal recipients.",
           date: "26 Mar 2018",
           place: "Gaya / South Bihar",
           sourceLabel: "Prabhat Khabar",
@@ -615,8 +637,7 @@
           tags: ["news","award"],
           badge: "News · Award",
           title: "Convocation Highlights (Prabhat Khabar – Clip)",
-          desc:
-            "Additional clip from the same coverage highlighting the convocation ceremony and gold medal announcements.",
+          desc: "Additional clip from the same coverage highlighting the convocation ceremony and gold medal announcements.",
           date: "2018",
           place: "Bihar, India",
           sourceLabel: "Prabhat Khabar",
@@ -628,23 +649,19 @@
           tags: ["news","training"],
           badge: "News · Training",
           title: "Genome Analysis Training Program (Hindi Press)",
-          desc:
-            "Hindi media reported on a genome analysis training program conducted by the Department of Bioinformatics, CUSB, where I served as one of the student trainers, assisting in hands-on instruction on computational genome analysis and bioinformatics workflows.",
+          desc: "Hindi media reported on a genome analysis training program conducted by the Department of Bioinformatics, CUSB, where I served as one of the student trainers, assisting in hands-on instruction on computational genome analysis and bioinformatics workflows.",
           date: "—",
           place: "CUSB, India",
           sourceLabel: "Hindi Press",
           img: "genome-training.png",
           links: []
         },
-
-        /* CSIR–JIGYASA (your scanned/clip PNGs) */
         {
           id: "csir-jigyasa-morung-scan",
           tags: ["news","outreach"],
           badge: "News · Outreach",
           title: "CSIR–JIGYASA Outreach (Print Clip)",
-          desc:
-            "Media coverage of CSIR–JIGYASA outreach at Livingstone Foundation International (LFI), where we visited the school as part of a CSIR outreach team, aimed at promoting scientific temper and engagement among school students in Northeast India.",
+          desc: "Media coverage of CSIR–JIGYASA outreach at Livingstone Foundation International (LFI), where we visited the school as part of a CSIR outreach team, aimed at promoting scientific temper and engagement among school students in Northeast India.",
           date: "Mar 2022",
           place: "Dimapur, Nagaland",
           sourceLabel: "Print coverage (scan)",
@@ -653,20 +670,16 @@
             { label: "Read online (Morung Express)", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
           ]
         },
-
-        /* === ONLINE ARTICLES (AUTO COVER IMAGE) === */
         {
           id: "toi-convocation-2018",
           tags: ["news","award"],
-          badge: "Online · Award",
+          badge: "News · Award",
           title: "CUSB Convocation Coverage (Times of India)",
-          desc:
-            "The Times of India reported on the CUSB convocation ceremony, during which gold medals were awarded to academic toppers, including me, alongside degree awards to graduating students.",
+          desc: "The Times of India reported on the CUSB convocation ceremony, during which gold medals were awarded to academic toppers, including me, alongside degree awards to graduating students.",
           date: "2018",
           place: "Patna, India",
           sourceLabel: "Times of India",
-          articleUrl: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms",
-          img: "", /* keep empty -> auto cover */
+          img: "https://logo.clearbit.com/indiatimes.com",
           links: [
             { label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }
           ]
@@ -674,38 +687,20 @@
         {
           id: "hans-nobel-outreach",
           tags: ["news","outreach"],
-          badge: "Online · Outreach",
+          badge: "News · Outreach",
           title: "Nobel Laureate Outreach Highlight (The Hans India)",
-          desc:
-            "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich, highlighting student interaction and science inspiration activities.",
+          desc: "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich, highlighting student interaction and science inspiration activities.",
           date: "2017",
           place: "India",
           sourceLabel: "The Hans India",
-          articleUrl: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347",
-          img: "https://www.thehansindia.com/images/logo1.png?v=2",
+          img: "https://logo.clearbit.com/thehansindia.com",
           links: [
             { label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }
           ]
         }
       ];
 
-      /* ========= PEER REVIEW JOURNALS (AUTO COVER IMAGE) =========
-         Each tile tries og:image from the journal page. If blocked -> logo fallback.
-      */
-      const reviewJournals = [
-        { name: "International Journal of Biological Macromolecules", count: 7, url: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules" },
-        { name: "Food Research International", count: 2, url: "https://www.sciencedirect.com/journal/food-research-international" },
-        { name: "Journal of Food Science", count: 8, url: "https://ift.onlinelibrary.wiley.com/journal/17503841" },
-        { name: "Frontiers in Microbiology", count: 1, url: "https://www.frontiersin.org/journals/microbiology" },
-        { name: "Frontiers in Genetics (Computational Genomics)", count: 1, url: "https://www.frontiersin.org/journals/genetics" },
-        { name: "Frontiers in Molecular Biosciences (Biophysics)", count: 1, url: "https://www.frontiersin.org/journals/molecular-biosciences" },
-        { name: "Frontiers in Sustainable Food Systems (Nutrition & Sustainable Diets)", count: 1, url: "https://www.frontiersin.org/journals/sustainable-food-systems" },
-        { name: "Frontiers in Pharmacology (Translational Pharmacology)", count: 1, url: "https://www.frontiersin.org/journals/pharmacology" }
-      ];
-
       const grid = document.getElementById("grid");
-      const journalGrid = document.getElementById("journalGrid");
-      const serviceSection = document.getElementById("serviceSection");
 
       function iconFor(tags){
         if (tags.includes("award")) return "fa-award";
@@ -714,28 +709,15 @@
         return "fa-newspaper";
       }
 
-      async function getItemImage(item){
-        // If user provided image (PNG or fixed URL), use it
-        if (item.img && item.img.trim() !== "") return item.img;
-
-        // Else try OG cover from articleUrl
-        if (item.articleUrl){
-          const og = await resolveOGImage(item.articleUrl);
-          if (og) return og;
-          return fallbackLogoFromUrl(item.articleUrl);
-        }
-
-        return "https://logo.clearbit.com/example.com";
-      }
-
-      async function render(filter="all"){
-        // show/hide service section by filter
+      function render(filter="all"){
+        // service section behavior
+        const serviceSection = document.getElementById("serviceSection");
         if (filter === "service"){
           serviceSection.style.display = "block";
           grid.innerHTML = "";
           return;
         } else {
-          serviceSection.style.display = "block"; // keep visible on All and other filters (you can set to "none" if you prefer)
+          serviceSection.style.display = (filter === "all") ? "block" : "none";
         }
 
         grid.innerHTML = "";
@@ -743,12 +725,9 @@
           ? items
           : items.filter(x => x.tags.includes(filter));
 
-        for (const item of data){
+        data.forEach(item => {
           const card = document.createElement("article");
           card.className = "activity-card";
-          card.dataset.tags = item.tags.join(",");
-
-          const imgSrc = await getItemImage(item);
 
           const linksHtml = (item.links && item.links.length)
             ? `<div class="links">
@@ -761,14 +740,14 @@
             : "";
 
           card.innerHTML = `
-            <div class="img-wrap" data-full="${escapeHtml(imgSrc)}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0" aria-label="Open full preview">
+            <div class="img-wrap" data-full="${escapeHtml(item.img)}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0" aria-label="Open full preview">
               <div class="badge-row">
                 <span class="badge"><i class="fa-solid ${iconFor(item.tags)}"></i> ${escapeHtml(item.badge)}</span>
               </div>
               <div class="zoom-hint" title="View full">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
               </div>
-              <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="no-referrer">
+              <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="no-referrer">
             </div>
 
             <div class="card-body">
@@ -790,42 +769,9 @@
           `;
 
           grid.appendChild(card);
-        }
+        });
 
         bindPreviewHandlers();
-      }
-
-      /* ====== Render journal tiles with auto “cover image” ====== */
-      async function renderJournals(){
-        if (!journalGrid) return;
-        journalGrid.innerHTML = "";
-
-        for (const j of reviewJournals){
-          const tile = document.createElement("div");
-          tile.className = "journal-tile";
-
-          // Try og:image from journal page; fallback to logo
-          let img = await resolveOGImage(j.url);
-          if (!img) img = fallbackLogoFromUrl(j.url);
-
-          tile.innerHTML = `
-            <div class="journal-img">
-              <img src="${escapeHtml(img)}" alt="${escapeHtml(j.name)} cover" loading="lazy" referrerpolicy="no-referrer">
-            </div>
-            <div class="journal-body">
-              <p class="journal-title">${escapeHtml(j.name)}</p>
-              <a class="journal-link" href="${escapeHtml(j.url)}" target="_blank" rel="noopener">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Journal page
-              </a>
-              <div class="journal-meta">
-                <span class="journal-badge"><i class="fa-solid fa-hashtag"></i> ${j.count}</span>
-                <span style="opacity:.92;"><i class="fa-regular fa-calendar"></i> 2022–Present</span>
-              </div>
-            </div>
-          `;
-
-          journalGrid.appendChild(tile);
-        }
       }
 
       /* MODAL PREVIEW */
@@ -838,12 +784,10 @@
         modalTitle.textContent = title || "Preview";
         modalImg.src = src;
         modal.classList.add("open");
-        modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
       }
       function closeModal(){
         modal.classList.remove("open");
-        modal.setAttribute("aria-hidden", "true");
         modalImg.src = "";
         document.body.style.overflow = "";
       }
@@ -859,9 +803,7 @@
       }
 
       modalClose.addEventListener("click", closeModal);
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-      });
+      modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
       });
@@ -869,18 +811,16 @@
       /* FILTER CHIPS */
       const chips = document.querySelectorAll(".chip");
       chips.forEach(chip => {
-        chip.addEventListener("click", async () => {
+        chip.addEventListener("click", () => {
           chips.forEach(c => c.classList.remove("active"));
           chip.classList.add("active");
-          await render(chip.dataset.filter);
+          render(chip.dataset.filter);
         });
       });
 
-      /* Initial render */
-      (async function init(){
-        await renderJournals();
-        await render("all");
-      })();
+      /* INIT */
+      renderJournals();
+      render("all");
     </script>
   </main>
 </body>
