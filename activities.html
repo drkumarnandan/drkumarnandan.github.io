@@ -13,7 +13,6 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
   <link rel="stylesheet" href="styles.css" />
 
   <style>
@@ -34,7 +33,7 @@
       letter-spacing: 0.03em;
     }
     .page-header p{
-      max-width: 780px;
+      max-width: 820px;
       margin: 0.25rem auto 0;
       color: #6b7280;
       font-size: 0.98rem;
@@ -46,6 +45,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
+      margin-top: 18px;
     }
     @media (max-width: 1000px){
       .activities-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -70,12 +70,11 @@
       background: #111827;
       padding: 12px;
     }
-
     .activity-img{
       width: 100%;
-      height: auto;         /* let height adapt */
+      height: auto;
       display: block;
-      object-fit: contain;  /* show full image */
+      object-fit: contain;
     }
 
     /* BADGE */
@@ -97,7 +96,7 @@
       z-index: 2;
     }
 
-    /* ================= CONTENT ================= */
+    /* CONTENT */
     .activity-content{
       padding: 14px 14px 16px;
       color: #f9fafb;
@@ -105,13 +104,11 @@
       flex-direction: column;
       gap: 10px;
     }
-
     .activity-title{
       font-size: 1rem;
       font-weight: 700;
       line-height: 1.35;
     }
-
     .activity-desc{
       color: #e5e7eb;
       font-size: 0.92rem;
@@ -119,14 +116,13 @@
       opacity: 0.95;
     }
 
-    /* ACTIONS */
+    /* ACTION BUTTONS */
     .activity-actions{
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin-top: 4px;
     }
-
     .btn-link{
       display: inline-flex;
       align-items: center;
@@ -150,20 +146,18 @@
     .activity-meta{
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
       font-size: 0.8rem;
       color: #cbd5e1;
       margin-top: auto;
     }
-
     .meta-left{
       display: inline-flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
     }
-
     .meta-chip{
       display: inline-flex;
       align-items: center;
@@ -206,30 +200,20 @@
       </p>
     </header>
 
-    <!-- GRID -->
     <section class="activities-grid">
 
-      <!-- MERGED: Prabhat Khabar (Convocation + Gold Medals; clip may also include other institutional notes) -->
+      <!-- 1) PRABHAT KHABAR (MERGED: Convocation + Gold medals; do NOT mention funding) -->
       <article class="activity-card">
         <div class="activity-imgwrap">
-          <span class="activity-badge">
-            <i class="fa-solid fa-medal"></i> News · Award
-          </span>
-
-          <!-- Use ONE image (recommended) OR a collage image that combines both clippings -->
-          <!-- Replace the src filename with your actual saved image file -->
+          <span class="activity-badge"><i class="fa-solid fa-medal"></i> News · Award</span>
           <img
             src="prabhat-khabar-cusb-2018.jpg"
             alt="Prabhat Khabar coverage of CUSB convocation and gold medals (26 March 2018)"
             class="activity-img"
           />
         </div>
-
         <div class="activity-content">
-          <div class="activity-title">
-            CUSB Convocation &amp; Gold Medals (Prabhat Khabar)
-          </div>
-
+          <div class="activity-title">CUSB Convocation &amp; Gold Medals (Prabhat Khabar)</div>
           <div class="activity-desc">
             Hindi daily <em>Prabhat Khabar</em> reported on the Central University of South Bihar (CUSB)
             convocation ceremony, where <strong>675</strong> students were awarded degrees and
@@ -242,6 +226,172 @@
               <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Prabhat Khabar (Hindi)</span>
             </span>
             <span>Gaya / South Bihar</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2) GENOME ANALYSIS TRAINING (HINDI CLIP) -->
+      <article class="activity-card">
+        <div class="activity-imgwrap">
+          <span class="activity-badge"><i class="fa-solid fa-laptop-code"></i> Research Training</span>
+          <img
+            src="genome-analysis-training-hindi.jpg"
+            alt="Hindi press coverage of genome analysis training program"
+            class="activity-img"
+          />
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">Genome Analysis Training Program (Hindi Press)</div>
+          <div class="activity-desc">
+            Coverage of a hands-on training program where participants learned computational approaches
+            for genome analysis and bioinformatics workflows.
+          </div>
+
+          <div class="activity-meta">
+            <span class="meta-left">
+              <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Hindi newspaper</span>
+            </span>
+            <span>India</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3) MORUNG EXPRESS (WITH YOUR LINK) -->
+      <article class="activity-card">
+        <div class="activity-imgwrap">
+          <span class="activity-badge"><i class="fa-solid fa-handshake-angle"></i> Outreach</span>
+          <img
+            src="morung-express-jigyasa-2022.jpg"
+            alt="The Morung Express: LFI collaborates with CSIR-JIGYASA Program (19 March 2022)"
+            class="activity-img"
+          />
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">LFI collaborates with CSIR–JIGYASA Program (The Morung Express)</div>
+          <div class="activity-desc">
+            Media coverage of CSIR–JIGYASA outreach at Livingstone Foundation International (LFI),
+            aimed at promoting scientific temper and engagement among school students in Northeast India.
+          </div>
+
+          <div class="activity-actions">
+            <a
+              href="https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program"
+              target="_blank"
+              rel="noopener"
+              class="btn-link"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Read article
+            </a>
+          </div>
+
+          <div class="activity-meta">
+            <span class="meta-left">
+              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 19 Mar 2022</span>
+              <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> The Morung Express</span>
+            </span>
+            <span>Dimapur, Nagaland</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4) EASTERN MIRROR (SCAN; NO LINK PROVIDED) -->
+      <article class="activity-card">
+        <div class="activity-imgwrap">
+          <span class="activity-badge"><i class="fa-solid fa-handshake-angle"></i> Outreach</span>
+          <img
+            src="eastern-mirror-jigyasa-2022.jpg"
+            alt="Eastern Mirror: LFI collaborates with government’s CSIR-JIGYASA programme (19 March 2022)"
+            class="activity-img"
+          />
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">CSIR–JIGYASA Outreach (Eastern Mirror)</div>
+          <div class="activity-desc">
+            Newspaper coverage of the CSIR–JIGYASA initiative highlighting science outreach activities,
+            student interaction, and engagement with scientific programs in Northeast India.
+          </div>
+
+          <div class="activity-meta">
+            <span class="meta-left">
+              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 19 Mar 2022</span>
+              <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Eastern Mirror</span>
+            </span>
+            <span>Dimapur, Nagaland</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5) TIMES OF INDIA (WITH YOUR LINK) -->
+      <article class="activity-card">
+        <div class="activity-imgwrap">
+          <span class="activity-badge"><i class="fa-regular fa-newspaper"></i> News</span>
+          <img
+            src="times-of-india-cusb-convocation.jpg"
+            alt="Times of India: CUSB convocation: 675 receive degrees"
+            class="activity-img"
+          />
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">CUSB Convocation Coverage (Times of India)</div>
+          <div class="activity-desc">
+            <em>The Times of India</em> reported on the Central University of South Bihar convocation ceremony,
+            where undergraduate and postgraduate students were awarded degrees.
+          </div>
+
+          <div class="activity-actions">
+            <a
+              href="https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms"
+              target="_blank"
+              rel="noopener"
+              class="btn-link"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Read article
+            </a>
+          </div>
+
+          <div class="activity-meta">
+            <span class="meta-left">
+              <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Times of India</span>
+            </span>
+            <span>Patna, India</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6) HANS INDIA (WITH YOUR LINK) -->
+      <article class="activity-card">
+        <div class="activity-imgwrap">
+          <span class="activity-badge"><i class="fa-solid fa-lightbulb"></i> Outreach</span>
+          <img
+            src="hans-india-nobel-inspires-children.jpg"
+            alt="The Hans India: Nobel laureate inspires children"
+            class="activity-img"
+          />
+        </div>
+        <div class="activity-content">
+          <div class="activity-title">Nobel Laureate Outreach Highlight (The Hans India)</div>
+          <div class="activity-desc">
+            <em>The Hans India</em> covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich,
+            highlighting student interaction and science inspiration activities.
+          </div>
+
+          <div class="activity-actions">
+            <a
+              href="https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347"
+              target="_blank"
+              rel="noopener"
+              class="btn-link"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Read article
+            </a>
+          </div>
+
+          <div class="activity-meta">
+            <span class="meta-left">
+              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 08 Feb 2017</span>
+              <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> The Hans India</span>
+            </span>
+            <span>India</span>
           </div>
         </div>
       </article>
