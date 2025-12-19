@@ -13,10 +13,11 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* PAGE LAYOUT */
+    /* ================= PAGE LAYOUT ================= */
     .activities-page{
       max-width: 1200px;
       margin: 0 auto;
@@ -25,7 +26,7 @@
 
     .page-header{
       text-align: center;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
     .page-header h1{
       font-size: 2.1rem;
@@ -40,7 +41,7 @@
       line-height: 1.6;
     }
 
-    /* FILTER BAR */
+    /* ================= FILTER BAR ================= */
     .filter-bar{
       display: flex;
       flex-wrap: wrap;
@@ -56,22 +57,22 @@
       border-radius: 999px;
       font-size: 0.9rem;
       cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      transition: all 0.12s ease;
     }
     .filter-btn:hover{
       transform: translateY(-1px);
-      box-shadow: 0 10px 18px rgba(15,23,42,0.10);
+      box-shadow: 0 8px 16px rgba(15,23,42,0.12);
     }
     .filter-btn.active{
-      background: rgba(59,130,246,0.12);
+      background: rgba(59,130,246,0.14);
       border-color: rgba(59,130,246,0.35);
     }
 
-    /* GRID */
+    /* ================= GRID ================= */
     .activities-grid{
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 22px;
     }
     @media (max-width: 1000px){
       .activities-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -80,7 +81,7 @@
       .activities-grid{ grid-template-columns: 1fr; }
     }
 
-    /* CARD */
+    /* ================= CARD ================= */
     .activity-card{
       border-radius: 14px;
       overflow: hidden;
@@ -88,31 +89,27 @@
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
       display: flex;
       flex-direction: column;
-      min-height: 260px;
-      position: relative;
     }
 
+    /* IMAGE: OPTION A — SHOW FULL IMAGE */
     .activity-imgwrap{
       position: relative;
-      background: #1f2937;
-      overflow: hidden;
-      height: 210px;
+      background: #111827;
+      padding: 12px;
     }
 
     .activity-img{
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
-      transition: transform 0.35s ease-out;
+      object-fit: contain;   /* key */
     }
-    .activity-card:hover .activity-img{ transform: scale(1.05); }
 
     /* BADGE */
     .activity-badge{
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 10px;
+      left: 10px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -124,16 +121,16 @@
       font-weight: 600;
       backdrop-filter: blur(8px);
       border: 1px solid rgba(59,130,246,0.22);
+      z-index: 2;
     }
 
-    /* CONTENT */
+    /* ================= CONTENT ================= */
     .activity-content{
       padding: 14px 14px 16px;
       color: #f9fafb;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      flex: 1 1 auto;
     }
 
     .activity-title{
@@ -149,41 +146,12 @@
       opacity: 0.95;
     }
 
-    .activity-meta{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: #cbd5e1;
-      margin-top: auto;
-    }
-
-    .meta-left{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .meta-chip{
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 2px 9px;
-      border-radius: 999px;
-      background: rgba(148,163,184,0.14);
-      color: #e5e7eb;
-      border: 1px solid rgba(148,163,184,0.18);
-      font-size: 0.78rem;
-    }
-
-    /* LINKS */
+    /* ACTIONS */
     .activity-actions{
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .btn-link{
@@ -196,82 +164,35 @@
       font-size: 0.9rem;
       font-weight: 600;
       border: 1px solid rgba(226,232,240,0.18);
-      background: rgba(15,23,42,0.32);
+      background: rgba(15,23,42,0.35);
       color: #f9fafb;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+      transition: all 0.12s ease;
     }
     .btn-link:hover{
       transform: translateY(-1px);
-      box-shadow: 0 10px 18px rgba(15,23,42,0.18);
-      background: rgba(15,23,42,0.45);
+      box-shadow: 0 8px 16px rgba(15,23,42,0.18);
     }
 
-    /* FEATURED (optional) */
-    .featured{
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 18px;
-      background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(15,23,42,0.0));
-      border: 1px solid rgba(15,23,42,0.10);
-      border-radius: 16px;
-      overflow: hidden;
-      margin: 10px 0 22px;
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.10);
+    /* META */
+    .activity-meta{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      margin-top: auto;
     }
-    .featured-img{
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-      background: #111827;
-    }
-    .featured-body{
-      padding: 16px 16px 18px;
-    }
-    .featured-kicker{
+
+    .meta-chip{
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: #1d4ed8;
-      background: rgba(59,130,246,0.12);
-      padding: 6px 10px;
+      gap: 6px;
+      padding: 2px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(59,130,246,0.18);
-    }
-    .featured-title{
-      margin-top: 10px;
-      font-size: 1.15rem;
-      font-weight: 800;
-      line-height: 1.35;
-      color: #0f172a;
-    }
-    .featured-desc{
-      margin-top: 8px;
-      color: #334155;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-    .featured-actions{
-      margin-top: 12px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .btn-link.light{
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid rgba(15,23,42,0.12);
-    }
-    .btn-link.light:hover{
-      background: rgba(255,255,255,0.96);
-    }
-
-    @media (max-width: 900px){
-      .featured{ grid-template-columns: 1fr; }
-      .featured-img{ height: 230px; }
-      .featured-title, .featured-desc{ color: #0f172a; }
+      background: rgba(148,163,184,0.14);
+      border: 1px solid rgba(148,163,184,0.18);
+      font-size: 0.75rem;
     }
   </style>
 </head>
@@ -300,193 +221,70 @@
     <header class="page-header">
       <h1>Activities</h1>
       <p>
-        Highlights from teaching, mentoring, outreach, professional service, invited talks, and media coverage.
-        Selected items include photos and links to official pages or news sources.
+        Selected highlights from teaching, mentoring, outreach, professional service,
+        awards, and media coverage.
       </p>
     </header>
 
-    <!-- OPTIONAL FEATURED ITEM -->
-    <section class="featured">
-      <img class="featured-img" src="activity-featured.jpg" alt="Featured activity image" />
-      <div class="featured-body">
-        <span class="featured-kicker">
-          <i class="fa-solid fa-bolt"></i> Featured
-        </span>
-        <div class="featured-title">
-          Example featured clip: Research highlight / press mention
-        </div>
-        <div class="featured-desc">
-          Replace this with a short 2–3 line summary. Keep it concise and factual.
-          You can link to a university news page, conference announcement, or award page.
-        </div>
-        <div class="featured-actions">
-          <a class="btn-link light" href="https://example.com" target="_blank" rel="noopener">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Read
-          </a>
-          <a class="btn-link light" href="gallery.html">
-            <i class="fa-regular fa-images"></i> More Photos
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FILTERS -->
+    <!-- FILTER -->
     <div class="filter-bar">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="news"><i class="fa-regular fa-newspaper"></i> News</button>
-      <button class="filter-btn" data-filter="outreach"><i class="fa-solid fa-handshake-angle"></i> Outreach</button>
-      <button class="filter-btn" data-filter="mentoring"><i class="fa-solid fa-user-graduate"></i> Mentoring</button>
-      <button class="filter-btn" data-filter="service"><i class="fa-solid fa-people-group"></i> Service</button>
-      <button class="filter-btn" data-filter="award"><i class="fa-solid fa-trophy"></i> Awards</button>
+      <button class="filter-btn" data-filter="news">News</button>
+      <button class="filter-btn" data-filter="outreach">Outreach</button>
+      <button class="filter-btn" data-filter="mentoring">Mentoring</button>
+      <button class="filter-btn" data-filter="service">Service</button>
+      <button class="filter-btn" data-filter="award">Awards</button>
     </div>
 
     <!-- GRID -->
-    <section class="activities-grid" id="activities-grid">
+    <section class="activities-grid">
 
-      <!-- ITEM 1 -->
+      <!-- NEWS ITEM -->
       <article class="activity-card" data-type="news">
         <div class="activity-imgwrap">
           <span class="activity-badge"><i class="fa-regular fa-newspaper"></i> News</span>
-          <img class="activity-img" src="activity-news-1.jpg" alt="News clip / photo 1" />
+          <img src="news1.jpg" alt="Newspaper coverage" class="activity-img">
         </div>
 
         <div class="activity-content">
-          <div class="activity-title">Example: University news feature on computational protein modeling</div>
+          <div class="activity-title">
+            Research featured in regional and national newspapers
+          </div>
           <div class="activity-desc">
-            1–2 lines describing what happened (press mention, spotlight, interview, etc.).
+            Coverage highlighting computational research and academic activities.
           </div>
 
           <div class="activity-actions">
-            <a class="btn-link" href="https://example.com" target="_blank" rel="noopener">
+            <a href="https://example.com" class="btn-link" target="_blank">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Source
             </a>
-            <a class="btn-link" href="publications.html">
-              <i class="fa-solid fa-file-lines"></i> Related work
-            </a>
           </div>
 
           <div class="activity-meta">
-            <span class="meta-left">
-              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2025</span>
-              <span class="meta-chip"><i class="fa-solid fa-link"></i> K-State</span>
-            </span>
-            <span style="opacity:0.9;">Manhattan, KS</span>
+            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2022</span>
+            <span>India</span>
           </div>
         </div>
       </article>
 
-      <!-- ITEM 2 -->
-      <article class="activity-card" data-type="mentoring">
-        <div class="activity-imgwrap">
-          <span class="activity-badge"><i class="fa-solid fa-user-graduate"></i> Mentoring</span>
-          <img class="activity-img" src="activity-mentoring-1.jpg" alt="Mentoring photo" />
-        </div>
-
-        <div class="activity-content">
-          <div class="activity-title">Example: Mentoring students in molecular simulation workflows</div>
-          <div class="activity-desc">
-            Short description of mentoring activity (lab training, code walkthroughs, project supervision).
-          </div>
-
-          <div class="activity-actions">
-            <a class="btn-link" href="contact.html">
-              <i class="fa-regular fa-envelope"></i> Contact
-            </a>
-          </div>
-
-          <div class="activity-meta">
-            <span class="meta-left">
-              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2024–2025</span>
-              <span class="meta-chip"><i class="fa-solid fa-building-columns"></i> Wheat Quality Lab</span>
-            </span>
-            <span style="opacity:0.9;">KSU</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ITEM 3 -->
-      <article class="activity-card" data-type="outreach">
-        <div class="activity-imgwrap">
-          <span class="activity-badge"><i class="fa-solid fa-handshake-angle"></i> Outreach</span>
-          <img class="activity-img" src="activity-outreach-1.jpg" alt="Outreach photo" />
-        </div>
-
-        <div class="activity-content">
-          <div class="activity-title">Example: Outreach / workshop / invited lecture</div>
-          <div class="activity-desc">
-            Replace with a short summary. Add a link to an announcement or agenda if available.
-          </div>
-
-          <div class="activity-actions">
-            <a class="btn-link" href="https://example.com" target="_blank" rel="noopener">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
-            </a>
-          </div>
-
-          <div class="activity-meta">
-            <span class="meta-left">
-              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2023</span>
-              <span class="meta-chip"><i class="fa-solid fa-location-dot"></i> Invited</span>
-            </span>
-            <span style="opacity:0.9;">Talk</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ITEM 4 -->
-      <article class="activity-card" data-type="service">
-        <div class="activity-imgwrap">
-          <span class="activity-badge"><i class="fa-solid fa-people-group"></i> Service</span>
-          <img class="activity-img" src="activity-service-1.jpg" alt="Service photo" />
-        </div>
-
-        <div class="activity-content">
-          <div class="activity-title">Example: Editorial / peer-review / professional service</div>
-          <div class="activity-desc">
-            Add a brief, neutral description (committee role, reviewer activity, editorial invitation, etc.).
-          </div>
-
-          <div class="activity-actions">
-            <a class="btn-link" href="https://example.com" target="_blank" rel="noopener">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Link
-            </a>
-          </div>
-
-          <div class="activity-meta">
-            <span class="meta-left">
-              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2025</span>
-              <span class="meta-chip"><i class="fa-solid fa-list-check"></i> Service</span>
-            </span>
-            <span style="opacity:0.9;">Professional</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- ITEM 5 -->
+      <!-- AWARD ITEM -->
       <article class="activity-card" data-type="award">
         <div class="activity-imgwrap">
           <span class="activity-badge"><i class="fa-solid fa-trophy"></i> Award</span>
-          <img class="activity-img" src="activity-award-1.jpg" alt="Award photo" />
+          <img src="award1.jpg" alt="Award news clipping" class="activity-img">
         </div>
 
         <div class="activity-content">
-          <div class="activity-title">Example: Award / recognition</div>
-          <div class="activity-desc">
-            1–2 lines describing the award and the awarding body.
+          <div class="activity-title">
+            Academic recognition and awards
           </div>
-
-          <div class="activity-actions">
-            <a class="btn-link" href="https://example.com" target="_blank" rel="noopener">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Announcement
-            </a>
+          <div class="activity-desc">
+            News coverage related to awards and professional recognition.
           </div>
 
           <div class="activity-meta">
-            <span class="meta-left">
-              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2020</span>
-              <span class="meta-chip"><i class="fa-solid fa-award"></i> Recognition</span>
-            </span>
-            <span style="opacity:0.9;">CSIR</span>
+            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2020</span>
+            <span>CSIR</span>
           </div>
         </div>
       </article>
@@ -499,7 +297,7 @@
       <span>Visits (this browser): <span id="visitor-count">—</span></span>
     </div>
 
-    <!-- filter + visitor counter -->
+    <!-- scripts -->
     <script>
       // visitor counter
       (function () {
@@ -507,34 +305,26 @@
         if (!el) return;
         const key = 'nk_site_visit_count';
         let count = parseInt(localStorage.getItem(key) || '0', 10);
-        count += 1;
+        count++;
         localStorage.setItem(key, String(count));
         el.textContent = count.toLocaleString();
       })();
 
-      // simple filtering
+      // filtering
       (function(){
         const buttons = document.querySelectorAll('.filter-btn');
         const cards = document.querySelectorAll('.activity-card');
 
-        function setActive(btn){
-          buttons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-        }
-
-        function applyFilter(type){
-          cards.forEach(card => {
-            const t = card.getAttribute('data-type');
-            const show = (type === 'all') || (t === type);
-            card.style.display = show ? '' : 'none';
-          });
-        }
-
         buttons.forEach(btn => {
           btn.addEventListener('click', () => {
-            const type = btn.getAttribute('data-filter');
-            setActive(btn);
-            applyFilter(type);
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const type = btn.dataset.filter;
+
+            cards.forEach(card => {
+              card.style.display =
+                (type === 'all' || card.dataset.type === type) ? '' : 'none';
+            });
           });
         });
       })();
