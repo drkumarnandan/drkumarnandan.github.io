@@ -25,7 +25,7 @@
 
     .page-header{
       text-align:center;
-      margin-bottom: 26px;
+      margin-bottom: 18px;
     }
     .page-header h1{
       font-size: 2.15rem;
@@ -33,20 +33,20 @@
       letter-spacing: .03em;
     }
     .page-header p{
-      max-width: 840px;
+      max-width: 900px;
       margin: .25rem auto 0;
       color:#6b7280;
       font-size: .98rem;
       line-height: 1.65;
     }
 
-    /* FILTER CHIPS (optional but useful) */
+    /* FILTER CHIPS */
     .chip-row{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       justify-content:center;
-      margin: 14px 0 22px;
+      margin: 14px 0 18px;
     }
     .chip{
       border: 1px solid rgba(15,23,42,.12);
@@ -65,7 +65,142 @@
       border-color: rgba(59,130,246,.35);
     }
 
-    /* GRID */
+    /* ====== SERVICE / REVIEW SECTION ====== */
+    .service-wrap{
+      max-width: 1200px;
+      margin: 0 auto 20px;
+    }
+    .service-card{
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 10px 22px rgba(15,23,42,.10);
+      padding: 16px;
+    }
+    .service-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    .service-head h2{
+      margin:0;
+      color:#0f172a;
+      font-size: 1.12rem;
+      letter-spacing:.01em;
+    }
+    .service-head p{
+      margin: 6px 0 0;
+      color:#475569;
+      font-size:.95rem;
+      line-height:1.55;
+    }
+    .service-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(59,130,246,.10);
+      border: 1px solid rgba(59,130,246,.22);
+      color:#0f172a;
+      font-weight: 700;
+      font-size: .86rem;
+      white-space: nowrap;
+    }
+
+    .journal-grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 980px){
+      .journal-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 700px){
+      .journal-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    .journal-tile{
+      border-radius: 14px;
+      overflow:hidden;
+      background: #0f172a;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+      display:flex;
+      flex-direction:column;
+      min-height: 220px;
+    }
+    .journal-img{
+      height: 120px;
+      background: #111827;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      position: relative;
+    }
+    .journal-img img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;     /* show full “cover/hero” */
+      display:block;
+    }
+    .journal-body{
+      padding: 12px 12px 12px;
+      color:#f9fafb;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      flex: 1 1 auto;
+    }
+    .journal-title{
+      margin:0;
+      font-size: .95rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .journal-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color: rgba(229,231,235,.9);
+      font-size: .82rem;
+      margin-top:auto;
+    }
+    .journal-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(59,130,246,.16);
+      border: 1px solid rgba(59,130,246,.22);
+      color: #e5edff;
+      font-weight: 700;
+      font-size: .78rem;
+    }
+    .journal-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color:#e5e7eb;
+      font-size: .86rem;
+      text-decoration:none;
+      width: fit-content;
+    }
+    .journal-link:hover{
+      background: rgba(255,255,255,.12);
+    }
+
+    /* ====== MAIN GRID ====== */
     .activity-grid{
       display:grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -92,8 +227,8 @@
     /* OPTION A: SHOW FULL CLIP (NO CROPPING) */
     .img-wrap{
       position: relative;
-      height: 260px;                 /* fixed frame */
-      background: #111827;           /* dark mat behind the clip */
+      height: 260px;
+      background: #111827;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -102,7 +237,7 @@
     .img-wrap img{
       width: 100%;
       height: 100%;
-      object-fit: contain;           /* ✅ shows full image always */
+      object-fit: contain;  /* ✅ full image */
       display:block;
       transform: scale(1);
       transition: transform .25s ease;
@@ -111,7 +246,6 @@
       transform: scale(1.01);
     }
 
-    /* LABELS ON IMAGE */
     .badge-row{
       position:absolute;
       top: 12px;
@@ -153,7 +287,6 @@
       cursor:pointer;
     }
 
-    /* CONTENT */
     .card-body{
       padding: 14px 14px 14px;
       color:#f9fafb;
@@ -229,7 +362,7 @@
       box-shadow: 0 10px 18px rgba(0,0,0,.18);
     }
 
-    /* MODAL (click image = full view) */
+    /* MODAL */
     .modal{
       position: fixed;
       inset: 0;
@@ -290,7 +423,6 @@
       background: #0b1220;
     }
 
-    /* small helper */
     .muted-note{
       text-align:center;
       margin-top: 14px;
@@ -302,7 +434,6 @@
 </head>
 
 <body>
-  <!-- Top navigation (same as other pages) -->
   <div class="topbar">
     <div class="topbar-inner">
       <div class="site-title">
@@ -325,7 +456,7 @@
       <h1>Activities</h1>
       <p>
         Selected highlights from academic milestones, outreach, and professional activities,
-        including verified media coverage and event documentation.
+        including verified media coverage and professional service.
       </p>
 
       <div class="chip-row" id="chipRow">
@@ -334,8 +465,28 @@
         <div class="chip" data-filter="award">Awards</div>
         <div class="chip" data-filter="training">Training</div>
         <div class="chip" data-filter="outreach">Outreach</div>
+        <div class="chip" data-filter="service">Peer Review</div>
       </div>
     </header>
+
+    <!-- ✅ REVIEW SECTION -->
+    <section class="service-wrap" id="serviceSection">
+      <div class="service-card">
+        <div class="service-head">
+          <div>
+            <h2>Peer Review Service (2022–Present)</h2>
+            <p>
+              Reviewer for <strong>30+ manuscripts</strong> across journals in food science,
+              biomolecular research, and computational biology.
+            </p>
+          </div>
+          <div class="service-pill">
+            <i class="fa-solid fa-shield-halved"></i> 30+ Reviews
+          </div>
+        </div>
+        <div class="journal-grid" id="journalGrid"></div>
+      </div>
+    </section>
 
     <section class="activity-grid" id="grid"></section>
 
@@ -380,14 +531,10 @@
     <!-- DATA + RENDER -->
     <script>
       /**
-       * ✅ NEW FEATURE ADDED:
-       * If an item has `articleUrl`, we automatically fetch the cover image from og:image/twitter:image
-       * and show it as the card image.
-       *
-       * This uses the public proxy: https://r.jina.ai/http(s)://...
-       * (needed because most news sites block browser cross-origin access)
+       * ✅ Cover image resolver:
+       * For any item with `articleUrl`, we fetch og:image/twitter:image and use it as the image.
+       * Uses https://r.jina.ai proxy to avoid browser CORS blocks.
        */
-
       const OG_CACHE_KEY = "nk_ogimg_cache_v1";
 
       function getCache(){
@@ -420,10 +567,8 @@
 
           cache[articleUrl] = { value: img, t: Date.now() };
           setCache(cache);
-
           return img;
         }catch(e){
-          // store null so we don't repeatedly retry
           const cache2 = getCache();
           cache2[articleUrl] = { value: null, t: Date.now() };
           setCache(cache2);
@@ -434,13 +579,22 @@
       function fallbackLogoFromUrl(articleUrl){
         try{
           const domain = new URL(articleUrl).hostname.replace(/^www\./, "");
-          // Clearbit logo (simple + looks nice)
           return "https://logo.clearbit.com/" + domain;
         }catch(e){
           return "https://logo.clearbit.com/example.com";
         }
       }
 
+      function escapeHtml(str){
+        return String(str || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      /* ========= YOUR NEWS/ACTIVITY ITEMS ========= */
       const items = [
         /* === PRINT CLIPS (YOUR PNGs) === */
         {
@@ -499,34 +653,6 @@
             { label: "Read online (Morung Express)", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
           ]
         },
-        {
-          id: "csir-jigyasa-eastern-mirror",
-          tags: ["news","outreach"],
-          badge: "News · Outreach",
-          title: "CSIR–JIGYASA Outreach (Eastern Mirror – Clip)",
-          desc:
-            "Print coverage highlighting CSIR–JIGYASA outreach activities and student engagement during the school visit.",
-          date: "Mar 2022",
-          place: "Nagaland, India",
-          sourceLabel: "Eastern Mirror (scan)",
-          img: "csir_jigyasa_eastern_mirror.png",
-          links: []
-        },
-        {
-          id: "csir-jigyasa-morung-express-scan",
-          tags: ["news","outreach"],
-          badge: "News · Outreach",
-          title: "CSIR–JIGYASA Outreach (Morung Express – Print Clip)",
-          desc:
-            "Additional print clip documenting the outreach session and interactions with students and school faculty.",
-          date: "Mar 2022",
-          place: "Dimapur, Nagaland",
-          sourceLabel: "The Morung Express (scan)",
-          img: "csir_jigyasa_morung_print.png",
-          links: [
-            { label: "Morung Express link", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
-          ]
-        },
 
         /* === ONLINE ARTICLES (AUTO COVER IMAGE) === */
         {
@@ -540,7 +666,7 @@
           place: "Patna, India",
           sourceLabel: "Times of India",
           articleUrl: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms",
-          img: "", /* keep empty -> auto cover image */
+          img: "", /* keep empty -> auto cover */
           links: [
             { label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }
           ]
@@ -556,14 +682,30 @@
           place: "India",
           sourceLabel: "The Hans India",
           articleUrl: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347",
-          img: "https://www.thehansindia.com/images/logo1.png?v=2", /* fallback if cover fails */
+          img: "https://www.thehansindia.com/images/logo1.png?v=2",
           links: [
             { label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }
           ]
         }
       ];
 
+      /* ========= PEER REVIEW JOURNALS (AUTO COVER IMAGE) =========
+         Each tile tries og:image from the journal page. If blocked -> logo fallback.
+      */
+      const reviewJournals = [
+        { name: "International Journal of Biological Macromolecules", count: 7, url: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules" },
+        { name: "Food Research International", count: 2, url: "https://www.sciencedirect.com/journal/food-research-international" },
+        { name: "Journal of Food Science", count: 8, url: "https://ift.onlinelibrary.wiley.com/journal/17503841" },
+        { name: "Frontiers in Microbiology", count: 1, url: "https://www.frontiersin.org/journals/microbiology" },
+        { name: "Frontiers in Genetics (Computational Genomics)", count: 1, url: "https://www.frontiersin.org/journals/genetics" },
+        { name: "Frontiers in Molecular Biosciences (Biophysics)", count: 1, url: "https://www.frontiersin.org/journals/molecular-biosciences" },
+        { name: "Frontiers in Sustainable Food Systems (Nutrition & Sustainable Diets)", count: 1, url: "https://www.frontiersin.org/journals/sustainable-food-systems" },
+        { name: "Frontiers in Pharmacology (Translational Pharmacology)", count: 1, url: "https://www.frontiersin.org/journals/pharmacology" }
+      ];
+
       const grid = document.getElementById("grid");
+      const journalGrid = document.getElementById("journalGrid");
+      const serviceSection = document.getElementById("serviceSection");
 
       function iconFor(tags){
         if (tags.includes("award")) return "fa-award";
@@ -573,22 +715,29 @@
       }
 
       async function getItemImage(item){
-        // PNG / manual image
+        // If user provided image (PNG or fixed URL), use it
         if (item.img && item.img.trim() !== "") return item.img;
 
-        // Try auto cover for online article
+        // Else try OG cover from articleUrl
         if (item.articleUrl){
           const og = await resolveOGImage(item.articleUrl);
           if (og) return og;
-          // fallback to logo if auto cover fails
           return fallbackLogoFromUrl(item.articleUrl);
         }
 
-        // last fallback
         return "https://logo.clearbit.com/example.com";
       }
 
       async function render(filter="all"){
+        // show/hide service section by filter
+        if (filter === "service"){
+          serviceSection.style.display = "block";
+          grid.innerHTML = "";
+          return;
+        } else {
+          serviceSection.style.display = "block"; // keep visible on All and other filters (you can set to "none" if you prefer)
+        }
+
         grid.innerHTML = "";
         const data = (filter === "all")
           ? items
@@ -646,13 +795,37 @@
         bindPreviewHandlers();
       }
 
-      function escapeHtml(str){
-        return String(str || "")
-          .replaceAll("&", "&amp;")
-          .replaceAll("<", "&lt;")
-          .replaceAll(">", "&gt;")
-          .replaceAll('"', "&quot;")
-          .replaceAll("'", "&#039;");
+      /* ====== Render journal tiles with auto “cover image” ====== */
+      async function renderJournals(){
+        if (!journalGrid) return;
+        journalGrid.innerHTML = "";
+
+        for (const j of reviewJournals){
+          const tile = document.createElement("div");
+          tile.className = "journal-tile";
+
+          // Try og:image from journal page; fallback to logo
+          let img = await resolveOGImage(j.url);
+          if (!img) img = fallbackLogoFromUrl(j.url);
+
+          tile.innerHTML = `
+            <div class="journal-img">
+              <img src="${escapeHtml(img)}" alt="${escapeHtml(j.name)} cover" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="journal-body">
+              <p class="journal-title">${escapeHtml(j.name)}</p>
+              <a class="journal-link" href="${escapeHtml(j.url)}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Journal page
+              </a>
+              <div class="journal-meta">
+                <span class="journal-badge"><i class="fa-solid fa-hashtag"></i> ${j.count}</span>
+                <span style="opacity:.92;"><i class="fa-regular fa-calendar"></i> 2022–Present</span>
+              </div>
+            </div>
+          `;
+
+          journalGrid.appendChild(tile);
+        }
       }
 
       /* MODAL PREVIEW */
@@ -678,7 +851,6 @@
       function bindPreviewHandlers(){
         document.querySelectorAll(".img-wrap").forEach(wrap => {
           const open = () => openModal(wrap.dataset.full, wrap.dataset.title);
-
           wrap.addEventListener("click", open);
           wrap.addEventListener("keydown", (e) => {
             if (e.key === "Enter" || e.key === " ") open();
@@ -705,7 +877,10 @@
       });
 
       /* Initial render */
-      render("all");
+      (async function init(){
+        await renderJournals();
+        await render("all");
+      })();
     </script>
   </main>
 </body>
