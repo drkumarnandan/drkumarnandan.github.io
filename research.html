@@ -15,7 +15,42 @@
   />
 
   <link rel="stylesheet" href="styles.css">
+
+  <!-- ✅ PATCH: prevent cropping for Research theme images -->
+  <style>
+    /* OPTION A: SHOW FULL FIGURE (NO CROPPING) */
+    .research-figure{
+      position: relative;
+      background: #111827;            /* dark mat behind figure */
+      border-radius: 12px;
+      overflow: hidden;               /* keep rounded corners */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;              /* frame height (adjust if you want bigger) */
+      padding: 10px;                  /* breathing space */
+      box-sizing: border-box;
+    }
+    .research-figure img{
+      width: 100%;
+      height: 100%;
+      max-height: 320px;              /* keeps row height reasonable */
+      object-fit: contain;            /* ✅ show full image always */
+      display: block;
+    }
+
+    /* Responsive adjustment */
+    @media (max-width: 640px){
+      .research-figure{
+        min-height: 210px;
+      }
+      .research-figure img{
+        max-height: 260px;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="topbar-inner">
@@ -66,7 +101,7 @@
       </div>
     </section>
 
-    <!-- RESEARCH THEMES: one per row, image left, text right -->
+    <!-- RESEARCH THEMES -->
     <section class="section">
       <h2 class="section-title">Research themes</h2>
 
@@ -75,13 +110,10 @@
         <div class="section-card research-card">
           <div class="research-theme">
             <div class="research-figure">
-              <!-- replace with your AI figure file -->
               <img src="theme-ai-peptides.jpg" alt="Illustration of AI/ML models for peptide prediction">
             </div>
             <div class="research-body">
-              <h3 class="research-title">
-                AI-enhanced peptide prediction &amp; design
-              </h3>
+              <h3 class="research-title">AI-enhanced peptide prediction &amp; design</h3>
               <p class="muted research-tagline">
                 Protein language models, graph neural networks, and deep learning for peptide bioactivity.
               </p>
@@ -103,9 +135,7 @@
               </ul>
               <div class="research-mini-pubs">
                 <span class="badge">Key paper</span>
-                <div class="mini-pub">
-                  pLM4CPPs, <em>J. Chem. Inf. Model.</em> 2025.
-                </div>
+                <div class="mini-pub">pLM4CPPs, <em>J. Chem. Inf. Model.</em> 2025.</div>
               </div>
             </div>
           </div>
@@ -118,9 +148,7 @@
               <img src="theme-membrane-peptides.jpg" alt="Illustration of peptides interacting with lipid bilayers">
             </div>
             <div class="research-body">
-              <h3 class="research-title">
-                Membrane-active peptides &amp; membrane biophysics
-              </h3>
+              <h3 class="research-title">Membrane-active peptides &amp; membrane biophysics</h3>
               <p class="muted research-tagline">
                 Mechanisms of selectivity, pore formation, and lipid heterogeneity.
               </p>
@@ -142,9 +170,7 @@
               </ul>
               <div class="research-mini-pubs">
                 <span class="badge">Key paper</span>
-                <div class="mini-pub">
-                  Snakin-Z selectivity, <em>J. Phys. Chem. B</em> 2025.
-                </div>
+                <div class="mini-pub">Snakin-Z selectivity, <em>J. Phys. Chem. B</em> 2025.</div>
               </div>
             </div>
           </div>
@@ -157,9 +183,7 @@
               <img src="theme-food-proteins.jpg" alt="Illustration of food proteins and processing environments">
             </div>
             <div class="research-body">
-              <h3 class="research-title">
-                Food protein structure, processing &amp; allergenicity
-              </h3>
+              <h3 class="research-title">Food protein structure, processing &amp; allergenicity</h3>
               <p class="muted research-tagline">
                 Linking molecular dynamics to functional properties in food systems.
               </p>
@@ -181,9 +205,7 @@
               </ul>
               <div class="research-mini-pubs">
                 <span class="badge">Key paper</span>
-                <div class="mini-pub">
-                  α-Gliadin in ethanol–water, <em>Food Chemistry</em> 2025.
-                </div>
+                <div class="mini-pub">α-Gliadin in ethanol–water, <em>Food Chemistry</em> 2025.</div>
               </div>
             </div>
           </div>
@@ -196,9 +218,7 @@
               <img src="theme-noncovalent.jpg" alt="Illustration of non-covalent interactions such as cation–π and aromatic stacking">
             </div>
             <div class="research-body">
-              <h3 class="research-title">
-                Non-covalent interactions &amp; quantum chemistry
-              </h3>
+              <h3 class="research-title">Non-covalent interactions &amp; quantum chemistry</h3>
               <p class="muted research-tagline">
                 Fundamental understanding of cation–π, aromatic–aromatic, and ion–water interactions.
               </p>
@@ -236,9 +256,7 @@
               <img src="theme-drug-platforms.jpg" alt="Illustration of drug discovery platforms and chemical space">
             </div>
             <div class="research-body">
-              <h3 class="research-title">
-                Computational drug discovery &amp; bioinformatics platforms
-              </h3>
+              <h3 class="research-title">Computational drug discovery &amp; bioinformatics platforms</h3>
               <p class="muted research-tagline">
                 Web-based toolkits and cheminformatics pipelines for structure-based design.
               </p>
@@ -271,161 +289,13 @@
       </div>
     </section>
 
-    <!-- ONGOING PROJECTS -->
-    <section class="section">
-      <h2 class="section-title">Selected ongoing projects</h2>
-
-      <div class="section-card">
-        <h3 class="research-subtitle">pLM4G-CPPs: Graph-based learning for CPPs</h3>
-        <p>
-          Extends pLM4CPPs by representing peptide sequences as graphs that combine residue-level
-          embeddings from protein language models with structural/contact information. The goal is
-          to improve robustness on diverse CPP datasets, quantify uncertainty, and provide
-          interpretable sub-sequence motifs linked to uptake efficiency and toxicity.
-        </p>
-        <p class="muted">
-          Techniques: ESM/ProtT5 embeddings, GAT/GCN models, stratified cross-validation, external
-          benchmarking against KELM-CPPpred and MLCPP 2.0.
-        </p>
-      </div>
-
-      <div class="section-card">
-        <h3 class="research-subtitle">Melittin pore formation across membranes</h3>
-        <p>
-          Uses large-scale all-atom MD and enhanced sampling to understand how melittin transitions
-          from surface-bound to transmembrane states in <strong>eukaryotic vs prokaryotic</strong>
-          membranes, and how peptide concentration, lipid composition, and pressure modulate pore
-          stability and leakage.
-        </p>
-        <p class="muted">
-          Techniques: CHARMM force fields, umbrella sampling, free-energy profiles, contact maps,
-          hydrogen-bond and water-wire analyses.
-        </p>
-      </div>
-
-      <div class="section-card">
-        <h3 class="research-subtitle">Antifreeze proteins &amp; ice–water interfaces</h3>
-        <p>
-          Simulates antifreeze proteins (AFPs) at TIP4P/ICE ice–water interfaces to dissect
-          adsorption mechanisms, control of ice growth, and thermal hysteresis. Focuses on
-          basal vs prism plane binding, hydrophobic/hydrophilic patterning, and relevance for
-          frozen food stability.
-        </p>
-        <p class="muted">
-          Techniques: TIP4P/ICE water, CHARMM/OPLS force fields, interface-specific analysis,
-          order parameters and clustering of ice-binding modes.
-        </p>
-      </div>
-
-      <div class="section-card">
-        <h3 class="research-subtitle">Food protein functionality from atoms to applications</h3>
-        <p>
-          Bridges molecular simulations of gluten proteins, ovalbumin, plant proteins and
-          process conditions (pressure, ethanol, ultrasound) with experimental readouts from
-          rheology, RVA, and baking performance. The aim is to design <strong>next-generation
-          plant-based and wheat-based products</strong> with targeted texture, stability, and
-          reduced allergenicity.
-        </p>
-        <p class="muted">
-          Techniques: long-timescale MD, coarse-grained simulations, PCA/FEL analysis, contact
-          networks, and integration with experimental grain quality metrics.
-        </p>
-      </div>
-    </section>
-
-    <!-- METHODS & TOOLS -->
-    <section class="section">
-      <h2 class="section-title">Methods &amp; tools</h2>
-
-      <div class="methods-grid">
-        <!-- Card 1 -->
-        <div class="section-card methods-card">
-          <div class="methods-header">
-            <div class="methods-icon">
-              <i class="fa-solid fa-flask"></i>
-            </div>
-            <div>
-              <h3 class="research-subtitle">Molecular modeling &amp; simulation</h3>
-              <div class="methods-sub">
-                From atomistic MD to coarse-grained and QM/MM.
-              </div>
-            </div>
-          </div>
-          <ul class="research-list">
-            <li>All-atom and coarse-grained MD of proteins, peptides, membranes, and ice–water interfaces.</li>
-            <li>QM and QM/MM for non-covalent interactions, reaction mechanisms, and ion–water microsolvation.</li>
-            <li>Enhanced sampling: umbrella sampling, free-energy landscapes, PCA/FEL, clustering, contact network analysis.</li>
-            <li>Structure preparation with AlphaFold/ESMFold, Modeller, and visualization in PyMOL/Chimera.</li>
-          </ul>
-          <div class="tool-badges">
-            <span class="tool-badge"><i class="fa-solid fa-cube"></i> GROMACS</span>
-            <span class="tool-badge">AMBER</span>
-            <span class="tool-badge">Desmond</span>
-            <span class="tool-badge">Gaussian</span>
-            <span class="tool-badge">PSI4</span>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="section-card methods-card">
-          <div class="methods-header">
-            <div class="methods-icon methods-icon-ml">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <div>
-              <h3 class="research-subtitle">AI/ML, bioinformatics &amp; software</h3>
-              <div class="methods-sub">
-                Deep learning, protein language models, and cheminformatics platforms.
-              </div>
-            </div>
-          </div>
-          <ul class="research-list">
-            <li>Deep learning with CNNs and GNNs for peptide classification, activity prediction, and interaction networks.</li>
-            <li>Protein language models (ESM-2, ProtT5, Bepler, SeqVec) for sequence and structure-aware embeddings.</li>
-            <li>Cheminformatics workflows for virtual screening, chemical space exploration, and fragment libraries.</li>
-            <li>Development of reproducible pipelines, web servers, and databases (MPDS, A2ID, CAD) on Linux/HPC systems.</li>
-          </ul>
-          <div class="tool-badges">
-            <span class="tool-badge"><i class="fa-brands fa-python"></i> Python</span>
-            <span class="tool-badge"><i class="fa-brands fa-r-project"></i> R</span>
-            <span class="tool-badge">PyTorch</span>
-            <span class="tool-badge">TensorFlow</span>
-            <span class="tool-badge">RDKit</span>
-            <span class="tool-badge"><i class="fa-brands fa-linux"></i> Linux</span>
-            <span class="tool-badge"><i class="fa-brands fa-github"></i> GitHub</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COLLABORATION -->
-    <section class="section">
-      <h2 class="section-title">Collaboration</h2>
-      <div class="section-card">
-        <p>
-          I enjoy collaborating with experimentalists, computational scientists, and data
-          scientists on problems at the interface of <strong>proteins, peptides, and food or
-          health applications</strong>. I am particularly interested in:
-        </p>
-        <ul class="research-list">
-          <li>Co-designing <strong>bioactive peptides</strong> (CPPs, AMPs, AFPs) guided by simulations and AI models.</li>
-          <li>Integrating <strong>MD and experimental measurements</strong> for food proteins and plant-based formulations.</li>
-          <li>Building <strong>open-source tools</strong> and datasets for peptide design, non-covalent interactions, and drug discovery.</li>
-        </ul>
-        <p class="muted">
-          If you are interested in collaborating or hosting a seminar, please feel free to
-          contact me via email or LinkedIn (links on the home page).
-        </p>
-      </div>
-    </section>
-
+    <!-- footer -->
     <div class="footer">
       <span>© 2025 Nandan Kumar.</span>
       <span class="footer-sep">·</span>
       <span>Visits (this browser): <span id="visitor-count">—</span></span>
     </div>
 
-    <!-- simple local visitor counter -->
     <script>
       (function () {
         const el = document.getElementById('visitor-count');
