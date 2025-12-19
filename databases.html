@@ -34,25 +34,31 @@
       color: #6b7280;
       margin-bottom: 1.8rem;
       max-width: 800px;
+      line-height: 1.65;
     }
 
     .tool-card {
       display: flex;
+      gap: 20px;
       background: #ffffff;
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 25px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      align-items: stretch;
     }
 
+    /* ✅ OPTION A: SHOW FULL IMAGE (NO CROPPING) */
     .tool-img {
       width: 240px;
-      height: 200px;
-      background: #e8e8e8;
-      border-radius: 8px;
-      margin-right: 20px;
-      object-fit: cover;
+      height: 200px;           /* fixed frame */
+      background: #111827;     /* dark mat behind image */
+      border-radius: 10px;
       flex-shrink: 0;
+      object-fit: contain;     /* ✅ show full image always */
+      display: block;
+      padding: 8px;            /* little breathing space */
+      box-sizing: border-box;
     }
 
     .tool-content h3 {
@@ -84,6 +90,17 @@
 
     .tool-links a i {
       margin-right: 4px;
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 780px){
+      .tool-card{
+        flex-direction: column;
+      }
+      .tool-img{
+        width: 100%;
+        height: 220px;
+      }
     }
   </style>
 </head>
@@ -117,9 +134,9 @@
       and drug discovery research.
     </p>
 
-        <!-- pLM4CPPs -->
+    <!-- pLM4CPPs -->
     <section class="tool-card">
-      <img src="plm4cpps.png" class="tool-img" alt="pLM4CPPs server screenshot">
+      <img src="plm4cpps.png" class="tool-img" alt="pLM4CPPs server screenshot" loading="lazy">
       <div class="tool-content">
         <h3>pLM4CPPs — AI/ML Predictor for CPPs</h3>
         <p>
@@ -130,10 +147,10 @@
           <strong>J. Chem. Inf. Model. 2025</strong> — https://doi.org/10.1021/acs.jcim.4c01338
         </p>
         <div class="tool-links">
-          <a href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank">
+          <a href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Try Server
           </a>
-          <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank">
+          <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank" rel="noopener">
             <i class="fa-brands fa-github"></i> GitHub
           </a>
         </div>
@@ -142,7 +159,7 @@
 
     <!-- MPDS COVID-19 -->
     <section class="tool-card">
-      <img src="mpds-covid.png" class="tool-img" alt="MPDS COVID-19 portal screenshot">
+      <img src="mpds-covid.png" class="tool-img" alt="MPDS COVID-19 portal screenshot" loading="lazy">
       <div class="tool-content">
         <h3>MPDS COVID-19 Web Portal</h3>
         <p>
@@ -153,7 +170,7 @@
           <strong>GigaByte 2024</strong> — https://doi.org/10.1101/2023.08.29.555437
         </p>
         <div class="tool-links">
-          <a href="https://mpds.neist.res.in:8085" target="_blank">
+          <a href="https://mpds.neist.res.in:8085" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal
           </a>
         </div>
@@ -162,7 +179,7 @@
 
     <!-- MPDS TB -->
     <section class="tool-card">
-      <img src="mpds-tb.png" class="tool-img" alt="MPDS TB portal screenshot">
+      <img src="mpds-tb.png" class="tool-img" alt="MPDS TB portal screenshot" loading="lazy">
       <div class="tool-content">
         <h3>MPDS TB Web Portal</h3>
         <p>
@@ -170,7 +187,7 @@
           CADD tools, and unique MPDS IDs for all compounds.
         </p>
         <div class="tool-links">
-          <a href="http://mpds.neist.res.in:8083" target="_blank">
+          <a href="http://mpds.neist.res.in:8083" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal
           </a>
         </div>
@@ -179,7 +196,7 @@
 
     <!-- A2ID -->
     <section class="tool-card">
-      <img src="a2id.png" class="tool-img" alt="A2ID database screenshot">
+      <img src="a2id.png" class="tool-img" alt="A2ID database screenshot" loading="lazy">
       <div class="tool-content">
         <h3>Aromatic–Aromatic Interactions Database (A2ID)</h3>
         <p>
@@ -190,7 +207,7 @@
           <strong>Int. J. Biol. Macromol. 2023</strong> — https://doi.org/10.1016/j.ijbiomac.2023.127207
         </p>
         <div class="tool-links">
-          <a href="https://acds.neist.res.in/a2idv2/" target="_blank">
+          <a href="https://acds.neist.res.in/a2idv2/" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore Database
           </a>
         </div>
@@ -199,7 +216,7 @@
 
     <!-- CAD -->
     <section class="tool-card">
-      <img src="cad.png" class="tool-img" alt="CAD 2.0 database screenshot">
+      <img src="cad.png" class="tool-img" alt="CAD 2.0 database screenshot" loading="lazy">
       <div class="tool-content">
         <h3>Cation–Aromatic Database (CAD 2.0)</h3>
         <p>
@@ -210,14 +227,13 @@
           <strong>Proteins 2023</strong> — https://doi.org/10.1002/prot.26600
         </p>
         <div class="tool-links">
-          <a href="https://acds.neist.res.in/cadv2/" target="_blank">
+          <a href="https://acds.neist.res.in/cadv2/" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore CAD
           </a>
         </div>
       </div>
     </section>
 
-    
     <div class="footer">
       <span>© 2025 Nandan Kumar.</span>
       <span class="footer-sep">·</span>
