@@ -27,6 +27,7 @@
     .section-title {
       font-size: 2rem;
       margin-bottom: 0.2rem;
+      text-align: left;
     }
 
     .intro-line {
@@ -34,42 +35,41 @@
       color: #6b7280;
       margin-bottom: 1.8rem;
       max-width: 800px;
-      line-height: 1.65;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .tool-card {
       display: flex;
-      gap: 20px;
       background: #ffffff;
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 25px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      align-items: stretch;
+      gap: 20px;
     }
 
-    /* ✅ OPTION A: SHOW FULL IMAGE (NO CROPPING) */
     .tool-img {
       width: 240px;
-      height: 200px;           /* fixed frame */
-      background: #111827;     /* dark mat behind image */
-      border-radius: 10px;
+      height: 200px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      object-fit: contain;   /* ✅ no cropping */
       flex-shrink: 0;
-      object-fit: contain;     /* ✅ show full image always */
-      display: block;
-      padding: 8px;            /* little breathing space */
-      box-sizing: border-box;
     }
 
     .tool-content h3 {
       margin: 0 0 10px;
       font-size: 1.1rem;
+      text-align: left;
     }
 
     .tool-content p {
       margin: 0 0 12px;
-      line-height: 1.5;
+      line-height: 1.55;
       font-size: 0.95rem;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .tool-links a {
@@ -92,21 +92,23 @@
       margin-right: 4px;
     }
 
-    /* Responsive: stack on small screens */
-    @media (max-width: 780px){
-      .tool-card{
+    @media (max-width: 768px) {
+      .tool-card {
         flex-direction: column;
+        align-items: center;
       }
-      .tool-img{
+
+      .tool-img {
         width: 100%;
-        height: 220px;
+        max-width: 320px;
+        height: auto;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Top navigation (same as other pages) -->
+  <!-- Top navigation -->
   <div class="topbar">
     <div class="topbar-inner">
       <div class="site-title">
@@ -136,21 +138,22 @@
 
     <!-- pLM4CPPs -->
     <section class="tool-card">
-      <img src="plm4cpps.png" class="tool-img" alt="pLM4CPPs server screenshot" loading="lazy">
+      <img src="plm4cpps.png" class="tool-img" alt="pLM4CPPs server screenshot">
       <div class="tool-content">
         <h3>pLM4CPPs — AI/ML Predictor for CPPs</h3>
         <p>
-          Deep learning architecture combining protein language models and CNNs for high-accuracy
-          cell-penetrating peptide prediction.
+          Deep learning architecture combining protein language models and convolutional neural
+          networks for high-accuracy prediction of cell-penetrating peptides.
         </p>
         <p>
-          <strong>J. Chem. Inf. Model. 2025</strong> — https://doi.org/10.1021/acs.jcim.4c01338
+          <strong>Journal of Chemical Information and Modeling (2025)</strong> —
+          https://doi.org/10.1021/acs.jcim.4c01338
         </p>
         <div class="tool-links">
-          <a href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank" rel="noopener">
+          <a href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Try Server
           </a>
-          <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank" rel="noopener">
+          <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank">
             <i class="fa-brands fa-github"></i> GitHub
           </a>
         </div>
@@ -159,18 +162,20 @@
 
     <!-- MPDS COVID-19 -->
     <section class="tool-card">
-      <img src="mpds-covid.png" class="tool-img" alt="MPDS COVID-19 portal screenshot" loading="lazy">
+      <img src="mpds-covid.png" class="tool-img" alt="MPDS COVID-19 portal screenshot">
       <div class="tool-content">
         <h3>MPDS COVID-19 Web Portal</h3>
         <p>
-          An open-source drug discovery portal integrating genes, proteins, pathways, binding sites,
-          and AI-powered compound analysis with a database of 149M molecules and 107k fragments.
+          An open-source drug discovery portal integrating genes, proteins, pathways, binding
+          sites, and AI-powered compound analysis with a database of over 149 million molecules
+          and 107,000 fragments.
         </p>
         <p>
-          <strong>GigaByte 2024</strong> — https://doi.org/10.1101/2023.08.29.555437
+          <strong>GigaByte (2024)</strong> —
+          https://doi.org/10.1101/2023.08.29.555437
         </p>
         <div class="tool-links">
-          <a href="https://mpds.neist.res.in:8085" target="_blank" rel="noopener">
+          <a href="https://mpds.neist.res.in:8085" target="_blank">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal
           </a>
         </div>
@@ -179,15 +184,15 @@
 
     <!-- MPDS TB -->
     <section class="tool-card">
-      <img src="mpds-tb.png" class="tool-img" alt="MPDS TB portal screenshot" loading="lazy">
+      <img src="mpds-tb.png" class="tool-img" alt="MPDS TB portal screenshot">
       <div class="tool-content">
         <h3>MPDS TB Web Portal</h3>
         <p>
-          An integrated computational suite for tuberculosis research, offering cheminformatics,
-          CADD tools, and unique MPDS IDs for all compounds.
+          An integrated computational suite for tuberculosis research, providing cheminformatics
+          workflows, CADD tools, and unique MPDS identifiers for compound tracking.
         </p>
         <div class="tool-links">
-          <a href="http://mpds.neist.res.in:8083" target="_blank" rel="noopener">
+          <a href="http://mpds.neist.res.in:8083" target="_blank">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Portal
           </a>
         </div>
@@ -196,18 +201,19 @@
 
     <!-- A2ID -->
     <section class="tool-card">
-      <img src="a2id.png" class="tool-img" alt="A2ID database screenshot" loading="lazy">
+      <img src="a2id.png" class="tool-img" alt="A2ID database screenshot">
       <div class="tool-content">
         <h3>Aromatic–Aromatic Interactions Database (A2ID)</h3>
         <p>
-          A systematic analysis of π–π motifs in proteins involving Trp, Tyr, Phe, and His,
-          advancing understanding of aromatic stabilization in protein structures.
+          A curated database of π–π interaction motifs involving Trp, Tyr, Phe, and His residues,
+          supporting analysis of aromatic stabilization in protein structures.
         </p>
         <p>
-          <strong>Int. J. Biol. Macromol. 2023</strong> — https://doi.org/10.1016/j.ijbiomac.2023.127207
+          <strong>International Journal of Biological Macromolecules (2023)</strong> —
+          https://doi.org/10.1016/j.ijbiomac.2023.127207
         </p>
         <div class="tool-links">
-          <a href="https://acds.neist.res.in/a2idv2/" target="_blank" rel="noopener">
+          <a href="https://acds.neist.res.in/a2idv2/" target="_blank">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore Database
           </a>
         </div>
@@ -216,18 +222,20 @@
 
     <!-- CAD -->
     <section class="tool-card">
-      <img src="cad.png" class="tool-img" alt="CAD 2.0 database screenshot" loading="lazy">
+      <img src="cad.png" class="tool-img" alt="CAD 2.0 database screenshot">
       <div class="tool-content">
         <h3>Cation–Aromatic Database (CAD 2.0)</h3>
         <p>
-          A comprehensive database of 27.26M cation–aromatic motifs with geometric parameters,
-          residue preferences, and classification of cation–π vs cation–σ interactions.
+          A comprehensive repository of over 27 million cation–aromatic interaction motifs,
+          including geometric parameters, residue preferences, and classification of interaction
+          types.
         </p>
         <p>
-          <strong>Proteins 2023</strong> — https://doi.org/10.1002/prot.26600
+          <strong>Proteins (2023)</strong> —
+          https://doi.org/10.1002/prot.26600
         </p>
         <div class="tool-links">
-          <a href="https://acds.neist.res.in/cadv2/" target="_blank" rel="noopener">
+          <a href="https://acds.neist.res.in/cadv2/" target="_blank">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore CAD
           </a>
         </div>
@@ -240,7 +248,7 @@
       <span>Visits (this browser): <span id="visitor-count">—</span></span>
     </div>
 
-    <!-- simple local visitor counter -->
+    <!-- Visitor counter -->
     <script>
       (function () {
         const el = document.getElementById('visitor-count');
