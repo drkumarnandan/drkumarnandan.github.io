@@ -26,7 +26,7 @@
 
     .page-header{
       text-align: center;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
     .page-header h1{
       font-size: 2.1rem;
@@ -34,38 +34,11 @@
       letter-spacing: 0.03em;
     }
     .page-header p{
-      max-width: 760px;
+      max-width: 780px;
       margin: 0.25rem auto 0;
       color: #6b7280;
       font-size: 0.98rem;
       line-height: 1.6;
-    }
-
-    /* ================= FILTER BAR ================= */
-    .filter-bar{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin: 18px 0 26px;
-    }
-    .filter-btn{
-      border: 1px solid rgba(15,23,42,0.12);
-      background: #ffffff;
-      color: #0f172a;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.12s ease;
-    }
-    .filter-btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 8px 16px rgba(15,23,42,0.12);
-    }
-    .filter-btn.active{
-      background: rgba(59,130,246,0.14);
-      border-color: rgba(59,130,246,0.35);
     }
 
     /* ================= GRID ================= */
@@ -91,7 +64,7 @@
       flex-direction: column;
     }
 
-    /* IMAGE: OPTION A — SHOW FULL IMAGE */
+    /* OPTION A: SHOW FULL IMAGE (NO CROP) */
     .activity-imgwrap{
       position: relative;
       background: #111827;
@@ -100,9 +73,9 @@
 
     .activity-img{
       width: 100%;
-      height: auto;
+      height: auto;         /* let height adapt */
       display: block;
-      object-fit: contain;   /* key */
+      object-fit: contain;  /* show full image */
     }
 
     /* BADGE */
@@ -184,6 +157,13 @@
       margin-top: auto;
     }
 
+    .meta-left{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .meta-chip{
       display: inline-flex;
       align-items: center;
@@ -221,70 +201,47 @@
     <header class="page-header">
       <h1>Activities</h1>
       <p>
-        Selected highlights from teaching, mentoring, outreach, professional service,
-        awards, and media coverage.
+        Selected highlights from academic milestones, outreach, and professional activities,
+        including verified media coverage and event documentation.
       </p>
     </header>
-
-    <!-- FILTER -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="news">News</button>
-      <button class="filter-btn" data-filter="outreach">Outreach</button>
-      <button class="filter-btn" data-filter="mentoring">Mentoring</button>
-      <button class="filter-btn" data-filter="service">Service</button>
-      <button class="filter-btn" data-filter="award">Awards</button>
-    </div>
 
     <!-- GRID -->
     <section class="activities-grid">
 
-      <!-- NEWS ITEM -->
-      <article class="activity-card" data-type="news">
+      <!-- MERGED: Prabhat Khabar (Convocation + Gold Medals; clip may also include other institutional notes) -->
+      <article class="activity-card">
         <div class="activity-imgwrap">
-          <span class="activity-badge"><i class="fa-regular fa-newspaper"></i> News</span>
-          <img src="news1.jpg" alt="Newspaper coverage" class="activity-img">
+          <span class="activity-badge">
+            <i class="fa-solid fa-medal"></i> News · Award
+          </span>
+
+          <!-- Use ONE image (recommended) OR a collage image that combines both clippings -->
+          <!-- Replace the src filename with your actual saved image file -->
+          <img
+            src="prabhat-khabar-cusb-2018.jpg"
+            alt="Prabhat Khabar coverage of CUSB convocation and gold medals (26 March 2018)"
+            class="activity-img"
+          />
         </div>
 
         <div class="activity-content">
           <div class="activity-title">
-            Research featured in regional and national newspapers
-          </div>
-          <div class="activity-desc">
-            Coverage highlighting computational research and academic activities.
+            CUSB Convocation &amp; Gold Medals (Prabhat Khabar)
           </div>
 
-          <div class="activity-actions">
-            <a href="https://example.com" class="btn-link" target="_blank">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Source
-            </a>
+          <div class="activity-desc">
+            Hindi daily <em>Prabhat Khabar</em> reported on the Central University of South Bihar (CUSB)
+            convocation ceremony, where <strong>675</strong> students were awarded degrees and
+            <strong>90</strong> students received <strong>gold medals</strong> for academic excellence.
           </div>
 
           <div class="activity-meta">
-            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2022</span>
-            <span>India</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- AWARD ITEM -->
-      <article class="activity-card" data-type="award">
-        <div class="activity-imgwrap">
-          <span class="activity-badge"><i class="fa-solid fa-trophy"></i> Award</span>
-          <img src="award1.jpg" alt="Award news clipping" class="activity-img">
-        </div>
-
-        <div class="activity-content">
-          <div class="activity-title">
-            Academic recognition and awards
-          </div>
-          <div class="activity-desc">
-            News coverage related to awards and professional recognition.
-          </div>
-
-          <div class="activity-meta">
-            <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 2020</span>
-            <span>CSIR</span>
+            <span class="meta-left">
+              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> 26 Mar 2018</span>
+              <span class="meta-chip"><i class="fa-regular fa-newspaper"></i> Prabhat Khabar (Hindi)</span>
+            </span>
+            <span>Gaya / South Bihar</span>
           </div>
         </div>
       </article>
@@ -297,36 +254,16 @@
       <span>Visits (this browser): <span id="visitor-count">—</span></span>
     </div>
 
-    <!-- scripts -->
+    <!-- visitor counter -->
     <script>
-      // visitor counter
       (function () {
         const el = document.getElementById('visitor-count');
         if (!el) return;
         const key = 'nk_site_visit_count';
         let count = parseInt(localStorage.getItem(key) || '0', 10);
-        count++;
+        count += 1;
         localStorage.setItem(key, String(count));
         el.textContent = count.toLocaleString();
-      })();
-
-      // filtering
-      (function(){
-        const buttons = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.activity-card');
-
-        buttons.forEach(btn => {
-          btn.addEventListener('click', () => {
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const type = btn.dataset.filter;
-
-            cards.forEach(card => {
-              card.style.display =
-                (type === 'all' || card.dataset.type === type) ? '' : 'none';
-            });
-          });
-        });
       })();
     </script>
   </main>
