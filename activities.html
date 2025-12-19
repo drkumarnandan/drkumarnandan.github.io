@@ -5,14 +5,18 @@
   <title>Activities – Nandan Kumar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous"
+    referrerpolicy="no-referrer"
   />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
+    /* PAGE LAYOUT (matches your gallery style) */
     .activities-page{
       max-width: 1200px;
       margin: 0 auto;
@@ -20,103 +24,299 @@
     }
 
     .page-header{
-      text-align: center;
-      margin-bottom: 24px;
+      text-align:center;
+      margin-bottom: 26px;
+    }
+    .page-header h1{
+      font-size: 2.15rem;
+      margin-bottom: .45rem;
+      letter-spacing: .03em;
+    }
+    .page-header p{
+      max-width: 840px;
+      margin: .25rem auto 0;
+      color:#6b7280;
+      font-size: .98rem;
+      line-height: 1.65;
     }
 
-    .activities-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    /* FILTER CHIPS (optional but useful) */
+    .chip-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin: 14px 0 22px;
+    }
+    .chip{
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.7);
+      color: #0f172a;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: .85rem;
+      cursor:pointer;
+      user-select:none;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .chip:hover{ transform: translateY(-1px); box-shadow: 0 8px 18px rgba(15,23,42,.10); }
+    .chip.active{
+      background: rgba(59,130,246,.10);
+      border-color: rgba(59,130,246,.35);
     }
 
-    @media (max-width: 900px){
-      .activities-grid{ grid-template-columns: repeat(2, 1fr); }
+    /* GRID */
+    .activity-grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
-    @media (max-width: 600px){
-      .activities-grid{ grid-template-columns: 1fr; }
+    @media (max-width: 1000px){
+      .activity-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px){
+      .activity-grid{ grid-template-columns: 1fr; }
     }
 
     .activity-card{
-      background: #0f172a;
+      position: relative;
       border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(15,23,42,0.18);
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      background: #0f172a;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+      display:flex;
+      flex-direction:column;
+      min-height: 330px;
     }
 
-    /* IMAGE BLOCK — ONLY WHEN NEEDED */
-    .activity-imgwrap{
-      background: #111827;
+    /* OPTION A: SHOW FULL CLIP (NO CROPPING) */
+    .img-wrap{
+      position: relative;
+      height: 260px;                 /* fixed frame */
+      background: #111827;           /* dark mat behind the clip */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .img-wrap img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;           /* ✅ shows full image always */
+      display:block;
+      transform: scale(1);
+      transition: transform .25s ease;
+    }
+    .activity-card:hover .img-wrap img{
+      transform: scale(1.01);
+    }
+
+    /* LABELS ON IMAGE */
+    .badge-row{
+      position:absolute;
+      top: 12px;
+      left: 12px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      z-index: 2;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      background: rgba(15,23,42,.65);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .zoom-hint{
+      position:absolute;
+      right: 12px;
+      top: 12px;
+      z-index:2;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#e5e7eb;
+      background: rgba(15,23,42,.55);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+      cursor:pointer;
+    }
+
+    /* CONTENT */
+    .card-body{
+      padding: 14px 14px 14px;
+      color:#f9fafb;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex: 1 1 auto;
+    }
+    .card-title{
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .card-desc{
+      margin: 0;
+      font-size: .92rem;
+      line-height: 1.55;
+      color: rgba(249,250,251,.86);
+    }
+
+    .meta-row{
+      margin-top:auto;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      color: rgba(229,231,235,.9);
+      font-size: .82rem;
+    }
+    .meta-left, .meta-right{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .meta-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(59,130,246,.16);
+      border: 1px solid rgba(59,130,246,.22);
+      color: #e5edff;
+      font-weight: 600;
+      font-size: .78rem;
+    }
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 2px;
+    }
+    .link-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color:#e5e7eb;
+      font-size: .86rem;
+      text-decoration:none;
+      transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+    .link-btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 10px 18px rgba(0,0,0,.18);
+    }
+
+    /* MODAL (click image = full view) */
+    .modal{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,.75);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .modal.open{ display:flex; }
+    .modal-inner{
+      max-width: min(1100px, 96vw);
+      max-height: 92vh;
+      background: rgba(15,23,42,.92);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.45);
+      display:flex;
+      flex-direction:column;
+    }
+    .modal-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding: 12px 12px;
+      color:#e5e7eb;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .modal-top strong{ font-size: .95rem; font-weight: 700; }
+    .modal-close{
+      cursor:pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color:#e5e7eb;
+    }
+    .modal-img-wrap{
+      background: #0b1220;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       padding: 12px;
     }
-    .activity-img{
-      width: 100%;
-      height: auto;
+    .modal-img-wrap img{
+      max-width: 100%;
+      max-height: 78vh;
       object-fit: contain;
-      display: block;
-      margin-bottom: 10px;
+      display:block;
+      border-radius: 12px;
+      background: #0b1220;
     }
 
-    .activity-content{
-      padding: 14px 14px 16px;
-      color: #f9fafb;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .activity-title{
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .activity-desc{
-      font-size: 0.92rem;
-      color: #e5e7eb;
-      line-height: 1.55;
-    }
-
-    .btn-link{
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(226,232,240,0.18);
-      color: #f9fafb;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      background: rgba(15,23,42,0.35);
-    }
-
-    .activity-meta{
-      margin-top: auto;
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .meta-chip{
-      padding: 2px 9px;
-      border-radius: 999px;
-      background: rgba(148,163,184,0.14);
-      font-size: 0.75rem;
+    /* small helper */
+    .muted-note{
+      text-align:center;
+      margin-top: 14px;
+      color:#6b7280;
+      font-size: .9rem;
+      line-height: 1.6;
     }
   </style>
 </head>
 
 <body>
-  <!-- Topbar -->
+  <!-- Top navigation (same as other pages) -->
   <div class="topbar">
     <div class="topbar-inner">
-      <div class="site-title"><a href="index.html">NANDAN KUMAR</a></div>
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
       <nav class="nav-links">
         <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link" href="conferences.html">Conferences</a>
         <a class="nav-link active" href="activities.html">Activities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="databases.html">Databases</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
@@ -124,75 +324,319 @@
   <main class="activities-page">
     <header class="page-header">
       <h1>Activities</h1>
-      <p>Academic achievements, training activities, outreach programs, and media coverage.</p>
+      <p>
+        Selected highlights from academic milestones, outreach, and professional activities,
+        including verified media coverage and event documentation.
+      </p>
+
+      <div class="chip-row" id="chipRow">
+        <div class="chip active" data-filter="all">All</div>
+        <div class="chip" data-filter="news">News</div>
+        <div class="chip" data-filter="award">Awards</div>
+        <div class="chip" data-filter="training">Training</div>
+        <div class="chip" data-filter="outreach">Outreach</div>
+      </div>
     </header>
 
-    <section class="activities-grid">
+    <section class="activity-grid" id="grid"></section>
 
-      <!-- PRINT CLIP: PRABHAT KHABAR -->
-      <article class="activity-card">
-        <div class="activity-imgwrap">
-          <img src="prabhat-khabar-gold-medal.png" class="activity-img" alt="">
-        </div>
-        <div class="activity-content">
-          <div class="activity-title">CUSB Convocation – Gold Medal Recognition (Prabhat Khabar)</div>
-          <div class="activity-desc">
-            Hindi daily <em>Prabhat Khabar</em> reported on the CUSB convocation ceremony,
-            during which gold medals were awarded to academic toppers,
-            <strong>including me</strong>.
-          </div>
-          <div class="activity-meta">
-            <span>26 Mar 2018</span>
-            <span>Gaya, Bihar</span>
-          </div>
-        </div>
-      </article>
+    <p class="muted-note">
+      Tip: Click any clip to view it in full (no cropping).
+    </p>
 
-      <!-- ONLINE: TIMES OF INDIA (NO IMAGE) -->
-      <article class="activity-card">
-        <div class="activity-content">
-          <div class="activity-title">CUSB Convocation – Gold Medal Award (The Times of India)</div>
-          <div class="activity-desc">
-            <em>The Times of India</em> reported on the CUSB convocation ceremony,
-            during which gold medals were awarded to academic toppers,
-            <strong>including me</strong>.
-          </div>
-          <a class="btn-link" target="_blank"
-             href="https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms">
-            Read online article
-          </a>
-          <div class="activity-meta">
-            <span>2018</span>
-            <span>Online</span>
-          </div>
-        </div>
-      </article>
+    <div class="footer">
+      <span>© 2025 Nandan Kumar.</span>
+      <span class="footer-sep">·</span>
+      <span>Visits (this browser): <span id="visitor-count">—</span></span>
+    </div>
 
-      <!-- CSIR–JIGYASA (MULTIPLE PRINT CLIPS + ONLINE LINK) -->
-      <article class="activity-card">
-        <div class="activity-imgwrap">
-          <img src="csir-jigyasa-clip1.png" class="activity-img" alt="">
-          <img src="csir-jigyasa-clip2.png" class="activity-img" alt="">
-        </div>
-        <div class="activity-content">
-          <div class="activity-title">CSIR–JIGYASA Science Outreach</div>
-          <div class="activity-desc">
-            Media coverage of CSIR–JIGYASA outreach at Livingstone Foundation International (LFI),
-            where <strong>we visited the school as part of a CSIR outreach team</strong>,
-            aimed at promoting scientific temper among students.
-          </div>
-          <a class="btn-link" target="_blank"
-             href="https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program">
-            Read online article
-          </a>
-          <div class="activity-meta">
-            <span>2022</span>
-            <span>Nagaland</span>
+    <!-- Modal -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-inner" role="dialog" aria-modal="true">
+        <div class="modal-top">
+          <strong id="modalTitle">Preview</strong>
+          <div class="modal-close" id="modalClose" title="Close">
+            <i class="fa-solid fa-xmark"></i>
           </div>
         </div>
-      </article>
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="Full preview">
+        </div>
+      </div>
+    </div>
 
-    </section>
+    <!-- Visitor counter -->
+    <script>
+      (function () {
+        const el = document.getElementById('visitor-count');
+        if (!el) return;
+        const key = 'nk_site_visit_count';
+        let count = parseInt(localStorage.getItem(key) || '0', 10);
+        count += 1;
+        localStorage.setItem(key, String(count));
+        el.textContent = count.toLocaleString();
+      })();
+    </script>
+
+    <!-- DATA + RENDER -->
+    <script>
+      /**
+       * IMPORTANT:
+       * 1) Put your PNG clips in the SAME folder as activities.html (or update paths below).
+       * 2) Use object-fit: contain (already set) -> full clip always visible.
+       */
+
+      const items = [
+        /* === PRINT CLIPS (YOUR PNGs) === */
+
+        {
+          id: "prabhat-convocation-2018",
+          tags: ["news","award"],
+          badge: "News · Award",
+          title: "CUSB Convocation & Gold Medals (Prabhat Khabar)",
+          desc:
+            "Hindi daily Prabhat Khabar covered the CUSB convocation and gold medal awards, including my recognition among the gold medal recipients.",
+          date: "26 Mar 2018",
+          place: "Gaya / South Bihar",
+          sourceLabel: "Prabhat Khabar (Hindi)",
+          img: "prabhat_khabar_convocation_26mar2018.png",   // <-- rename your PNG to this OR change here
+          links: []
+        },
+        {
+          id: "prabhat-convocation-collage",
+          tags: ["news","award"],
+          badge: "News · Award",
+          title: "Convocation Highlights (Prabhat Khabar – Clip)",
+          desc:
+            "Additional clip from the same coverage highlighting the convocation ceremony and gold medal announcements.",
+          date: "2018",
+          place: "Bihar, India",
+          sourceLabel: "Prabhat Khabar (Hindi)",
+          img: "prabhat_khabar_convocation_clip2.png",       // <-- your PNG
+          links: []
+        },
+        {
+          id: "genome-training-hindi",
+          tags: ["news","training"],
+          badge: "News · Training",
+          title: "Genome Analysis Training Program (Hindi Press)",
+          desc:
+            "Hindi media reported on a genome analysis training program conducted by the Department of Bioinformatics, CUSB, where I served as one of the student trainers, assisting in hands-on instruction on computational genome analysis and bioinformatics workflows.",
+          date: "—",
+          place: "CUSB, India",
+          sourceLabel: "Hindi Press",
+          img: "genome_analysis_training_hindi.png",          // <-- your PNG
+          links: []
+        },
+
+        /* CSIR–JIGYASA (your scanned/clip PNGs) */
+        {
+          id: "csir-jigyasa-morung-scan",
+          tags: ["news","outreach"],
+          badge: "News · Outreach",
+          title: "CSIR–JIGYASA Outreach (Print Clip)",
+          desc:
+            "Media coverage of a CSIR–JIGYASA outreach visit by our team to Livingstone Foundation International (LFI), aimed at promoting scientific temper and engagement among school students in Northeast India.",
+          date: "19 Mar 2022",
+          place: "Dimapur, Nagaland",
+          sourceLabel: "Print coverage (scan)",
+          img: "csir_jigyasa_clip_1.png",                      // <-- your PNG
+          links: [
+            { label: "Read online (Morung Express)", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
+          ]
+        },
+        {
+          id: "csir-jigyasa-eastern-mirror",
+          tags: ["news","outreach"],
+          badge: "News · Outreach",
+          title: "CSIR–JIGYASA Outreach (Eastern Mirror – Clip)",
+          desc:
+            "Print coverage highlighting CSIR–JIGYASA outreach activities and student engagement during the school visit.",
+          date: "19 Mar 2022",
+          place: "Nagaland, India",
+          sourceLabel: "Eastern Mirror (scan)",
+          img: "csir_jigyasa_eastern_mirror.png",              // <-- your PNG
+          links: []
+        },
+        {
+          id: "csir-jigyasa-morung-express-scan",
+          tags: ["news","outreach"],
+          badge: "News · Outreach",
+          title: "CSIR–JIGYASA Outreach (Morung Express – Print Clip)",
+          desc:
+            "Additional print clip documenting the outreach session and interactions with students and school faculty.",
+          date: "19 Mar 2022",
+          place: "Dimapur, Nagaland",
+          sourceLabel: "The Morung Express (scan)",
+          img: "csir_jigyasa_morung_print.png",                // <-- your PNG
+          links: [
+            { label: "Morung Express link", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
+          ]
+        },
+
+        /* === ONLINE ARTICLES (AUTO IMAGE FROM WEBSITE) === */
+
+        {
+          id: "toi-convocation-2018",
+          tags: ["news","award"],
+          badge: "News · Award",
+          title: "CUSB Convocation Coverage (Times of India)",
+          desc:
+            "The Times of India reported on the CUSB convocation ceremony, during which gold medals were awarded to academic toppers, including me, alongside degree awards to graduating students.",
+          date: "28 Mar 2018",
+          place: "Patna, India",
+          sourceLabel: "Times of India",
+          img: "https://static.toiimg.com/thumb/msid-63493024%2Cimgsize-405817%2Cwidth-900%2Cheight-506%2Cresizemode-72/63493024.jpg",
+          links: [
+            { label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }
+          ]
+        },
+        {
+          id: "hans-nobel-outreach",
+          tags: ["news","outreach"],
+          badge: "News · Outreach",
+          title: "Nobel Laureate Outreach Highlight (The Hans India)",
+          desc:
+            "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich, highlighting student interaction and science inspiration activities.",
+          date: "9 Feb 2017",
+          place: "Hyderabad, India",
+          sourceLabel: "The Hans India",
+          /* NOTE:
+             The original article image URL appears unavailable (404) on the site.
+             So we show the publisher logo image instead (still an online image, no extra PNG needed). */
+          img: "https://www.thehansindia.com/images/logo1.png?v=2",
+          links: [
+            { label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }
+          ]
+        }
+      ];
+
+      const grid = document.getElementById("grid");
+
+      function iconFor(tags){
+        if (tags.includes("award")) return "fa-award";
+        if (tags.includes("training")) return "fa-laptop-code";
+        if (tags.includes("outreach")) return "fa-people-group";
+        return "fa-newspaper";
+      }
+
+      function render(filter="all"){
+        grid.innerHTML = "";
+        const data = (filter === "all")
+          ? items
+          : items.filter(x => x.tags.includes(filter));
+
+        data.forEach(item => {
+          const card = document.createElement("article");
+          card.className = "activity-card";
+          card.dataset.tags = item.tags.join(",");
+
+          const linksHtml = (item.links && item.links.length)
+            ? `<div class="links">
+                 ${item.links.map(l => `
+                   <a class="link-btn" href="${l.url}" target="_blank" rel="noopener">
+                     <i class="fa-solid fa-arrow-up-right-from-square"></i> ${l.label}
+                   </a>
+                 `).join("")}
+               </div>`
+            : "";
+
+          card.innerHTML = `
+            <div class="img-wrap" data-full="${item.img}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0" aria-label="Open full preview">
+              <div class="badge-row">
+                <span class="badge"><i class="fa-solid ${iconFor(item.tags)}"></i> ${item.badge}</span>
+              </div>
+              <div class="zoom-hint" title="View full">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+              <img src="${item.img}" alt="${escapeHtml(item.title)}">
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">${escapeHtml(item.title)}</h3>
+              <p class="card-desc">${escapeHtml(item.desc)}</p>
+
+              ${linksHtml}
+
+              <div class="meta-row">
+                <div class="meta-left">
+                  <span class="meta-pill"><i class="fa-regular fa-calendar"></i> ${escapeHtml(item.date)}</span>
+                  <span class="meta-pill"><i class="fa-regular fa-newspaper"></i> ${escapeHtml(item.sourceLabel)}</span>
+                </div>
+                <div class="meta-right">
+                  <span style="opacity:.9;"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.place)}</span>
+                </div>
+              </div>
+            </div>
+          `;
+
+          grid.appendChild(card);
+        });
+
+        bindPreviewHandlers();
+      }
+
+      function escapeHtml(str){
+        return String(str || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      /* MODAL PREVIEW */
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalClose = document.getElementById("modalClose");
+
+      function openModal(src, title){
+        modalTitle.textContent = title || "Preview";
+        modalImg.src = src;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal(){
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      function bindPreviewHandlers(){
+        document.querySelectorAll(".img-wrap").forEach(wrap => {
+          const open = () => openModal(wrap.dataset.full, wrap.dataset.title);
+
+          wrap.addEventListener("click", open);
+          wrap.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") open();
+          });
+        });
+      }
+
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      /* FILTER CHIPS */
+      const chips = document.querySelectorAll(".chip");
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          chips.forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          render(chip.dataset.filter);
+        });
+      });
+
+      /* Initial render */
+      render("all");
+    </script>
   </main>
 </body>
 </html>
