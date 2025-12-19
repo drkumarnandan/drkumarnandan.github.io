@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles.css" />
 
   <style>
-    /* PAGE LAYOUT (matches your gallery style) */
+    /* PAGE LAYOUT */
     .activities-page{
       max-width: 1200px;
       margin: 0 auto;
@@ -25,7 +25,7 @@
 
     .page-header{
       text-align:center;
-      margin-bottom: 26px;
+      margin-bottom: 12px;
     }
     .page-header h1{
       font-size: 2.15rem;
@@ -33,20 +33,154 @@
       letter-spacing: .03em;
     }
     .page-header p{
-      max-width: 840px;
+      max-width: 880px;
       margin: .25rem auto 0;
       color:#6b7280;
       font-size: .98rem;
       line-height: 1.65;
     }
 
-    /* FILTER CHIPS (optional but useful) */
+    /* SERVICE SECTION */
+    .service-section{
+      margin: 18px auto 22px;
+      max-width: 1100px;
+    }
+    .service-card{
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 10px 22px rgba(15,23,42,.10);
+      padding: 16px;
+    }
+    .service-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    .service-head h2{
+      margin:0;
+      font-size: 1.15rem;
+      color:#0f172a;
+    }
+    .service-head p{
+      margin: 6px 0 0;
+      color:#475569;
+      font-size:.95rem;
+      line-height:1.55;
+    }
+    .service-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(59,130,246,.10);
+      border: 1px solid rgba(59,130,246,.22);
+      color:#0f172a;
+      font-weight: 800;
+      font-size: .86rem;
+      white-space:nowrap;
+    }
+
+    .journal-grid{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+    }
+    @media (max-width: 980px){
+      .journal-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+    @media (max-width: 700px){
+      .journal-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    .journal-item{
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.80);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .journal-item:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(15,23,42,.14);
+      background: rgba(255,255,255,.95);
+    }
+    .journal-top{
+      height: 70px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: #0b1220;
+    }
+    .journal-top img{
+      max-width: 88%;
+      max-height: 52px;
+      object-fit: contain;
+      display:block;
+    }
+    .journal-body{
+      padding: 10px 10px 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      color:#0f172a;
+    }
+    .journal-title{
+      margin:0;
+      font-size: .92rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+    .journal-meta{
+      display:flex;
+      justify-content:space-between;
+      gap:8px;
+      flex-wrap:wrap;
+      font-size: .82rem;
+      color:#475569;
+    }
+    .journal-count{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,.06);
+      border: 1px solid rgba(15,23,42,.10);
+      font-weight: 800;
+      color:#0f172a;
+    }
+    .journal-link{
+      margin-top: 2px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.90);
+      text-decoration:none;
+      color:#0f172a;
+      font-weight: 800;
+      font-size: .85rem;
+    }
+    .journal-link:hover{
+      background: rgba(59,130,246,.08);
+      border-color: rgba(59,130,246,.22);
+    }
+
+    /* FILTER CHIPS */
     .chip-row{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       justify-content:center;
-      margin: 14px 0 22px;
+      margin: 14px 0 18px;
     }
     .chip{
       border: 1px solid rgba(15,23,42,.12);
@@ -89,11 +223,11 @@
       min-height: 330px;
     }
 
-    /* OPTION A: SHOW FULL CLIP (NO CROPPING) */
+    /* OPTION A: SHOW FULL IMAGE (NO CROPPING) */
     .img-wrap{
       position: relative;
-      height: 260px;                 /* fixed frame */
-      background: #111827;           /* dark mat behind the clip */
+      height: 260px;
+      background: #111827;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -102,7 +236,7 @@
     .img-wrap img{
       width: 100%;
       height: 100%;
-      object-fit: contain;           /* ✅ shows full image always */
+      object-fit: contain; /* ✅ FULL IMAGE ALWAYS */
       display:block;
       transform: scale(1);
       transition: transform .25s ease;
@@ -111,7 +245,6 @@
       transform: scale(1.01);
     }
 
-    /* LABELS ON IMAGE */
     .badge-row{
       position:absolute;
       top: 12px;
@@ -128,7 +261,7 @@
       padding: 6px 10px;
       border-radius: 999px;
       font-size: .78rem;
-      font-weight: 600;
+      font-weight: 700;
       color: #e5e7eb;
       background: rgba(15,23,42,.65);
       border: 1px solid rgba(255,255,255,.12);
@@ -153,7 +286,6 @@
       cursor:pointer;
     }
 
-    /* CONTENT */
     .card-body{
       padding: 14px 14px 14px;
       color:#f9fafb;
@@ -164,7 +296,7 @@
     }
     .card-title{
       font-size: 1.02rem;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 1.35;
       margin: 0;
     }
@@ -200,7 +332,7 @@
       background: rgba(59,130,246,.16);
       border: 1px solid rgba(59,130,246,.22);
       color: #e5edff;
-      font-weight: 600;
+      font-weight: 700;
       font-size: .78rem;
     }
 
@@ -220,6 +352,7 @@
       border: 1px solid rgba(255,255,255,.12);
       color:#e5e7eb;
       font-size: .86rem;
+      font-weight: 800;
       text-decoration:none;
       transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
     }
@@ -229,7 +362,7 @@
       box-shadow: 0 10px 18px rgba(0,0,0,.18);
     }
 
-    /* MODAL (click image = full view) */
+    /* MODAL */
     .modal{
       position: fixed;
       inset: 0;
@@ -261,7 +394,7 @@
       color:#e5e7eb;
       border-bottom: 1px solid rgba(255,255,255,.10);
     }
-    .modal-top strong{ font-size: .95rem; font-weight: 700; }
+    .modal-top strong{ font-size: .95rem; font-weight: 800; }
     .modal-close{
       cursor:pointer;
       width: 38px;
@@ -290,7 +423,6 @@
       background: #0b1220;
     }
 
-    /* small helper */
     .muted-note{
       text-align:center;
       margin-top: 14px;
@@ -302,7 +434,7 @@
 </head>
 
 <body>
-  <!-- Top navigation (same as other pages) -->
+  <!-- Top navigation -->
   <div class="topbar">
     <div class="topbar-inner">
       <div class="site-title">
@@ -315,7 +447,6 @@
         <a class="nav-link" href="conferences.html">Conferences</a>
         <a class="nav-link active" href="activities.html">Activities</a>
         <a class="nav-link" href="gallery.html">Gallery</a>
-        <a class="nav-link" href="databases.html">Databases</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
@@ -325,8 +456,8 @@
     <header class="page-header">
       <h1>Activities</h1>
       <p>
-        Selected highlights from academic milestones, outreach, and professional activities,
-        including verified media coverage and event documentation.
+        Selected highlights from academic milestones, outreach, and professional service.
+        News clips are shown as uploaded scans; online articles automatically display their cover image.
       </p>
 
       <div class="chip-row" id="chipRow">
@@ -335,14 +466,35 @@
         <div class="chip" data-filter="award">Awards</div>
         <div class="chip" data-filter="training">Training</div>
         <div class="chip" data-filter="outreach">Outreach</div>
+        <div class="chip" data-filter="service">Service</div>
       </div>
     </header>
 
+    <!-- PROFESSIONAL SERVICE -->
+    <section class="service-section" id="serviceSection">
+      <div class="service-card">
+        <div class="service-head">
+          <div>
+            <h2>Academic &amp; Professional Service</h2>
+            <p>
+              <strong>Peer Review Service (2022–Present)</strong><br/>
+              Reviewer for <strong>30+ manuscripts</strong> across journals in food science,
+              biomolecular research, and computational biology.
+            </p>
+          </div>
+          <div class="service-badge">
+            <i class="fa-solid fa-shield-halved"></i> 30+ Reviews
+          </div>
+        </div>
+
+        <div class="journal-grid" id="journalGrid"></div>
+      </div>
+    </section>
+
+    <!-- ACTIVITY CARDS -->
     <section class="activity-grid" id="grid"></section>
 
-    <p class="muted-note">
-      Tip: Click any clip to view it in full (no cropping).
-    </p>
+    <p class="muted-note">Tip: Click any image to view it in full (no cropping).</p>
 
     <div class="footer">
       <span>© 2025 Nandan Kumar.</span>
@@ -365,8 +517,8 @@
       </div>
     </div>
 
-    <!-- Visitor counter -->
     <script>
+      /* Visitor counter */
       (function () {
         const el = document.getElementById('visitor-count');
         if (!el) return;
@@ -376,205 +528,6 @@
         localStorage.setItem(key, String(count));
         el.textContent = count.toLocaleString();
       })();
-    </script>
-
-    <!-- DATA + RENDER -->
-    <script>
-      /**
-       * IMPORTANT:
-       * 1) Put your PNG clips in the SAME folder as activities.html (or update paths below).
-       * 2) Use object-fit: contain (already set) -> full clip always visible.
-       */
-
-      const items = [
-        /* === PRINT CLIPS (YOUR PNGs) === */
-
-        {
-          id: "prabhat-convocation-2018",
-          tags: ["news","award"],
-          badge: "News · Award",
-          title: "CUSB Convocation & Gold Medals (Prabhat Khabar)",
-          desc:
-            "Hindi daily Prabhat Khabar covered the CUSB convocation and gold medal awards, including my recognition among the gold medal recipients.",
-          date: "26 Mar 2018",
-          place: "Gaya / South Bihar",
-          
-          img: "prabhat-khabar-cusb-2018.png",   // <-- rename your PNG to this OR change here
-          links: []
-        },
-        {
-          id: "prabhat-convocation-collage",
-          tags: ["news","award"],
-          badge: "News · Award",
-          title: "Convocation Highlights (Prabhat Khabar – Clip)",
-          desc:
-            "Additional clip from the same coverage highlighting the convocation ceremony and gold medal announcements.",
-          date: "2018",
-          place: "Bihar, India",
-          
-          img: "parbhat_goldmedal.png",       // <-- your PNG
-          links: []
-        },
-        {
-          id: "genome-training-hindi",
-          tags: ["news","training"],
-          badge: "News · Training",
-          title: "Genome Analysis Training Program (Hindi Press)",
-          desc:
-            "Hindi media reported on a genome analysis training program conducted by the Department of Bioinformatics, CUSB, where I served as one of the student trainers, assisting in hands-on instruction on computational genome analysis and bioinformatics workflows.",
-          date: "—",
-          place: "CUSB, India",
-          
-          img: "genome-training.png",          // <-- your PNG
-          links: []
-        },
-
-        /* CSIR–JIGYASA (your scanned/clip PNGs) */
-        {
-          id: "csir-jigyasa-morung-scan",
-          tags: ["news","outreach"],
-          badge: "News · Outreach",
-          title: "CSIR–JIGYASA Outreach (Print Clip)",
-          desc:
-            "Media coverage of a CSIR–JIGYASA outreach visit by our team to Livingstone Foundation International (LFI), aimed at promoting scientific temper and engagement among school students in Northeast India.",
-          date: "19 Mar 2022",
-          place: "Dimapur, Nagaland",
-          sourceLabel: "Print coverage (scan)",
-          img: "csir_jigyasa_clip_1.png",                      // <-- your PNG
-          links: [
-            { label: "Read online (Morung Express)", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
-          ]
-        },
-        {
-          id: "csir-jigyasa-eastern-mirror",
-          tags: ["news","outreach"],
-          badge: "News · Outreach",
-          title: "CSIR–JIGYASA Outreach (Eastern Mirror – Clip)",
-          desc:
-            "Print coverage highlighting CSIR–JIGYASA outreach activities and student engagement during the school visit.",
-          date: "19 Mar 2022",
-          place: "Nagaland, India",
-          sourceLabel: "Eastern Mirror (scan)",
-          img: "csir_jigyasa_eastern_mirror.png",              // <-- your PNG
-          links: []
-        },
-        {
-          id: "csir-jigyasa-morung-express-scan",
-          tags: ["news","outreach"],
-          badge: "News · Outreach",
-          title: "CSIR–JIGYASA Outreach (Morung Express – Print Clip)",
-          desc:
-            "Additional print clip documenting the outreach session and interactions with students and school faculty.",
-          date: "19 Mar 2022",
-          place: "Dimapur, Nagaland",
-          sourceLabel: "The Morung Express (scan)",
-          img: "csir_jigyasa_morung_print.png",                // <-- your PNG
-          links: [
-            { label: "Morung Express link", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
-          ]
-        },
-
-        /* === ONLINE ARTICLES (AUTO IMAGE FROM WEBSITE) === */
-
-        {
-          id: "toi-convocation-2018",
-          tags: ["news","award"],
-          badge: "News · Award",
-          title: "CUSB Convocation Coverage (Times of India)",
-          desc:
-            "The Times of India reported on the CUSB convocation ceremony, during which gold medals were awarded to academic toppers, including me, alongside degree awards to graduating students.",
-          date: "28 Mar 2018",
-          place: "Patna, India",
-          sourceLabel: "Times of India",
-          img: "https://static.toiimg.com/thumb/msid-63493024%2Cimgsize-405817%2Cwidth-900%2Cheight-506%2Cresizemode-72/63493024.jpg",
-          links: [
-            { label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }
-          ]
-        },
-        {
-          id: "hans-nobel-outreach",
-          tags: ["news","outreach"],
-          badge: "News · Outreach",
-          title: "Nobel Laureate Outreach Highlight (The Hans India)",
-          desc:
-            "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich, highlighting student interaction and science inspiration activities.",
-          date: "9 Feb 2017",
-          place: "Hyderabad, India",
-          sourceLabel: "The Hans India",
-          /* NOTE:
-             The original article image URL appears unavailable (404) on the site.
-             So we show the publisher logo image instead (still an online image, no extra PNG needed). */
-          img: "https://www.thehansindia.com/images/logo1.png?v=2",
-          links: [
-            { label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }
-          ]
-        }
-      ];
-
-      const grid = document.getElementById("grid");
-
-      function iconFor(tags){
-        if (tags.includes("award")) return "fa-award";
-        if (tags.includes("training")) return "fa-laptop-code";
-        if (tags.includes("outreach")) return "fa-people-group";
-        return "fa-newspaper";
-      }
-
-      function render(filter="all"){
-        grid.innerHTML = "";
-        const data = (filter === "all")
-          ? items
-          : items.filter(x => x.tags.includes(filter));
-
-        data.forEach(item => {
-          const card = document.createElement("article");
-          card.className = "activity-card";
-          card.dataset.tags = item.tags.join(",");
-
-          const linksHtml = (item.links && item.links.length)
-            ? `<div class="links">
-                 ${item.links.map(l => `
-                   <a class="link-btn" href="${l.url}" target="_blank" rel="noopener">
-                     <i class="fa-solid fa-arrow-up-right-from-square"></i> ${l.label}
-                   </a>
-                 `).join("")}
-               </div>`
-            : "";
-
-          card.innerHTML = `
-            <div class="img-wrap" data-full="${item.img}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0" aria-label="Open full preview">
-              <div class="badge-row">
-                <span class="badge"><i class="fa-solid ${iconFor(item.tags)}"></i> ${item.badge}</span>
-              </div>
-              <div class="zoom-hint" title="View full">
-                <i class="fa-solid fa-magnifying-glass-plus"></i>
-              </div>
-              <img src="${item.img}" alt="${escapeHtml(item.title)}">
-            </div>
-
-            <div class="card-body">
-              <h3 class="card-title">${escapeHtml(item.title)}</h3>
-              <p class="card-desc">${escapeHtml(item.desc)}</p>
-
-              ${linksHtml}
-
-              <div class="meta-row">
-                <div class="meta-left">
-                  <span class="meta-pill"><i class="fa-regular fa-calendar"></i> ${escapeHtml(item.date)}</span>
-                  <span class="meta-pill"><i class="fa-regular fa-newspaper"></i> ${escapeHtml(item.sourceLabel)}</span>
-                </div>
-                <div class="meta-right">
-                  <span style="opacity:.9;"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.place)}</span>
-                </div>
-              </div>
-            </div>
-          `;
-
-          grid.appendChild(card);
-        });
-
-        bindPreviewHandlers();
-      }
 
       function escapeHtml(str){
         return String(str || "")
@@ -585,7 +538,281 @@
           .replaceAll("'", "&#039;");
       }
 
-      /* MODAL PREVIEW */
+      function iconFor(tags){
+        if (tags.includes("service")) return "fa-shield-halved";
+        if (tags.includes("award")) return "fa-award";
+        if (tags.includes("training")) return "fa-laptop-code";
+        if (tags.includes("outreach")) return "fa-people-group";
+        return "fa-newspaper";
+      }
+
+      /* ========= Journal wall (no images from you) ========= */
+      const reviewJournals = [
+        { name: "International Journal of Biological Macromolecules", count: 7, link: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules", logo: "https://logo.clearbit.com/sciencedirect.com" },
+        { name: "Food Research International", count: 2, link: "https://www.sciencedirect.com/journal/food-research-international", logo: "https://logo.clearbit.com/sciencedirect.com" },
+        { name: "Journal of Food Science", count: 8, link: "https://ift.onlinelibrary.wiley.com/journal/17503841", logo: "https://logo.clearbit.com/wiley.com" },
+        { name: "Frontiers in Microbiology", count: 1, link: "https://www.frontiersin.org/journals/microbiology", logo: "https://logo.clearbit.com/frontiersin.org" },
+        { name: "Frontiers in Genetics (Computational Genomics)", count: 1, link: "https://www.frontiersin.org/journals/genetics", logo: "https://logo.clearbit.com/frontiersin.org" },
+        { name: "Frontiers in Molecular Biosciences (Biophysics)", count: 1, link: "https://www.frontiersin.org/journals/molecular-biosciences", logo: "https://logo.clearbit.com/frontiersin.org" },
+        { name: "Frontiers in Sustainable Food Systems (Nutrition and Sustainable Diets)", count: 1, link: "https://www.frontiersin.org/journals/sustainable-food-systems/sections/nutrition-and-sustainable-diets", logo: "https://logo.clearbit.com/frontiersin.org" },
+        { name: "Frontiers in Pharmacology (Translational Pharmacology)", count: 1, link: "https://www.frontiersin.org/journals/pharmacology", logo: "https://logo.clearbit.com/frontiersin.org" }
+      ];
+
+      function renderJournals(){
+        const wrap = document.getElementById("journalGrid");
+        if (!wrap) return;
+
+        wrap.innerHTML = reviewJournals.map(j => `
+          <div class="journal-item">
+            <div class="journal-top">
+              <img src="${j.logo}" alt="${escapeHtml(j.name)} logo" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="journal-body">
+              <p class="journal-title">${escapeHtml(j.name)}</p>
+              <div class="journal-meta">
+                <span class="journal-count"><i class="fa-solid fa-hashtag"></i> ${j.count}</span>
+                <span><i class="fa-regular fa-calendar"></i> 2022–Present</span>
+              </div>
+              <a class="journal-link" href="${j.link}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Journal page
+              </a>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      /* ========= Online “cover image” resolver =========
+         Uses r.jina.ai to fetch HTML text and extract og:image/twitter:image.
+         Falls back to publisher logo if blocked/unavailable.
+      */
+      const ogCacheKey = "nk_ogimg_cache_v1";
+      const ogCache = JSON.parse(localStorage.getItem(ogCacheKey) || "{}");
+
+      function cacheSet(url, value){
+        ogCache[url] = { value, t: Date.now() };
+        localStorage.setItem(ogCacheKey, JSON.stringify(ogCache));
+      }
+
+      async function resolveOGImage(articleUrl){
+        if (!articleUrl) return null;
+        if (ogCache[articleUrl]?.value) return ogCache[articleUrl].value;
+
+        try{
+          const proxied = "https://r.jina.ai/http://" + articleUrl.replace(/^https?:\/\//, "");
+          const res = await fetch(proxied, { mode: "cors" });
+          if (!res.ok) throw new Error("fetch failed");
+          const html = await res.text();
+
+          const og1 = html.match(/property=["']og:image["'][^>]*content=["']([^"']+)["']/i);
+          const og2 = html.match(/name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i);
+          const og3 = html.match(/property=["']twitter:image["'][^>]*content=["']([^"']+)["']/i);
+
+          const img = (og1 && og1[1]) || (og2 && og2[1]) || (og3 && og3[1]) || null;
+          if (img){
+            cacheSet(articleUrl, img);
+            return img;
+          }
+        }catch(e){
+          // ignore
+        }
+
+        cacheSet(articleUrl, null);
+        return null;
+      }
+
+      function publisherFallback(domain){
+        // simple stable fallback images
+        if (domain.includes("indiatimes.com") || domain.includes("timesofindia")) return "https://logo.clearbit.com/indiatimes.com";
+        if (domain.includes("frontiersin.org")) return "https://logo.clearbit.com/frontiersin.org";
+        if (domain.includes("morungexpress.com")) return "https://logo.clearbit.com/morungexpress.com";
+        if (domain.includes("thehansindia.com")) return "https://logo.clearbit.com/thehansindia.com";
+        return "https://logo.clearbit.com/" + domain;
+      }
+
+      /* ========= Your items =========
+         IMPORTANT:
+         - For PNG clips: set img to your local png filename
+         - For online articles: set articleUrl, and leave img empty
+      */
+      const items = [
+        /* PRINT/PNG CLIPS (YOU UPLOAD) — replace filenames with your real PNG names */
+        {
+          id: "pk-clip-1",
+          tags: ["news","award"],
+          badge: "News · Award",
+          title: "CUSB Convocation & Gold Medal (Prabhat Khabar – Clip)",
+          desc: "Hindi daily Prabhat Khabar covered the CUSB convocation and gold medal awards, including my recognition among the gold medal recipients.",
+          date: "26 Mar 2018",
+          place: "Gaya / South Bihar",
+          img: "prabhat_khabar_clip_1.png",
+          links: []
+        },
+        {
+          id: "pk-clip-2",
+          tags: ["news","award"],
+          badge: "News · Award",
+          title: "CUSB Convocation (Prabhat Khabar – Clip)",
+          desc: "Additional clip from the same coverage highlighting the convocation ceremony and gold medal announcements.",
+          date: "2018",
+          place: "Bihar, India",
+          img: "prabhat_khabar_clip_2.png",
+          links: []
+        },
+        {
+          id: "genome-training-clip",
+          tags: ["news","training"],
+          badge: "News · Training",
+          title: "Genome Analysis Training Program (Hindi Press)",
+          desc: "Hindi media reported on a genome analysis training program conducted by the Department of Bioinformatics, CUSB, where I served as one of the student trainers, assisting in hands-on instruction on computational genome analysis and bioinformatics workflows.",
+          date: "—",
+          place: "CUSB, India",
+          img: "genome_training_clip.png",
+          links: []
+        },
+
+        /* CSIR–JIGYASA (ALL YOUR PNG CLIPS SEPARATE) — add as many as you want */
+        {
+          id: "csir-jigyasa-clip-1",
+          tags: ["news","outreach"],
+          badge: "News · Outreach",
+          title: "CSIR–JIGYASA Outreach (News Clip)",
+          desc: "Media coverage of CSIR–JIGYASA outreach at Livingstone Foundation International (LFI), where we visited the school as part of a CSIR outreach team, aimed at promoting scientific temper and engagement among school students in Northeast India.",
+          date: "Mar 2022",
+          place: "Nagaland, India",
+          img: "csir_jigyasa_clip_1.png",
+          links: [{ label: "Read article", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }]
+        },
+        {
+          id: "csir-jigyasa-clip-2",
+          tags: ["news","outreach"],
+          badge: "News · Outreach",
+          title: "CSIR–JIGYASA Outreach (News Clip)",
+          desc: "Additional news clip documenting the CSIR–JIGYASA outreach visit and student engagement activities.",
+          date: "Mar 2022",
+          place: "Nagaland, India",
+          img: "csir_jigyasa_clip_2.png",
+          links: [{ label: "Read article", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }]
+        },
+
+        /* ONLINE ARTICLES (AUTO COVER IMAGE) */
+        {
+          id: "toi-cusb",
+          tags: ["news","award"],
+          badge: "Online · Award",
+          title: "CUSB Convocation Coverage (Times of India)",
+          desc: "The Times of India reported on the Central University of South Bihar convocation ceremony, during which gold medals were awarded to academic toppers, including me, alongside degree awards to graduating students.",
+          date: "2018",
+          place: "Patna, India",
+          articleUrl: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms",
+          links: [{ label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }]
+        },
+        {
+          id: "hans-nobel",
+          tags: ["news","outreach"],
+          badge: "Online · Outreach",
+          title: "Nobel Laureate Outreach Highlight (The Hans India)",
+          desc: "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich, highlighting student interaction and science inspiration activities.",
+          date: "2017",
+          place: "India",
+          articleUrl: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347",
+          links: [{ label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }]
+        },
+        {
+          id: "morung-online",
+          tags: ["news","outreach"],
+          badge: "Online · Outreach",
+          title: "CSIR–JIGYASA Coverage (Morung Express)",
+          desc: "Online coverage of the CSIR–JIGYASA outreach collaboration and school visit activities.",
+          date: "2022",
+          place: "Nagaland, India",
+          articleUrl: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program",
+          links: [{ label: "Read article", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }]
+        }
+      ];
+
+      /* RENDER GRID */
+      const grid = document.getElementById("grid");
+
+      async function render(filter="all"){
+        grid.innerHTML = "";
+
+        let data = items;
+        if (filter !== "all"){
+          if (filter === "service"){
+            // hide cards and show service section only
+            document.getElementById("serviceSection").style.display = "block";
+            grid.innerHTML = "";
+            return;
+          }
+          data = items.filter(x => x.tags.includes(filter));
+        }
+
+        // show service section unless user selects service-only
+        document.getElementById("serviceSection").style.display = "block";
+
+        for (const item of data){
+          const card = document.createElement("article");
+          card.className = "activity-card";
+
+          // choose image:
+          // - if item.img exists (local png), use it
+          // - else fetch OG image from articleUrl
+          // - fallback to publisher logo
+          let imgSrc = item.img || "";
+          if (!imgSrc && item.articleUrl){
+            const og = await resolveOGImage(item.articleUrl);
+            if (og) imgSrc = og;
+            else {
+              const domain = new URL(item.articleUrl).hostname;
+              imgSrc = publisherFallback(domain);
+            }
+          }
+
+          const linksHtml = (item.links && item.links.length)
+            ? `<div class="links">
+                 ${item.links.map(l => `
+                   <a class="link-btn" href="${l.url}" target="_blank" rel="noopener">
+                     <i class="fa-solid fa-arrow-up-right-from-square"></i> ${escapeHtml(l.label)}
+                   </a>
+                 `).join("")}
+               </div>`
+            : "";
+
+          card.innerHTML = `
+            <div class="img-wrap" data-full="${escapeHtml(imgSrc)}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0" aria-label="Open full preview">
+              <div class="badge-row">
+                <span class="badge"><i class="fa-solid ${iconFor(item.tags)}"></i> ${escapeHtml(item.badge)}</span>
+              </div>
+              <div class="zoom-hint" title="View full">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+              <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(item.title)}" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">${escapeHtml(item.title)}</h3>
+              <p class="card-desc">${escapeHtml(item.desc)}</p>
+
+              ${linksHtml}
+
+              <div class="meta-row">
+                <div class="meta-left">
+                  <span class="meta-pill"><i class="fa-regular fa-calendar"></i> ${escapeHtml(item.date || "—")}</span>
+                </div>
+                <div class="meta-right">
+                  <span style="opacity:.9;"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.place || "—")}</span>
+                </div>
+              </div>
+            </div>
+          `;
+
+          grid.appendChild(card);
+        }
+
+        bindPreviewHandlers();
+      }
+
+      /* MODAL */
       const modal = document.getElementById("modal");
       const modalImg = document.getElementById("modalImg");
       const modalTitle = document.getElementById("modalTitle");
@@ -608,7 +835,6 @@
       function bindPreviewHandlers(){
         document.querySelectorAll(".img-wrap").forEach(wrap => {
           const open = () => openModal(wrap.dataset.full, wrap.dataset.title);
-
           wrap.addEventListener("click", open);
           wrap.addEventListener("keydown", (e) => {
             if (e.key === "Enter" || e.key === " ") open();
@@ -617,24 +843,21 @@
       }
 
       modalClose.addEventListener("click", closeModal);
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
-      });
+      modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
 
       /* FILTER CHIPS */
       const chips = document.querySelectorAll(".chip");
       chips.forEach(chip => {
-        chip.addEventListener("click", () => {
+        chip.addEventListener("click", async () => {
           chips.forEach(c => c.classList.remove("active"));
           chip.classList.add("active");
-          render(chip.dataset.filter);
+          await render(chip.dataset.filter);
         });
       });
 
-      /* Initial render */
+      /* Init */
+      renderJournals();
       render("all");
     </script>
   </main>
