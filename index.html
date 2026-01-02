@@ -16,7 +16,6 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <div class="topbar">
     <div class="topbar-inner">
@@ -35,32 +34,405 @@
   </div>
 
   <main class="page home-page">
-    <!-- (ALL YOUR PAGE CONTENT IS UNCHANGED ABOVE) -->
+    <!-- TOP: two-column intro -->
+    <section class="home-grid">
+      <!-- LEFT: name, photo, icons -->
+      <div class="home-left">
+        <h1 class="home-name">
+          Nandan<br>
+          Kumar
+        </h1>
 
-    <!-- FOOTER -->
+        <!-- Photo from working directory -->
+        <img class="home-photo" src="nandan.jpg" alt="Nandan Kumar">
+
+        <div class="home-icons">
+          <a class="icon-pill" href="mailto:mr.kumarnandan@gmail.com" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a class="icon-pill" href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" title="Google Scholar">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </a>
+          <a class="icon-pill" href="https://github.com/drkumarnandan" target="_blank" rel="noopener" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="icon-pill" href="https://orcid.org/0000-0001-6915-708X" target="_blank" rel="noopener" title="ORCID">
+            <i class="fa-brands fa-orcid"></i>
+          </a>
+          <a class="icon-pill" href="https://www.scopus.com/authid/detail.uri?authorId=57214110355" target="_blank" rel="noopener" title="Scopus">
+            <i class="fa-solid fa-chart-line"></i>
+          </a>
+          <a class="icon-pill icon-pill-text" href="https://www.linkedin.com/in/nandan-kumar-ph-d-5574b5141/" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+
+        <div class="home-contact">
+          <div>Kansas State University</div>
+          <div>Manhattan, Kansas, USA</div>
+          <div class="home-contact-small">
+          </div>
+        </div>
+
+        <div class="tag-row">
+          <span class="tag-pill">Computational structural biology</span>
+          <span class="tag-pill">AI/ML for proteins</span>
+          <span class="tag-pill">Drug discovery</span>
+          <span class="tag-pill">Membrane modeling</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: intro & recent work -->
+      <div class="home-right">
+        <p style="text-align: justify;">
+          I am a <strong>Postdoctoral Researcher and Lab Manager</strong> at
+          <strong>Kansas State University</strong>, working at the interface of
+          <strong>computational structural biology</strong>, <strong>bioinformatics</strong>,
+          <strong>peptide science</strong>, and <strong>AI/ML</strong>. My research focuses on developing
+          <strong>scalable, data-driven models</strong> to understand the structure, dynamics, and function
+          of proteins and bioactive peptides. I integrate <strong>large-scale molecular simulations</strong> with
+          <strong>advanced protein-language models</strong> and <strong>machine-learning approaches</strong> to uncover
+          mechanistic insights into biomolecular interactions and behavior.
+        </p>
+
+        <p style="text-align: justify;">
+          I enjoy thinking about how <strong>proteins and peptides behave across length and time scales</strong>,
+          from quantum-level interactions and molecular dynamics simulations to data-driven models of sequence and structure.
+          My research goal is to design and understand <strong>bioactive peptides, biologics, and
+          complex protein assemblies</strong> using multiscale simulations, protein language models,
+          and graph neural networks, and to translate these insights into improved therapeutics and
+          practical biomolecular applications.
+        </p>
+
+        <p style="text-align: justify;">Recently, I have worked on:</p>
+
+        <ol class="home-list">
+          <li style="text-align: justify;">
+            <strong>AI-driven peptide prediction and design</strong> – developing pLM4CPPs and
+            pLM4G-CPPs that combine protein language models and graph learning for accurate
+            prediction of cell-penetrating and antimicrobial peptides, with interpretable
+            sequence–activity relationships.
+          </li>
+          <li style="text-align: justify;">
+            <strong>Multiscale simulations of proteins, membranes, and complex environments</strong> –
+            using all-atom and coarse-grained MD to study gluten proteins, ovalbumin, heterogeneous
+            lipid bilayers, and antifreeze proteins under ethanol, pressure, and processing
+            conditions, linking structural dynamics to functionality and allergenicity.
+          </li>
+          <li style="text-align: justify;">
+            <strong>Open-source platforms for drug discovery and non-covalent interactions</strong> –
+            contributing to the Molecular Property Diagnostic Suite (MPDS), A2ID, CAD, and fragment
+            libraries to explore chemical space and quantify key non-covalent interactions in
+            protein–ligand systems.
+          </li>
+        </ol>
+
+        <p style="text-align: justify;">
+          I did my Ph.D. in <strong>Computational Biology</strong> at <a href="https://iict.res.in/" target="_blank" rel="noopener"> CSIR-Indian Institute of Chemical
+          Technology </a> under the supervision of <a href="https://en.wikipedia.org/wiki/Garikapati_Narahari_Sastry" target="_blank" rel="noopener"> Prof. G. Narahari Sastry</a>, where I worked on ion–molecule interactions,
+          lipid membrane heterogeneity, and drug repurposing for infectious diseases. Before that,
+          I completed an M.Sc. in <strong>Bioinformatics</strong> (Gold Medalist) at <a href="https://www.cusb.ac.in/" target="_blank" rel="noopener"> Central University
+          of Bihar </a> and a B.Sc. in Biotechnology at Magadh University. I have also contributed to
+          the development of drug discovery portals and non-covalent interaction databases at
+          CSIR-NEIST.
+        </p>
+      </div>
+    </section>
+
+    <!-- RESEARCH EXPERTISE -->
+    <section class="home-section">
+      <h2 class="section-title">Research expertise</h2>
+      <div class="home-two-col">
+        <ul class="home-interests">
+          <li style="text-align: justify;">
+            <strong>Computational structural biology &amp; biomolecular dynamics</strong> –
+            all-atom and coarse-grained MD of proteins, peptides, and membranes under
+            environmental stresses (pressure, solvent, processing) to link conformational
+            dynamics with function, stability, and allergenicity.
+          </li>
+          <li style="text-align: justify;">
+            <strong>Protein &amp; peptide structure–function prediction</strong> – multi-scale
+            modeling of protein–protein, protein–ligand, and protein–membrane interactions,
+            including QM/MM and enhanced-sampling approaches for binding and selectivity.
+          </li>
+          <li style="text-align: justify;">
+            <strong>AI-driven bioinformatics &amp; peptide design</strong> – development of
+            predictive models using protein language models, graph neural networks, and
+            classical ML for cell-penetrating, antimicrobial, and bioactive peptides.
+          </li>
+        </ul>
+
+        <ul class="home-interests">
+          <li style="text-align: justify;">
+            <strong>Computational drug discovery &amp; cheminformatics</strong> – virtual
+            screening, drug repurposing, and fragment-based design; exploration of chemical
+            space using MPDS, RDKit, and related tools for small-molecule optimization.
+          </li>
+          <li style="text-align: justify;">
+            <strong>Membrane biophysics &amp; biologics design</strong> – modeling lipid
+            heterogeneity, peptide–bilayer interactions, and pore formation to guide the
+            design of targeted biologics and membrane-active agents.
+          </li>
+          <li style="text-align: justify;">
+            <strong>Software, databases &amp; open platforms</strong> – co-development of
+            web portals and databases (MPDS, A2ID, CAD) for non-covalent interactions and
+            structure-based drug discovery, supporting academic and industrial users.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RECENT NEWS -->
+    <section class="home-section">
+      <h2 class="section-title">Recent news</h2>
+      <div class="news-card">
+        <ul class="news-list">
+          <li>
+            <span class="news-year">2025</span>
+            Recipient of the <strong>Outstanding Post-Doctoral Research Associate Award</strong> at Kansas State University.
+          </li>
+          <li>
+            <span class="news-year">2025</span>
+            Four first-author papers published in <em>J. Chem. Inf. Model.</em>, <em>J. Phys. Chem. B</em>, and <em>Food Chemistry</em>.
+          </li>
+          <li>
+            <span class="news-year">2024–2025</span>
+            Invited talks at <strong>Cereals &amp; Grains 2024</strong> and the <strong>Foods2024</strong> electronic conference.
+          </li>
+          <li>
+            <span class="news-year">2024</span>
+            Released <strong>pLM4CPPs</strong>, a state-of-the-art protein language model–based predictor for cell-penetrating peptides.
+          </li>
+          <li>
+            <span class="news-year">2023–2025</span>
+            Reviewed <strong>30+ manuscripts</strong> for journals including <em>Food Chemistry</em>, <em>Int. J. Biol. Macromol.</em>, and various <em>Frontiers</em> series.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RESEARCH HIGHLIGHTS -->
+    <section class="home-section">
+      <h2 class="section-title">Research highlights</h2>
+      <ul class="home-highlights">
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>pLM4CPPs &amp; pLM4G-CPPs.</strong>
+            Developed protein language model–based CNN and graph models for cell-penetrating
+            peptide prediction, improving over existing CPP predictors and enabling interpretable
+            sequence–feature analyses.
+          </div>
+        </li>
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>Membrane selectivity of antimicrobial peptides.</strong>
+            Used AA/CG MD to uncover how Snakin-Z and melittin discriminate between
+            prokaryotic and eukaryotic membranes, integrating contact analysis, pore formation,
+            and pressure-dependent effects.
+          </div>
+        </li>
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>Gliadin and protein dynamics in complex environments.</strong>
+            Performed long-timescale simulations of α-gliadin and ovalbumin under ethanol,
+            high pressure, and ultrasound, linking structural changes to functionality and
+            potential allergenicity.
+          </div>
+        </li>
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>MPDS &amp; non-covalent interaction databases.</strong>
+            Contributed to the Molecular Property Diagnostic Suite, A2ID, CAD, and fragment
+            libraries for systematic exploration of chemical space and non-covalent interactions.
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SELECTED PUBLICATIONS -->
+    <section class="home-section">
+      <h2 class="section-title">Selected publications</h2>
+      <ul class="home-pubs">
+        <li>
+          <div class="home-pub-title">
+            pLM4CPPs: Protein Language Model-Based Predictor for Cell Penetrating Peptides
+          </div>
+          <div class="home-pub-meta">
+            Kumar, N.; Du, Z.; Li, Y. <span>J. Chem. Inf. Model. 2025, 65, 1128.</span>
+            <span class="home-pub-links">
+              <a href="https://doi.org/10.1021/acs.jcim.4c01338">paper</a>
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div class="home-pub-title">
+            Membrane Selectivity Mechanisms of Antimicrobial Peptide Snakin-Z against
+            Prokaryotic and Eukaryotic Membrane Models
+          </div>
+          <div class="home-pub-meta">
+            Kumar, N.; Du, Z.; Amachawadi, R. G.; Guo, X.; Zhao, J.; Li, Y.
+            <span>J. Phys. Chem. B 2025, 129, 4409.</span>
+            <span class="home-pub-links">
+              <a href="https://doi.org/10.1021/acs.jpcb.5c01013">paper</a>
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div class="home-pub-title">
+            Solvent-Dependent Structural and Dynamic Behavior of α-Gliadin in Aqueous
+            Ethanol Systems: Insights from Molecular Dynamics Simulations
+          </div>
+          <div class="home-pub-meta">
+            Kumar, N.; Li, Y. <span>Food Chemistry 2025, 497, 147044.</span>
+          </div>
+        </li>
+
+        <li>
+          <div class="home-pub-title">
+            Towards Developing a Criterion to Characterize Non-Covalent Bonds:
+            A Quantum Mechanical Study
+          </div>
+          <div class="home-pub-meta">
+            Kumar, N.; Saha, S.; Sastry, G. N.
+            <span>Phys. Chem. Chem. Phys. 2021, 23, 8478.</span>
+            <span class="home-pub-links">
+              <a href="https://doi.org/10.1039/d0cp05689h">paper</a>
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div class="home-pub-title">
+            Analyzing the Aromatic-Aromatic Interactions in Proteins: A2ID 2.0
+          </div>
+          <div class="home-pub-meta">
+            Kumar, Y. B.; Kumar, N.; Vaikundamani, S.; <em>et al.</em>
+            <span>Int. J. Biol. Macromol. 2023, 127207.</span>
+            <span class="home-pub-links">
+              <a href="https://doi.org/10.1016/j.ijbiomac.2023.127207">paper</a>
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <p class="home-more muted">
+        Full list of publications:
+        <a href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&hl=en&oi=ao">Google Scholar</a>.
+      </p>
+    </section>
+
+    <!-- HONORS -->
+    <section class="home-section">
+      <h2 class="section-title">Honors &amp; awards</h2>
+      <ul class="home-highlights">
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>Outstanding Post-Doctoral Research Associate Award</strong>,
+            Kansas State University (2025) – for innovative research, grant development,
+            mentoring, and departmental seminar.
+          </div>
+        </li>
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>INSPIRE Fellowship</strong>, Department of Science &amp; Technology,
+            Government of India (2014–2019) – prestigious national fellowship supporting
+            doctoral research in computational biology and molecular modeling.
+          </div>
+        </li>
+        <li>
+          <span class="home-bullet"></span>
+          <div>
+            <strong>Gold Medal for Academic Excellence</strong>, Central University of Bihar (2014),
+            and invited speaker in the <strong>Sakura Science Program</strong>, Ibaraki University,
+            Japan (2019).
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="home-section stats-section">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">
+            PEER-<br>
+            REVIEWED<br>
+            PUBLICATIONS
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">7</div>
+          <div class="stat-label">
+            BOOK<br>
+            CHAPTERS
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">11</div>
+          <div class="stat-label">
+            H-INDEX<br>
+            (SCHOLAR)
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">307+</div>
+          <div class="stat-label">
+            CITATIONS
+          </div>
+        </div>
+      </div>
+
+      <p class="stats-note muted">
+        Based on Google Scholar and Scopus metrics (updated 2025).
+        <a href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&hl=en&oi=ao">View profile</a>.
+      </p>
+    </section>
+
     <div class="footer">
       <span>© 2025 Nandan Kumar.</span>
       <span class="footer-sep">·</span>
       <span>Total visits: <span id="visitor-count">—</span></span>
     </div>
 
-    <!-- GLOBAL VISITOR COUNTER (CountAPI) -->
+    <!-- Global visitor counter (counts all visitors) using CountAPI -->
     <script>
       (function () {
         const el = document.getElementById('visitor-count');
         if (!el) return;
 
-        fetch('https://api.countapi.xyz/hit/drkumarnandan.github.io/homepage')
-          .then(res => res.json())
+        // ✅ Change these two strings to something unique for your site
+        // Example namespace: your domain or GitHub pages repo name
+        const NAMESPACE = 'drkumarnandan-github-io';
+        const KEY = 'home-total';
+
+        const url = `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
+
+        fetch(url)
+          .then(r => r.json())
           .then(data => {
-            el.textContent = data.value.toLocaleString();
+            if (typeof data.value === 'number') {
+              el.textContent = data.value.toLocaleString();
+            } else {
+              el.textContent = '—';
+            }
           })
           .catch(() => {
             el.textContent = '—';
           });
       })();
     </script>
-
   </main>
 </body>
 </html>
