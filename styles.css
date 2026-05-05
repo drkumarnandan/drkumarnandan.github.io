@@ -706,108 +706,132 @@ main .hero-heading:not(.home-hero) {
   line-height: 1;
 }
 
+
+
+
 /* ============================================================
-   FINAL PROFESSIONAL POLISH
-   Added for clearer academic color hierarchy and readability
+   FINAL FULL-SITE HOMEPAGE POLISH
+   Purpose: stronger header colors, lighter body text,
+   professional blue/gray hierarchy, restored research vision.
    ============================================================ */
 
-/* Strong headers (dark) */
-.home-name,
-.section-title,
-.site-title a,
-.research-title,
-.stat-label {
-  color: #0b1f3a !important;
-  font-weight: 700;
+:root {
+  --pro-heading: #0b1f3a;
+  --pro-text: #374151;
+  --pro-strong: #111827;
+  --pro-muted: #64748b;
+  --pro-accent: #2563eb;
+  --pro-accent-dark: #1e40af;
+  --pro-soft: #f8fafc;
+  --pro-chip: #f1f5f9;
+  --pro-border: #e5e7eb;
 }
 
-/* Body text softer (readable) */
+/* Main readability */
+body {
+  color: var(--pro-text);
+}
+
 .home-right p,
-.home-list li,
 .home-interests li,
 .news-list li,
 .home-highlights li,
-.research-list li {
-  color: #374151 !important;
-  font-weight: 400;
+.home-list li {
+  color: var(--pro-text);
 }
 
-/* Strong words inside text */
 .home-right strong,
-.home-list strong,
 .home-interests strong,
 .home-highlights strong,
-.research-list strong {
-  color: #111827 !important;
-  font-weight: 600;
+.home-list strong {
+  color: var(--pro-strong);
+  font-weight: 650;
 }
 
-/* Identity line (top statement) */
-.identity-line {
-  color: #0b1f3a !important;
-  font-weight: 650 !important;
-  border-left: 4px solid #2563eb !important;
-  padding-left: 1rem !important;
-}
-
-/* Research Vision box */
-.vision-box {
-  background: #f8fafc !important;
-  border: 1px solid #e5e7eb !important;
-  border-left: 4px solid #2563eb !important;
-  border-radius: 12px !important;
-  padding: 0.9rem 1rem !important;
-  margin-top: 1rem !important;
-  color: #374151 !important;
-}
-
-/* Sub headings */
+/* Darker/bolder headers */
+.site-title a,
+.home-name,
+.section-title,
+.home-pub-title,
 .mini-heading {
-  color: #0b1f3a !important;
-  font-weight: 600 !important;
+  color: var(--pro-heading);
 }
 
-/* Tag pills (cleaner) */
-.tag-pill {
-  background: #f1f5f9 !important;
-  color: #1e3a8a !important;
-  border-color: #cbd5e1 !important;
+.home-name {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
 }
 
-/* Links */
-a {
-  color: #2563eb;
-}
-
-a:hover {
-  color: #1e40af;
-}
-
-/* Navigation active (slightly stronger) */
-.nav-link.active {
-  background: #1e40af !important;
-  border-color: #1e40af !important;
-}
-
-/* Stats refinement */
-.stat-number {
-  color: #1e40af !important;
-}
-
-/* Slightly soften icons shadow */
-.icon-pill {
-  box-shadow: 0 6px 16px rgba(148, 163, 184, 0.3);
-}
-
-/* Optional visible profile links and CV button if present in HTML */
+/* Subtitle under name */
 .home-subtitle {
   font-size: 0.88rem;
   line-height: 1.45;
-  color: #64748b;
+  color: var(--pro-muted);
   margin-bottom: 1.15rem;
   font-weight: 500;
 }
 
+/* Identity line */
+.identity-line {
+  margin: 0 0 1.05rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--pro-accent);
+  color: var(--pro-heading);
+  font-weight: 750;
+  font-size: 1.08rem;
+  line-height: 1.58;
+}
+
+/* Mini heading */
+.mini-heading {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-top: 1rem;
+  margin-bottom: 0.45rem !important;
+}
+
+/* Research Vision block */
+.vision-box {
+  background: var(--pro-soft);
+  border: 1px solid var(--pro-border);
+  border-left: 4px solid var(--pro-accent);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  color: var(--pro-text);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vision-box strong:first-child {
+  color: var(--pro-heading);
+}
+
+/* Links */
+a {
+  color: var(--pro-accent);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--pro-accent-dark);
+}
+
+/* Navigation */
+.nav-link.active {
+  background: var(--pro-heading);
+  border-color: var(--pro-heading);
+}
+
+/* Tags */
+.tag-pill {
+  background: var(--pro-chip);
+  border-color: #cbd5e1;
+  color: var(--pro-accent-dark);
+  font-weight: 550;
+}
+
+/* Visible profile links */
 .profile-links {
   margin-top: 0.75rem;
   font-size: 0.82rem;
@@ -815,7 +839,7 @@ a:hover {
 }
 
 .profile-links a {
-  color: #1e40af;
+  color: var(--pro-accent-dark);
   font-weight: 600;
 }
 
@@ -824,20 +848,387 @@ a:hover {
   color: #94a3b8;
 }
 
+/* CV button */
 .cv-button {
   display: inline-block;
   margin-top: 0.85rem;
   padding: 0.48rem 0.92rem;
   border-radius: 999px;
-  background: #0b1f3a;
-  color: #ffffff !important;
+  background: var(--pro-heading);
+  color: #ffffff;
   font-weight: 650;
   font-size: 0.86rem;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
 }
 
 .cv-button:hover {
-  background: #1e40af;
-  color: #ffffff !important;
+  background: var(--pro-accent-dark);
+  color: #ffffff;
   text-decoration: none;
+}
+
+/* Photo */
+.home-photo {
+  box-shadow: 0 14px 34px rgba(100, 116, 139, 0.32);
+  border: 4px solid #ffffff;
+  outline: 1px solid var(--pro-border);
+}
+
+/* Section title bar */
+.section-title {
+  font-weight: 720;
+  letter-spacing: -0.01em;
+}
+
+.section-title::before {
+  background: linear-gradient(180deg, var(--pro-heading), var(--pro-accent));
+}
+
+/* Featured work */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 850px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-card {
+  background: #ffffff;
+  border: 1px solid var(--pro-border);
+  border-top: 3px solid var(--pro-accent);
+  border-radius: 16px;
+  padding: 1rem 1rem 0.9rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.featured-card h3 {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 1rem;
+  color: var(--pro-heading);
+}
+
+.featured-card p {
+  margin: 0;
+  color: var(--pro-text);
+  font-size: 0.9rem;
+  line-height: 1.62;
+}
+
+.featured-kicker {
+  font-size: 0.75rem;
+  color: var(--pro-accent-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* News, publications, stats */
+.news-card {
+  background: var(--pro-soft);
+  border-color: var(--pro-border);
+}
+
+.news-year {
+  color: var(--pro-accent-dark);
+  font-weight: 750;
+}
+
+.home-pub-meta,
+.muted,
+.home-contact {
+  color: var(--pro-muted);
+}
+
+.home-bullet {
+  background: var(--pro-accent);
+  box-shadow: 0 0 0 3px #dbeafe;
+}
+
+.stat-card {
+  border: 1px solid var(--pro-border);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.stat-number {
+  color: var(--pro-accent-dark);
+}
+
+.stat-label {
+  color: var(--pro-heading);
+}
+
+
+/* ============================================================
+   TOP-TIER ACADEMIC SITE REFINEMENT
+   Shorter identity, research program cards, spacing, hover polish
+   ============================================================ */
+
+/* Slightly more elegant intro line */
+.identity-line {
+  font-size: 1.06rem !important;
+  line-height: 1.6 !important;
+  max-width: 100%;
+}
+
+/* More breathing room around Research Vision */
+.vision-box {
+  margin-top: 1.2rem !important;
+  margin-bottom: 1.4rem !important;
+}
+
+/* Featured cards: subtle professional hover */
+.featured-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  border-color: #bfdbfe;
+}
+
+/* Research Program section */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 850px) {
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.program-card {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.05rem 1rem 1rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.program-number {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #2563eb;
+  margin-bottom: 0.35rem;
+}
+
+.program-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #0b1f3a;
+}
+
+.program-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: #374151;
+}
+
+/* Improve left-column professional spacing */
+.home-subtitle {
+  margin-top: -0.25rem;
+}
+
+.profile-links {
+  line-height: 1.5;
+}
+
+/* Publication titles slightly stronger but still clean */
+.home-pub-title {
+  font-weight: 700 !important;
+  color: #0b1f3a !important;
+}
+
+/* Keep body text light but readable */
+.home-right p,
+.home-list li,
+.home-interests li,
+.news-list li,
+.home-highlights li,
+.program-card p,
+.featured-card p {
+  color: #374151 !important;
+}
+
+/* Headings remain strong */
+.section-title,
+.home-name,
+.program-card h3,
+.featured-card h3 {
+  color: #0b1f3a !important;
+}
+
+
+/* ============================================================
+   NATURE-STYLE PI PROFILE REFINEMENT
+   Cleaner narrative hierarchy and restrained academic styling
+   ============================================================ */
+
+.identity-line {
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  letter-spacing: -0.005em;
+}
+
+.home-right p {
+  line-height: 1.78 !important;
+}
+
+.mini-heading {
+  text-transform: none;
+  font-size: 1rem !important;
+}
+
+.vision-box {
+  background: linear-gradient(90deg, #f8fafc, #ffffff) !important;
+  border-left-color: #1e40af !important;
+}
+
+.featured-card,
+.program-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.featured-card:hover,
+.program-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.11);
+  border-color: #bfdbfe;
+}
+
+.program-card h3,
+.featured-card h3 {
+  letter-spacing: -0.01em;
+}
+
+.program-number,
+.featured-kicker {
+  color: #1e40af !important;
+}
+
+.home-list li {
+  margin-top: 0.5rem !important;
+}
+
+.home-list strong {
+  color: #0b1f3a !important;
+}
+
+.home-pub-title {
+  letter-spacing: -0.005em;
+}
+
+
+/* ============================================================
+   Visitor counter footer polish
+   ============================================================ */
+
+#visitor-count {
+  color: #0b1f3a;
+  font-weight: 650;
+}
+
+.footer {
+  color: #64748b;
+}
+
+
+/* ============================================================
+   Website & Research Impact section
+   ============================================================ */
+
+.impact-section {
+  margin-top: 2.6rem;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 850px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.impact-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.11);
+  border-color: #bfdbfe;
+}
+
+.impact-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  border: 1px solid #dbeafe;
+}
+
+.impact-content {
+  flex: 1;
+}
+
+.impact-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1e40af;
+  margin-bottom: 0.25rem;
+}
+
+.impact-number {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: #0b1f3a;
+  margin-bottom: 0.3rem;
+}
+
+.impact-card p {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.impact-link {
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: #2563eb;
+}
+
+.impact-link:hover {
+  color: #1e40af;
 }
