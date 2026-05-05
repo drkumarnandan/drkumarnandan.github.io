@@ -706,132 +706,108 @@ main .hero-heading:not(.home-hero) {
   line-height: 1;
 }
 
-
-
-
 /* ============================================================
-   FINAL FULL-SITE HOMEPAGE POLISH
-   Purpose: stronger header colors, lighter body text,
-   professional blue/gray hierarchy, restored research vision.
+   FINAL PROFESSIONAL POLISH
+   Added for clearer academic color hierarchy and readability
    ============================================================ */
 
-:root {
-  --pro-heading: #0b1f3a;
-  --pro-text: #374151;
-  --pro-strong: #111827;
-  --pro-muted: #64748b;
-  --pro-accent: #2563eb;
-  --pro-accent-dark: #1e40af;
-  --pro-soft: #f8fafc;
-  --pro-chip: #f1f5f9;
-  --pro-border: #e5e7eb;
+/* Strong headers (dark) */
+.home-name,
+.section-title,
+.site-title a,
+.research-title,
+.stat-label {
+  color: #0b1f3a !important;
+  font-weight: 700;
 }
 
-/* Main readability */
-body {
-  color: var(--pro-text);
-}
-
+/* Body text softer (readable) */
 .home-right p,
+.home-list li,
 .home-interests li,
 .news-list li,
 .home-highlights li,
-.home-list li {
-  color: var(--pro-text);
+.research-list li {
+  color: #374151 !important;
+  font-weight: 400;
 }
 
+/* Strong words inside text */
 .home-right strong,
+.home-list strong,
 .home-interests strong,
 .home-highlights strong,
-.home-list strong {
-  color: var(--pro-strong);
-  font-weight: 650;
+.research-list strong {
+  color: #111827 !important;
+  font-weight: 600;
 }
 
-/* Darker/bolder headers */
-.site-title a,
-.home-name,
-.section-title,
-.home-pub-title,
-.mini-heading {
-  color: var(--pro-heading);
-}
-
-.home-name {
-  font-weight: 750;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.35rem;
-}
-
-/* Subtitle under name */
-.home-subtitle {
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--pro-muted);
-  margin-bottom: 1.15rem;
-  font-weight: 500;
-}
-
-/* Identity line */
+/* Identity line (top statement) */
 .identity-line {
-  margin: 0 0 1.05rem;
-  padding-left: 1rem;
-  border-left: 4px solid var(--pro-accent);
-  color: var(--pro-heading);
-  font-weight: 750;
-  font-size: 1.08rem;
-  line-height: 1.58;
+  color: #0b1f3a !important;
+  font-weight: 650 !important;
+  border-left: 4px solid #2563eb !important;
+  padding-left: 1rem !important;
 }
 
-/* Mini heading */
-.mini-heading {
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  margin-top: 1rem;
-  margin-bottom: 0.45rem !important;
-}
-
-/* Research Vision block */
+/* Research Vision box */
 .vision-box {
-  background: var(--pro-soft);
-  border: 1px solid var(--pro-border);
-  border-left: 4px solid var(--pro-accent);
-  border-radius: 12px;
-  padding: 0.85rem 1rem;
-  color: var(--pro-text);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  background: #f8fafc !important;
+  border: 1px solid #e5e7eb !important;
+  border-left: 4px solid #2563eb !important;
+  border-radius: 12px !important;
+  padding: 0.9rem 1rem !important;
+  margin-top: 1rem !important;
+  color: #374151 !important;
 }
 
-.vision-box strong:first-child {
-  color: var(--pro-heading);
+/* Sub headings */
+.mini-heading {
+  color: #0b1f3a !important;
+  font-weight: 600 !important;
+}
+
+/* Tag pills (cleaner) */
+.tag-pill {
+  background: #f1f5f9 !important;
+  color: #1e3a8a !important;
+  border-color: #cbd5e1 !important;
 }
 
 /* Links */
 a {
-  color: var(--pro-accent);
-  font-weight: 500;
+  color: #2563eb;
 }
 
 a:hover {
-  color: var(--pro-accent-dark);
+  color: #1e40af;
 }
 
-/* Navigation */
+/* Navigation active (slightly stronger) */
 .nav-link.active {
-  background: var(--pro-heading);
-  border-color: var(--pro-heading);
+  background: #1e40af !important;
+  border-color: #1e40af !important;
 }
 
-/* Tags */
-.tag-pill {
-  background: var(--pro-chip);
-  border-color: #cbd5e1;
-  color: var(--pro-accent-dark);
-  font-weight: 550;
+/* Stats refinement */
+.stat-number {
+  color: #1e40af !important;
 }
 
-/* Visible profile links */
+/* Slightly soften icons shadow */
+.icon-pill {
+  box-shadow: 0 6px 16px rgba(148, 163, 184, 0.3);
+}
+
+/* Optional visible profile links and CV button if present in HTML */
+.home-subtitle {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #64748b;
+  margin-bottom: 1.15rem;
+  font-weight: 500;
+}
+
 .profile-links {
   margin-top: 0.75rem;
   font-size: 0.82rem;
@@ -839,7 +815,7 @@ a:hover {
 }
 
 .profile-links a {
-  color: var(--pro-accent-dark);
+  color: #1e40af;
   font-weight: 600;
 }
 
@@ -848,116 +824,20 @@ a:hover {
   color: #94a3b8;
 }
 
-/* CV button */
 .cv-button {
   display: inline-block;
   margin-top: 0.85rem;
   padding: 0.48rem 0.92rem;
   border-radius: 999px;
-  background: var(--pro-heading);
-  color: #ffffff;
+  background: #0b1f3a;
+  color: #ffffff !important;
   font-weight: 650;
   font-size: 0.86rem;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
 }
 
 .cv-button:hover {
-  background: var(--pro-accent-dark);
-  color: #ffffff;
+  background: #1e40af;
+  color: #ffffff !important;
   text-decoration: none;
-}
-
-/* Photo */
-.home-photo {
-  box-shadow: 0 14px 34px rgba(100, 116, 139, 0.32);
-  border: 4px solid #ffffff;
-  outline: 1px solid var(--pro-border);
-}
-
-/* Section title bar */
-.section-title {
-  font-weight: 720;
-  letter-spacing: -0.01em;
-}
-
-.section-title::before {
-  background: linear-gradient(180deg, var(--pro-heading), var(--pro-accent));
-}
-
-/* Featured work */
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-@media (max-width: 850px) {
-  .featured-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.featured-card {
-  background: #ffffff;
-  border: 1px solid var(--pro-border);
-  border-top: 3px solid var(--pro-accent);
-  border-radius: 16px;
-  padding: 1rem 1rem 0.9rem;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-}
-
-.featured-card h3 {
-  margin: 0.25rem 0 0.4rem;
-  font-size: 1rem;
-  color: var(--pro-heading);
-}
-
-.featured-card p {
-  margin: 0;
-  color: var(--pro-text);
-  font-size: 0.9rem;
-  line-height: 1.62;
-}
-
-.featured-kicker {
-  font-size: 0.75rem;
-  color: var(--pro-accent-dark);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/* News, publications, stats */
-.news-card {
-  background: var(--pro-soft);
-  border-color: var(--pro-border);
-}
-
-.news-year {
-  color: var(--pro-accent-dark);
-  font-weight: 750;
-}
-
-.home-pub-meta,
-.muted,
-.home-contact {
-  color: var(--pro-muted);
-}
-
-.home-bullet {
-  background: var(--pro-accent);
-  box-shadow: 0 0 0 3px #dbeafe;
-}
-
-.stat-card {
-  border: 1px solid var(--pro-border);
-  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
-}
-
-.stat-number {
-  color: var(--pro-accent-dark);
-}
-
-.stat-label {
-  color: var(--pro-heading);
 }
