@@ -42,16 +42,40 @@
           Nandan Kumar
         </h1>
 
-
-
         <!-- Photo from working directory -->
         <img class="home-photo" src="nandan.jpg" alt="Nandan Kumar">
 
-        <div class="home-subtitle">
-          Postdoctoral Researcher | Computational Structural Biologist<br>
-          Multiscale Modeling | Bioinformatics | AI-Driven Protein &amp; Peptide Design
-        </div>
+        <div class="home-subtitle" style="line-height: 1.6; margin-top: 18px;">
+          <div style="
+            font-size: 1.32rem;
+            font-weight: 800;
+            color: #111;
+            letter-spacing: 0.2px;
+          ">
+            Postdoctoral Researcher | Computational Structural Biologist
+          </div>
 
+          <div style="
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-top: 6px;
+            color: #2c2c2c;
+            letter-spacing: 0.15px;
+          ">
+            Multiscale Modeling | Bioinformatics | AI-Driven Protein &amp; Peptide Design
+          </div>
+
+          <div style="
+            margin-top: 14px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #333;
+            letter-spacing: 0.3px;
+          ">
+            Kansas State University<br>
+            Manhattan, Kansas, USA
+          </div>
+        </div>
 
         <div class="home-icons">
           <a class="icon-pill" href="mailto:mr.kumarnandan@gmail.com" title="Email">
@@ -74,38 +98,19 @@
           </a>
         </div>
 
-
-        <div class="home-contact">
-          <div>Kansas State University</div>
-          <div>Manhattan, Kansas, USA</div>
-          <div class="home-contact-small">
-          </div>
-        </div>
-
         <a class="cv-button" href="Nandan_Kumar_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-        
-        <div class="profile-links">
-          <a href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a>
-          <span>·</span>
-          <a href="https://orcid.org/0000-0001-6915-708X" target="_blank" rel="noopener">ORCID</a>
-          <span>·</span>
-          <a href="https://github.com/drkumarnandan" target="_blank" rel="noopener">GitHub</a>
-        </div>
-
-        <div class="tag-row">
-          <span class="tag-pill">Computational Structural Biology</span>
-          <span class="tag-pill">Multiscale Modeling</span>
-          <span class="tag-pill">Bioinformatics</span>
-          <span class="tag-pill">Protein Language Models</span>
-          <span class="tag-pill">AI-Driven Peptide Design</span>
-          <span class="tag-pill">Protein–Membrane Modeling</span>
-        </div>
       </div>
 
       <!-- RIGHT: intro & recent work -->
       <div class="home-right">
-        <p class="identity-line">
-          Computational structural biologist building integrative multiscale modelig, bioinformatics and AI-driven frameworks to decode, predict, and design functional proteins and peptides.
+        <p class="identity-line" style="
+          text-align: justify;
+          font-size: 1.06rem;
+          line-height: 1.9;
+          color: #222;
+          font-weight: 400;
+        ">
+          Computational structural biologist developing integrative multiscale modeling, bioinformatics, and AI-driven frameworks to decode, predict, and design functional proteins and peptides across complex biological systems.
         </p>
 
         <p style="text-align: justify;">
@@ -492,7 +497,7 @@
          use: nandan-kumar
     -->
     <script>
-      const GOATCOUNTER_SITE = "YOUR-GOATCOUNTER-SUBDOMAIN";
+      const GOATCOUNTER_SITE = "nandan-kumar";
 
       const visitorEl = document.getElementById("visitor-count");
       const graphLink = document.getElementById("visitor-graph");
@@ -530,7 +535,7 @@
         const el = document.getElementById('visitor-count');
         if (!el) return;
 
-        // ✅ Change these two strings to something unique for your site
+        // Change these two strings to something unique for your site
         // Example namespace: your domain or GitHub pages repo name
         const NAMESPACE = 'drkumarnandan-github-io';
         const KEY = 'home-total';
