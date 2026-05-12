@@ -128,7 +128,6 @@
       </div>
     </section>
 
-
     <!-- FEATURED WORK -->
     <section class="home-section featured-section">
       <h2 class="section-title">Featured work</h2>
@@ -150,7 +149,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- RESEARCH PROGRAM -->
     <section class="home-section research-program-section">
@@ -451,53 +449,38 @@
     <div class="footer">
       <span>© 2025 Nandan Kumar.</span>
       <span class="footer-sep">·</span>
-      <span>Total visits: <span id="visitor-count">—</span></span>
+
+      <span>
+        📊
+        <a
+          href="https://drnkumar.goatcounter.com"
+          target="_blank"
+          rel="noopener"
+        >
+          Visitor Graph
+        </a>
+      </span>
+
       <span class="footer-sep">·</span>
-      <span>📊 <a id="visitor-graph" href="#" target="_blank" rel="noopener">Visitor Graph</a></span>
-      <span class="footer-sep">·</span>
-      <span>🌍 <a id="visitor-map" href="#" target="_blank" rel="noopener">Visitor Map</a></span>
+
+      <span>
+        🌍
+        <a
+          href="https://drnkumar.goatcounter.com"
+          target="_blank"
+          rel="noopener"
+        >
+          Visitor Map
+        </a>
+      </span>
     </div>
 
-    <!--
-      Visitor counter setup:
-      1. Create a free GoatCounter account at https://www.goatcounter.com
-      2. Replace YOUR-GOATCOUNTER-SUBDOMAIN below with your GoatCounter site name.
-         Example: if your GoatCounter dashboard is https://nandan-kumar.goatcounter.com,
-         use: nandan-kumar
-    -->
-    <script>
-      const GOATCOUNTER_SITE = "drnkumar";
-
-      const visitorEl = document.getElementById("visitor-count");
-      const graphLink = document.getElementById("visitor-graph");
-      const mapLink = document.getElementById("visitor-map");
-
-      if (GOATCOUNTER_SITE === "YOUR-GOATCOUNTER-SUBDOMAIN") {
-        if (visitorEl) visitorEl.textContent = "—";
-      } else {
-        const dashboard = `https://${GOATCOUNTER_SITE}.goatcounter.com`;
-
-        if (graphLink) graphLink.href = dashboard;
-        if (mapLink) mapLink.href = dashboard;
-
-        fetch(`${dashboard}/counter/TOTAL.json`)
-          .then(res => res.json())
-          .then(data => {
-            if (visitorEl) visitorEl.textContent = data.count || "—";
-          })
-          .catch(() => {
-            if (visitorEl) visitorEl.textContent = "—";
-          });
-
-        window.goatcounter = { path: location.pathname };
-        const s = document.createElement("script");
-        s.dataset.goatcounter = `${dashboard}/count`;
-        s.async = true;
-        s.src = "https://gc.zgo.at/count.js";
-        document.body.appendChild(s);
-      }
+    <!-- GoatCounter Analytics -->
+    <script
+      data-goatcounter="https://drnkumar.goatcounter.com/count"
+      async
+      src="https://gc.zgo.at/count.js">
     </script>
-
 
   </main>
 </body>
