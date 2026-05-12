@@ -446,41 +446,62 @@
       </p>
     </section>
 
-    <div class="footer">
-      <span>© 2025 Nandan Kumar.</span>
-      <span class="footer-sep">·</span>
+    
+<div class="footer">
+  <span>© 2025 Nandan Kumar.</span>
 
-      <span>
-        📊
-        <a
-          href="https://drnkumar.goatcounter.com"
-          target="_blank"
-          rel="noopener"
-        >
-          Visitor Graph
-        </a>
-      </span>
+  <span class="footer-sep">·</span>
 
-      <span class="footer-sep">·</span>
+  <span>
+    Visitors:
+    <span id="visitor-count">0</span>
+  </span>
 
-      <span>
-        🌍
-        <a
-          href="https://drnkumar.goatcounter.com"
-          target="_blank"
-          rel="noopener"
-        >
-          Visitor Map
-        </a>
-      </span>
-    </div>
+  <span class="footer-sep">·</span>
 
-    <!-- GoatCounter Analytics -->
-    <script
-      data-goatcounter="https://drnkumar.goatcounter.com/count"
-      async
-      src="https://gc.zgo.at/count.js">
-    </script>
+  <span>
+    📊
+    <a
+      href="https://drnkumar.goatcounter.com"
+      target="_blank"
+      rel="noopener"
+    >
+      Visitor Graph
+    </a>
+  </span>
+
+  <span class="footer-sep">·</span>
+
+  <span>
+    🌍
+    <a
+      href="https://drnkumar.goatcounter.com"
+      target="_blank"
+      rel="noopener"
+    >
+      Visitor Map
+    </a>
+  </span>
+</div>
+
+<!-- GoatCounter Analytics -->
+<script
+  data-goatcounter="https://drnkumar.goatcounter.com/count"
+  async
+  src="https://gc.zgo.at/count.js">
+</script>
+
+<!-- Auto Visitor Count -->
+<script>
+  fetch("https://drnkumar.goatcounter.com/counter/TOTAL.json")
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visitor-count").textContent = data.count;
+    })
+    .catch(error => {
+      console.log("Visitor count unavailable");
+    });
+</script>
 
   </main>
 </body>
