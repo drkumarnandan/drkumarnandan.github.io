@@ -466,7 +466,7 @@
          use: nandan-kumar
     -->
     <script>
-      const GOATCOUNTER_SITE = "YOUR-GOATCOUNTER-SUBDOMAIN";
+      const GOATCOUNTER_SITE = "drnkumar";
 
       const visitorEl = document.getElementById("visitor-count");
       const graphLink = document.getElementById("visitor-graph");
@@ -498,33 +498,7 @@
       }
     </script>
 
-    <!-- Global visitor counter (counts all visitors) using CountAPI -->
-    <script>
-      (function () {
-        const el = document.getElementById('visitor-count');
-        if (!el) return;
 
-        // Change these two strings to something unique for your site
-        // Example namespace: your domain or GitHub pages repo name
-        const NAMESPACE = 'drkumarnandan-github-io';
-        const KEY = 'home-total';
-
-        const url = `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
-
-        fetch(url)
-          .then(r => r.json())
-          .then(data => {
-            if (typeof data.value === 'number') {
-              el.textContent = data.value.toLocaleString();
-            } else {
-              el.textContent = '—';
-            }
-          })
-          .catch(() => {
-            el.textContent = '—';
-          });
-      })();
-    </script>
   </main>
 </body>
 </html>
