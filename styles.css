@@ -569,3 +569,368 @@ a:hover {
   color: var(--pro-heading);
   font-weight: 650;
 }
+
+
+/* ============================================================
+   RESTORED NON-HOME PAGE STYLES FROM OLD CSS
+   Keeps the new homepage design but restores shared, research,
+   methods, publication, badge, and inner-page styles.
+   ============================================================ */
+/* ========== SHARED STYLES ========== */
+
+.section {
+  margin-top: 2rem;
+}
+
+.section-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 1.05rem 1.25rem;
+  box-shadow: var(--shadow-soft);
+  margin-top: 0.6rem;
+}
+
+.section-card + .section-card {
+  margin-top: 0.8rem;
+}
+
+.lead {
+  font-size: 0.97rem;
+  color: var(--muted);
+  max-width: 54rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.08rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-right: 0.35rem;
+  margin-top: 0.2rem;
+  background: var(--surface-soft);
+}
+
+.pub {
+  margin-bottom: 0.95rem;
+  font-size: 0.95rem;
+}
+
+.pub-title {
+  font-weight: 600;
+}
+
+.pub-meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.pub-links {
+  font-size: 0.88rem;
+  margin-left: 0.25rem;
+}
+
+.pub-links a + a::before {
+  content: "·";
+  color: var(--muted);
+  margin: 0 0.3rem;
+}
+
+ul {
+  margin: 0.4rem 0 0.3rem;
+  padding-left: 1.15rem;
+}
+li + li {
+  margin-top: 0.25rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 1px solid rgba(229, 231, 235, 0.9);
+  margin-top: 2.4rem;
+  padding-top: 0.9rem;
+  font-size: 0.83rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer-sep {
+  margin: 0 0.3rem;
+}
+
+/* hero heading on inner pages */
+main .hero-heading:not(.home-hero) {
+  font-size: 1.8rem;
+}
+
+/* ========== RESEARCH PAGE SPECIFIC ========== */
+
+.research-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 0.6rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.research-card {
+  height: 100%;
+}
+
+/* row: image left, text right */
+.research-theme {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 750px) {
+  .research-theme {
+    flex-direction: column;
+  }
+}
+
+.research-figure {
+  flex-shrink: 0;
+}
+
+.research-figure img {
+  width: 210px;
+  max-width: 40vw;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* body on the right */
+.research-body {
+  flex: 1;
+}
+
+/* text styles */
+.research-title {
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  font-size: 1.02rem;
+}
+
+.research-tagline {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+}
+
+.research-list {
+  margin: 0.3rem 0 0.5rem;
+  padding-left: 1rem;
+  font-size: 0.93rem;
+}
+.research-list li + li {
+  margin-top: 0.3rem;
+}
+
+.research-mini-pubs {
+  margin-top: 0.4rem;
+  font-size: 0.87rem;
+}
+
+.mini-pub {
+  margin-top: 0.15rem;
+}
+
+/* pills row for core areas */
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.pill {
+  font-size: 0.8rem;
+  padding: 0.14rem 0.6rem;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border-strong);
+  color: var(--muted);
+}
+
+/* subtitles in research sections */
+.research-subtitle {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+/* ===== Methods & tools visual cards ===== */
+
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .methods-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.methods-card {
+  position: relative;
+}
+
+.methods-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.methods-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eef2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4f46e5;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(129, 140, 248, 0.35);
+  font-size: 1rem;
+}
+
+.methods-icon-ml {
+  background: #ecfeff;
+  color: #0f766e;
+  box-shadow: 0 6px 18px rgba(45, 212, 191, 0.35);
+}
+
+.methods-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* tool badges with icons */
+.tool-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+}
+
+.tool-badge {
+  font-size: 0.78rem;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-soft);
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+
+.tool-badge i {
+
+
+/* ============================================================
+   Website & Research Impact section
+   ============================================================ */
+
+.impact-section {
+  margin-top: 2.6rem;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 850px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.impact-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.11);
+  border-color: #bfdbfe;
+}
+
+.impact-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  border: 1px solid #dbeafe;
+}
+
+.impact-content {
+  flex: 1;
+}
+
+.impact-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1e40af;
+  margin-bottom: 0.25rem;
+}
+
+.impact-number {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: #0b1f3a;
+  margin-bottom: 0.3rem;
+}
+
+.impact-card p {
+  margin: 0 0 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.impact-link {
+  font-size: 0.86rem;
+  font-weight: 650;
+  color: #2563eb;
+}
+
+.impact-link:hover {
+  color: #1e40af;
+}
