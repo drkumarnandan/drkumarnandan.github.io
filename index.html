@@ -34,16 +34,19 @@
   </div>
 
   <main class="page home-page">
+    <!-- TOP: two-column intro -->
     <section class="home-grid">
+      <!-- LEFT: name, photo, icons -->
       <div class="home-left">
         <h1 class="home-name">
           Nandan Kumar
         </h1>
 
+        <!-- Photo from working directory -->
         <img class="home-photo" src="nandan.jpg" alt="drnkumar">
 
         <div class="home-subtitle">
-          Postdoctoral Researcher | Computational Structural Biologist<br>
+          PPostdoctoral Researcher | Computational Structural Biologist<br>
           Multiscale Modeling | Bioinformatics | AI-Driven Protein &amp; Peptide Design<br><br>
 
           <strong style="font-size: 1.02rem; letter-spacing: 0.3px;">
@@ -76,6 +79,7 @@
         <a class="cv-button" href="Nandan_Kumar_CV.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
 
+      <!-- RIGHT: intro & recent work -->
       <div class="home-right">
         <p class="identity-line" style="text-align: justify;">
           Computational structural biologist developing integrative multiscale modeling, bioinformatics, and AI-driven frameworks to decode, predict, and design functional proteins and peptides across complex biological systems.
@@ -124,6 +128,7 @@
       </div>
     </section>
 
+    <!-- FEATURED WORK -->
     <section class="home-section featured-section">
       <h2 class="section-title">Featured work</h2>
       <div class="featured-grid">
@@ -145,6 +150,7 @@
       </div>
     </section>
 
+    <!-- RESEARCH PROGRAM -->
     <section class="home-section research-program-section">
       <h2 class="section-title">Research program</h2>
       <div class="program-grid">
@@ -179,6 +185,7 @@
       </div>
     </section>
 
+    <!-- RESEARCH EXPERTISE -->
     <section class="home-section">
       <h2 class="section-title">Research expertise</h2>
       <div class="home-two-col">
@@ -221,6 +228,7 @@
       </div>
     </section>
 
+    <!-- RECENT NEWS -->
     <section class="home-section">
       <h2 class="section-title">Recent news</h2>
       <div class="news-card">
@@ -249,6 +257,7 @@
       </div>
     </section>
 
+    <!-- RESEARCH HIGHLIGHTS -->
     <section class="home-section">
       <h2 class="section-title">Research highlights</h2>
       <ul class="home-highlights">
@@ -290,6 +299,7 @@
       </ul>
     </section>
 
+    <!-- SELECTED PUBLICATIONS -->
     <section class="home-section">
       <h2 class="section-title">Selected publications</h2>
       <ul class="home-pubs">
@@ -363,6 +373,7 @@
       </p>
     </section>
 
+    <!-- HONORS -->
     <section class="home-section">
       <h2 class="section-title">Honors &amp; awards</h2>
       <ul class="home-highlights">
@@ -393,6 +404,7 @@
       </ul>
     </section>
 
+    <!-- STATS STRIP -->
     <section class="home-section stats-section">
       <div class="stats-grid">
         <div class="stat-card">
@@ -471,20 +483,32 @@
       </span>
     </div>
 
+    <!-- GoatCounter Analytics -->
     <script
       data-goatcounter="https://drnkumar.goatcounter.com/count"
       async
       src="https://gc.zgo.at/count.js">
     </script>
 
+    <!-- Visitor Count for homepage root path -->
     <script>
-      var t = setInterval(function () {
-        if (window.goatcounter && window.goatcounter.visit_count) {
-          clearInterval(t);
-          window.goatcounter.visit_count({ append: '#visitor-count' });
-        }
-      }, 100);
+      fetch("https://drnkumar.goatcounter.com/counter//.json")
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("HTTP " + response.status);
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && data.count !== undefined && data.count !== null) {
+            document.getElementById("visitor-count").textContent = data.count;
+          }
+        })
+        .catch(function (err) {
+          console.log("Visitor count unavailable:", err);
+        });
     </script>
+
   </main>
 </body>
 </html>
