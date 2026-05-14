@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Professional Activities – Nandan Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Professional activities of Nandan Kumar, including editorial leadership, Research Topic editing, conferences, workshops, invited talks, poster presentations, peer review service, academic service, outreach, training, awards, and media coverage.">
+
+  <link rel="stylesheet" href="styles.css?v=31">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+
+  <style>
+    .activities-page p,
+    .activities-page li {
+      text-align: justify;
+    }
+
+    .activity-hero {
+      margin-bottom: 1.4rem;
+    }
+
+    .activity-hero .lead {
+      max-width: 58rem;
+    }
+
+    .activity-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 850px) {
+      .activity-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .activity-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .activity-stat {
+      background: #ffffff;
+      border: 1px solid var(--pro-border);
+      border-radius: 16px;
+      padding: 0.85rem 0.95rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .activity-stat-number {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: var(--pro-accent-dark);
+      line-height: 1.1;
+    }
+
+    .activity-stat-label {
+      margin-top: 0.28rem;
+      font-size: 0.76rem;
+      color: var(--pro-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.055em;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .chip-row {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-top: 0.95rem;
+    }
+
+    .chip {
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      background: rgba(37, 99, 235, 0.06);
+      color: var(--pro-heading);
+      padding: 0.28rem 0.68rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    .chip.active {
+      background: var(--pro-heading);
+      color: #ffffff;
+      border-color: var(--pro-heading);
+    }
+
+    .activity-section-card {
+      margin-top: 0.9rem;
+      background: #ffffff;
+      border: 1px solid rgba(15, 76, 129, 0.10);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .activity-section-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0f4c81, #2563eb, #3b82f6);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.65rem;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: var(--pro-heading);
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-head p {
+      margin: 0.25rem 0 0;
+      color: var(--pro-muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+      max-width: 850px;
+    }
+
+    .section-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.16);
+      color: #1e40af;
+      font-weight: 750;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .timeline-list {
+      display: grid;
+      gap: 0.58rem;
+      margin-top: 0.75rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.85rem;
+      align-items: start;
+      padding: 0.72rem 0.8rem;
+      border-radius: 14px;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      background: linear-gradient(90deg, #ffffff, #f8fafc);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.22);
+      box-shadow: 0 10px 24px rgba(15, 76, 129, 0.08);
+    }
+
+    @media (max-width: 760px) {
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .timeline-title {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.42;
+      color: var(--pro-heading);
+      font-weight: 750;
+    }
+
+    .timeline-location {
+      margin-top: 0.2rem;
+      color: var(--pro-text);
+      font-size: 0.84rem;
+      line-height: 1.48;
+    }
+
+    .timeline-desc {
+      margin-top: 0.28rem;
+      color: var(--pro-muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+      justify-content: flex-end;
+      align-items: flex-start;
+      max-width: 285px;
+    }
+
+    @media (max-width: 760px) {
+      .timeline-meta {
+        justify-content: flex-start;
+        max-width: none;
+      }
+    }
+
+    .activity-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.21rem 0.52rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      color: #1e40af;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .topic-link,
+    .review-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.26rem 0.56rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      background: #ffffff;
+      border: 1px solid var(--pro-border);
+      color: var(--pro-heading);
+    }
+
+    .topic-link:hover,
+    .review-link:hover {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    .review-list {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.7rem;
+      align-items: center;
+      padding: 0.62rem 0.72rem;
+      border-radius: 13px;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      background: #ffffff;
+    }
+
+    @media (max-width: 700px) {
+      .review-item {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .review-title {
+      margin: 0;
+      font-weight: 760;
+      color: var(--pro-heading);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+
+    .review-sub {
+      margin: 0.12rem 0 0;
+      color: var(--pro-muted);
+      font-size: 0.78rem;
+    }
+
+    .review-actions {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 700px) {
+      .review-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    .review-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      padding: 0.26rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: nowrap;
+      background: rgba(37, 99, 235, 0.08);
+      color: #1e40af;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 1000px) {
+      .media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .media-card {
+      background: #0f172a;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+      display: flex;
+      flex-direction: column;
+      min-height: 305px;
+    }
+
+    .img-wrap {
+      position: relative;
+      height: 225px;
+      background: #111827;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .media-card:hover .img-wrap img {
+      transform: scale(1.01);
+    }
+
+    .badge-row {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .media-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.28rem 0.56rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(8px);
+    }
+
+    .zoom-hint {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .media-body {
+      padding: 0.78rem;
+      color: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .media-title {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 760;
+      line-height: 1.32;
+    }
+
+    .media-desc {
+      margin: 0;
+      font-size: 0.8rem;
+      line-height: 1.48;
+      color: rgba(249, 250, 251, 0.86);
+    }
+
+    .media-meta {
+      margin-top: auto;
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      align-items: center;
+      color: rgba(229, 231, 235, 0.9);
+      font-size: 0.72rem;
+    }
+
+    .media-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.24rem 0.48rem;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.16);
+      border: 1px solid rgba(59, 130, 246, 0.22);
+      color: #e5edff;
+      font-weight: 650;
+      font-size: 0.7rem;
+    }
+
+    .media-links {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .media-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.32rem 0.52rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e5e7eb;
+      font-size: 0.76rem;
+      text-decoration: none;
+    }
+
+    .media-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.76);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-inner {
+      max-width: min(1100px, 96vw);
+      max-height: 92vh;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      color: #e5e7eb;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .modal-close {
+      cursor: pointer;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e5e7eb;
+    }
+
+    .modal-img-wrap {
+      background: #0b1220;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .modal-img-wrap img {
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
+
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link" href="databases.html">Databases</a>
+        <a class="nav-link active" href="activities.html">Activities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="page activities-page">
+
+    <section class="activity-hero">
+      <h1 class="hero-heading">Professional Activities</h1>
+
+      <p class="lead">
+        Selected professional activities, including editorial leadership, Research Topic editing,
+        conference presentations, workshops, invited seminars, peer review service, academic service,
+        scientific outreach, training, awards, and media coverage. These activities reflect my engagement
+        across computational chemistry, bioinformatics, molecular modeling, food protein science,
+        peptide research, drug discovery, and computational structural biology.
+      </p>
+
+      <div class="activity-stats">
+        <div class="activity-stat">
+          <div class="activity-stat-number">2</div>
+          <div class="activity-stat-label">Research Topic initiatives</div>
+        </div>
+
+        <div class="activity-stat">
+          <div class="activity-stat-number">14+</div>
+          <div class="activity-stat-label">Conferences &amp; workshops</div>
+        </div>
+
+        <div class="activity-stat">
+          <div class="activity-stat-number">30+</div>
+          <div class="activity-stat-label">Peer review assignments</div>
+        </div>
+
+        <div class="activity-stat">
+          <div class="activity-stat-number">2013–2026</div>
+          <div class="activity-stat-label">Academic activity timeline</div>
+        </div>
+      </div>
+
+      <div class="chip-row" id="chipRow">
+        <div class="chip active" data-filter="all">All</div>
+        <div class="chip" data-filter="editorial">Editorial</div>
+        <div class="chip" data-filter="talk">Talks</div>
+        <div class="chip" data-filter="poster">Posters</div>
+        <div class="chip" data-filter="academic">Academic Service</div>
+        <div class="chip" data-filter="review">Peer Review</div>
+        <div class="chip" data-filter="news">News &amp; Media</div>
+        <div class="chip" data-filter="award">Awards</div>
+        <div class="chip" data-filter="training">Training</div>
+        <div class="chip" data-filter="outreach">Outreach</div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL LEADERSHIP -->
+    <section class="section activity-block" data-section="editorial">
+      <div class="activity-section-card">
+        <div class="section-head">
+          <div>
+            <h2><i class="fa-solid fa-pen-nib"></i> Editorial &amp; Research Topic Leadership</h2>
+            <p>
+              Selected editorial and Research Topic activities reflecting engagement in computational
+              structural biology, peptide science, molecular modeling, machine learning, and drug discovery.
+            </p>
+          </div>
+          <div class="section-pill"><i class="fa-solid fa-book-open-reader"></i> Topic Leadership</div>
+        </div>
+
+        <div class="timeline-list">
+
+          <article class="timeline-item">
+            <div>
+              <h3 class="timeline-title">
+                Advancing Protein and Peptide Research through Multiscale Modelling and Machine Learning
+              </h3>
+              <div class="timeline-location">
+                Frontiers in Molecular Biosciences · Biological Modeling and Simulation
+              </div>
+              <div class="timeline-desc">
+                Serving as Topic Editor for a Research Topic focused on multiscale modeling,
+                machine learning, graph neural networks, enhanced sampling, protein and peptide
+                structure–dynamics, empirical force fields, and AI-assisted biomolecular design.
+              </div>
+            </div>
+
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-regular fa-calendar"></i> 2026</span>
+              <span class="activity-tag"><i class="fa-solid fa-user-pen"></i> Topic Editor</span>
+              <a class="topic-link"
+                 href="https://www.frontiersin.org/research-topics/77580/advancing-protein-and-peptide-research-through-multiscale-modelling-and-machine-learning"
+                 target="_blank"
+                 rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Topic page
+              </a>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div>
+              <h3 class="timeline-title">
+                Computational and AI-Driven Drug Discovery for Targeting Multidrug Efflux Proteins
+              </h3>
+              <div class="timeline-location">
+                Frontiers in Drug Discovery · Research Topic proposal under development
+              </div>
+              <div class="timeline-desc">
+                Research Topic proposal being developed around computational modeling,
+                AI-driven drug discovery, multidrug resistance, efflux proteins, molecular screening,
+                ligand optimization, resistance mechanisms, and structure-based therapeutic design.
+              </div>
+            </div>
+
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-regular fa-calendar"></i> 2026</span>
+              <span class="activity-tag"><i class="fa-solid fa-file-pen"></i> Under development</span>
+              <span class="activity-tag"><i class="fa-solid fa-flask"></i> Drug discovery</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTATIONS -->
+    <section class="section activity-block" data-section="talk poster">
+      <div class="activity-section-card">
+        <div class="section-head">
+          <div>
+            <h2><i class="fa-solid fa-chalkboard-user"></i> Conferences, Workshops &amp; Presentations</h2>
+            <p>
+              Selected invited seminars, oral presentations, PowerPoint presentations, poster presentations,
+              and academic workshop contributions.
+            </p>
+          </div>
+          <div class="section-pill"><i class="fa-solid fa-calendar-days"></i> 2013–2024</div>
+        </div>
+
+        <div class="timeline-list" id="presentationList"></div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC SERVICE -->
+    <section class="section activity-block" data-section="academic training outreach">
+      <div class="activity-section-card">
+        <div class="section-head">
+          <div>
+            <h2><i class="fa-solid fa-people-group"></i> Academic Service, Training &amp; Outreach</h2>
+            <p>
+              Selected academic activities involving industrial collaboration, computational training,
+              hands-on workshops, and science outreach.
+            </p>
+          </div>
+          <div class="section-pill"><i class="fa-solid fa-hands-helping"></i> Service &amp; Training</div>
+        </div>
+
+        <div class="timeline-list">
+
+          <article class="timeline-item">
+            <div>
+              <h3 class="timeline-title">Industrial Project on Cyclodextrin–Drug Complexes</h3>
+              <div class="timeline-location">
+                Computational modeling and molecular simulation-based industry-linked project
+              </div>
+              <div class="timeline-desc">
+                Studied cyclodextrin–drug complexes using electronic structure calculations,
+                molecular dynamics simulations, and machine learning approaches to understand
+                host–guest binding, molecular stability, and complexation behavior.
+              </div>
+            </div>
+
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-solid fa-industry"></i> Industrial project</span>
+              <span class="activity-tag"><i class="fa-solid fa-atom"></i> QM / MD / ML</span>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div>
+              <h3 class="timeline-title">
+                Drug Discovery Hackathon: Molecular Docking, Simulation &amp; Text Mining
+              </h3>
+              <div class="timeline-location">
+                Training and hands-on computational drug discovery sessions
+              </div>
+              <div class="timeline-desc">
+                Delivered lectures on molecular docking, molecular simulation, and text mining.
+                Conducted hands-on sessions on molecular dynamics simulations using GROMACS
+                and text mining workflows using RStudio.
+              </div>
+            </div>
+
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-solid fa-chalkboard-user"></i> Lecturer / Trainer</span>
+              <span class="activity-tag"><i class="fa-solid fa-cube"></i> GROMACS</span>
+              <span class="activity-tag"><i class="fa-brands fa-r-project"></i> RStudio</span>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div>
+              <h3 class="timeline-title">CSIR–Jigyasa Student–Scientist Connect Program</h3>
+              <div class="timeline-location">
+                Science outreach and student interaction program
+              </div>
+              <div class="timeline-desc">
+                Participated in CSIR–Jigyasa outreach activities by visiting schools and interacting
+                with students and faculty members. Explained the purpose of the program and how
+                students can connect with scientists across India to build scientific curiosity and awareness.
+              </div>
+            </div>
+
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-solid fa-school"></i> Outreach</span>
+              <span class="activity-tag"><i class="fa-solid fa-people-group"></i> Student engagement</span>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div>
+              <h3 class="timeline-title">Bioinformatics and Genome Analysis Training</h3>
+              <div class="timeline-location">
+                Hands-on student training in computational biology
+              </div>
+              <div class="timeline-desc">
+                Assisted in training students in computational genome analysis and bioinformatics workflows,
+                contributing to practical skill development in sequence analysis and computational biology.
+              </div>
+            </div>
+
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-solid fa-dna"></i> Bioinformatics</span>
+              <span class="activity-tag"><i class="fa-solid fa-laptop-code"></i> Training</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PEER REVIEW -->
+    <section class="section activity-block" data-section="review">
+      <div class="activity-section-card">
+        <div class="section-head">
+          <div>
+            <h2><i class="fa-solid fa-shield-halved"></i> Peer Review Service</h2>
+            <p>
+              Reviewer for manuscripts across journals in food science, biomolecular research,
+              computational biology, molecular biosciences, microbiology, pharmacology, and sustainability.
+            </p>
+          </div>
+          <div class="section-pill"><i class="fa-solid fa-check-double"></i> 30+ Reviews</div>
+        </div>
+
+        <div class="review-list" id="reviewList"></div>
+
+        <p class="muted">
+          Counts indicate approximate number of reviewed manuscripts. Journal links open official journal pages.
+        </p>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section activity-block" data-section="news award training outreach">
+      <div class="activity-section-card">
+        <div class="section-head">
+          <div>
+            <h2><i class="fa-solid fa-newspaper"></i> News, Media, Awards, Training &amp; Outreach</h2>
+            <p>
+              Selected press clips and online mentions highlighting awards, outreach, training,
+              and science engagement activities.
+            </p>
+          </div>
+          <div class="section-pill"><i class="fa-solid fa-award"></i> Media Highlights</div>
+        </div>
+
+        <div class="media-grid" id="mediaGrid"></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>© 2026 Nandan Kumar.</span>
+      <span class="footer-sep">·</span>
+      <span>Visitors: <span id="visitor-count">0</span></span>
+      <span class="footer-sep">·</span>
+      <span>📊 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Graph</a></span>
+      <span class="footer-sep">·</span>
+      <span>🌍 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Map</a></span>
+    </div>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-inner" role="dialog" aria-modal="true">
+        <div class="modal-top">
+          <strong id="modalTitle">Preview</strong>
+          <div class="modal-close" id="modalClose" title="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <div class="modal-img-wrap">
+          <img id="modalImg" src="" alt="Full preview">
+        </div>
+      </div>
+    </div>
+
+    <script data-goatcounter="https://drnkumar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+
+    <script>
+      fetch("https://drnkumar.goatcounter.com/counter//.json")
+        .then(function (response) {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && data.count !== undefined && data.count !== null) {
+            document.getElementById("visitor-count").textContent = data.count;
+          }
+        })
+        .catch(function () {
+          console.log("Visitor count unavailable");
+        });
+    </script>
+
+    <script>
+      function escapeHtml(str) {
+        return String(str || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      const presentations = [
+        {
+          title: "Cereals & Grains – Chemistry, Quality, and Technology Conference",
+          location: "Hyatt Regency, Schaumburg, Illinois, USA",
+          date: "October 16–17, 2024",
+          type: "PowerPoint presentation",
+          filter: "talk",
+          icon: "fa-person-chalkboard"
+        },
+        {
+          title: "Foods2024: The 5th Electronic Conference on Foods – The Future of Technology, Sustainability, and Nutrition in the Food Domain",
+          location: "Online",
+          date: "October 28–30, 2024",
+          type: "PowerPoint presentation",
+          filter: "talk",
+          icon: "fa-person-chalkboard"
+        },
+        {
+          title: "Seminar on Status and Need of Bioinformatics in Northeast Region",
+          location: "CSIR-NEIST, Jorhat, India",
+          date: "2022",
+          type: "Invited seminar",
+          filter: "talk",
+          icon: "fa-person-chalkboard"
+        },
+        {
+          title: "The Second Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences",
+          location: "Ibaraki University, Mito, Japan",
+          date: "2019",
+          type: "Oral presentation",
+          filter: "talk",
+          icon: "fa-person-chalkboard"
+        },
+        {
+          title: "International Bioresources Conclave and Ethnopharmacology Congress",
+          location: "City Convention Centre, Imphal, India",
+          date: "2023",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "Internal Seminar and Workshop on CRISPR/Cas-based Plant Functional Genomics and Computational Modeling",
+          location: "CSIR-NEIST, Jorhat, India",
+          date: "2023",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "International Conference on Advances in Chemical Biology and Biologics",
+          location: "CSIR-IICT, Hyderabad, India",
+          date: "2019",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "OpenTox Asia",
+          location: "CSIR-Indian Institute of Chemical Technology, Hyderabad, India",
+          date: "2019",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "International Conference on Advanced Chemical and Structural Biology",
+          location: "PRIST University, Chennai, India",
+          date: "2019",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "Asia-Pacific Conference of Theoretical and Computational Chemistry (APCTCC8)",
+          location: "IIT Bombay, India",
+          date: "2017",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "Protein Structure and Drug Discovery (PSDD)",
+          location: "University of Hyderabad, India",
+          date: "2017",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "21st CRSI-ACS",
+          location: "CSIR-Indian Institute of Chemical Technology, Hyderabad, India",
+          date: "2017",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "International Conference on Computational Modeling of Molecules and Materials",
+          location: "The River View Retreat at Corbett National Park, Nainital, India",
+          date: "2016",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        },
+        {
+          title: "Current Trends in Life Science",
+          location: "Central University of South Bihar, Patna, India",
+          date: "2013",
+          type: "Poster presentation",
+          filter: "poster",
+          icon: "fa-scroll"
+        }
+      ];
+
+      const reviewJournals = [
+        { name: "International Journal of Biological Macromolecules", count: 7, area: "Biomacromolecules · Biophysics", url: "https://www.sciencedirect.com/journal/international-journal-of-biological-macromolecules" },
+        { name: "Food Research International", count: 2, area: "Food Science · Processing", url: "https://www.sciencedirect.com/journal/food-research-international" },
+        { name: "Journal of Food Science", count: 8, area: "Food Chemistry · Quality", url: "https://ift.onlinelibrary.wiley.com/journal/17503841" },
+        { name: "Frontiers in Microbiology", count: 1, area: "Microbiology · Systems", url: "https://www.frontiersin.org/journals/microbiology" },
+        { name: "Frontiers in Genetics (Computational Genomics)", count: 1, area: "Genomics · Computation", url: "https://www.frontiersin.org/journals/genetics" },
+        { name: "Frontiers in Molecular Biosciences (Biophysics)", count: 1, area: "Biophysics · Molecular", url: "https://www.frontiersin.org/journals/molecular-biosciences" },
+        { name: "Frontiers in Sustainable Food Systems (Nutrition & Sustainable Diets)", count: 1, area: "Nutrition · Sustainability", url: "https://www.frontiersin.org/journals/sustainable-food-systems" },
+        { name: "Frontiers in Pharmacology (Translational Pharmacology)", count: 1, area: "Pharmacology · Translational", url: "https://www.frontiersin.org/journals/pharmacology" }
+      ];
+
+      const mediaItems = [
+        {
+          tags: ["news", "award"],
+          badge: "News · Award",
+          title: "CUSB Convocation & Gold Medals",
+          desc: "Prabhat Khabar covered the CUSB convocation and gold medal awards, including recognition among the gold medal recipients.",
+          date: "26 Mar 2018",
+          place: "Gaya / South Bihar",
+          sourceLabel: "Prabhat Khabar",
+          img: "prabhat-khabar-cusb-2018.png",
+          links: []
+        },
+        {
+          tags: ["news", "award"],
+          badge: "News · Award",
+          title: "Convocation Highlights",
+          desc: "Additional clip from the same coverage highlighting the convocation ceremony and gold medal announcements.",
+          date: "2018",
+          place: "Bihar, India",
+          sourceLabel: "Prabhat Khabar",
+          img: "parbhat_goldmedal.png",
+          links: []
+        },
+        {
+          tags: ["news", "training"],
+          badge: "News · Training",
+          title: "Genome Analysis Training Program",
+          desc: "Media report on a genome analysis training program at CUSB, where I served as one of the student trainers for computational genome analysis and bioinformatics workflows.",
+          date: "—",
+          place: "CUSB, India",
+          sourceLabel: "Hindi Press",
+          img: "genome-training.png",
+          links: []
+        },
+        {
+          tags: ["news", "outreach"],
+          badge: "News · Outreach",
+          title: "CSIR–JIGYASA Outreach",
+          desc: "Media coverage of CSIR–JIGYASA outreach at Livingstone Foundation International, promoting scientific engagement among school students in Northeast India.",
+          date: "Mar 2022",
+          place: "Dimapur, Nagaland",
+          sourceLabel: "Print coverage",
+          img: "csir_jigyasa_clip_1.png",
+          links: [
+            { label: "Read online", url: "https://morungexpress.com/lfi-collaborates-withcsir-jigyasa-program" }
+          ]
+        },
+        {
+          tags: ["news", "award"],
+          badge: "Online · Award",
+          title: "CUSB Convocation Coverage",
+          desc: "The Times of India reported on the CUSB convocation ceremony, during which gold medals were awarded to academic toppers.",
+          date: "2018",
+          place: "Patna, India",
+          sourceLabel: "Times of India",
+          img: "timesofindia_cover.png",
+          links: [
+            { label: "Read article", url: "https://timesofindia.indiatimes.com/city/patna/cusb-convocation-675-receive-degrees/articleshow/63493024.cms" }
+          ]
+        },
+        {
+          tags: ["news", "outreach"],
+          badge: "Online · Outreach",
+          title: "Nobel Laureate Outreach Highlight",
+          desc: "The Hans India covered an outreach event featuring Nobel Laureate Prof. Kurt Wüthrich and student science engagement activities.",
+          date: "2017",
+          place: "India",
+          sourceLabel: "The Hans India",
+          img: "hansindia_cover.png",
+          links: [
+            { label: "Read article", url: "https://www.thehansindia.com/posts/index/Hyderabad-Tab/2017-02-08/Nobel-laureate-inspires-children/279347" }
+          ]
+        }
+      ];
+
+      function iconFor(tags) {
+        if (tags.includes("award")) return "fa-award";
+        if (tags.includes("training")) return "fa-laptop-code";
+        if (tags.includes("outreach")) return "fa-people-group";
+        return "fa-newspaper";
+      }
+
+      function renderPresentations(filter = "all") {
+        const wrap = document.getElementById("presentationList");
+        if (!wrap) return;
+        wrap.innerHTML = "";
+
+        const data = presentations.filter(item => filter === "all" || item.filter === filter);
+
+        data.forEach(item => {
+          const row = document.createElement("article");
+          row.className = "timeline-item";
+          row.innerHTML = `
+            <div>
+              <h3 class="timeline-title">${escapeHtml(item.title)}</h3>
+              <div class="timeline-location">${escapeHtml(item.location)}</div>
+            </div>
+            <div class="timeline-meta">
+              <span class="activity-tag"><i class="fa-regular fa-calendar"></i> ${escapeHtml(item.date)}</span>
+              <span class="activity-tag"><i class="fa-solid ${escapeHtml(item.icon)}"></i> ${escapeHtml(item.type)}</span>
+            </div>
+          `;
+          wrap.appendChild(row);
+        });
+      }
+
+      function renderReviews() {
+        const wrap = document.getElementById("reviewList");
+        if (!wrap) return;
+        wrap.innerHTML = "";
+
+        reviewJournals.forEach(j => {
+          const row = document.createElement("div");
+          row.className = "review-item";
+          row.innerHTML = `
+            <div>
+              <p class="review-title">${escapeHtml(j.name)}</p>
+              <p class="review-sub">${escapeHtml(j.area)}</p>
+            </div>
+            <div class="review-actions">
+              <span class="review-count"><i class="fa-solid fa-hashtag"></i> ${j.count}</span>
+              <a class="review-link" href="${escapeHtml(j.url)}" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Journal
+              </a>
+            </div>
+          `;
+          wrap.appendChild(row);
+        });
+      }
+
+      function renderMedia(filter = "all") {
+        const wrap = document.getElementById("mediaGrid");
+        if (!wrap) return;
+        wrap.innerHTML = "";
+
+        const data = mediaItems.filter(item => filter === "all" || item.tags.includes(filter));
+
+        data.forEach(item => {
+          const linksHtml = item.links && item.links.length
+            ? `<div class="media-links">
+                ${item.links.map(l => `
+                  <a class="media-link" href="${escapeHtml(l.url)}" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> ${escapeHtml(l.label)}
+                  </a>
+                `).join("")}
+              </div>`
+            : "";
+
+          const card = document.createElement("article");
+          card.className = "media-card";
+          card.innerHTML = `
+            <div class="img-wrap" data-full="${escapeHtml(item.img)}" data-title="${escapeHtml(item.title)}" role="button" tabindex="0">
+              <div class="badge-row">
+                <span class="media-badge"><i class="fa-solid ${iconFor(item.tags)}"></i> ${escapeHtml(item.badge)}</span>
+              </div>
+              <div class="zoom-hint" title="View full">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+              <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.title)}" loading="lazy">
+            </div>
+
+            <div class="media-body">
+              <h3 class="media-title">${escapeHtml(item.title)}</h3>
+              <p class="media-desc">${escapeHtml(item.desc)}</p>
+              ${linksHtml}
+              <div class="media-meta">
+                <span class="media-pill"><i class="fa-regular fa-calendar"></i> ${escapeHtml(item.date)}</span>
+                <span class="media-pill"><i class="fa-regular fa-newspaper"></i> ${escapeHtml(item.sourceLabel)}</span>
+                <span class="media-pill"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.place)}</span>
+              </div>
+            </div>
+          `;
+
+          wrap.appendChild(card);
+        });
+
+        bindPreviewHandlers();
+      }
+
+      function applyFilter(filter) {
+        document.querySelectorAll(".activity-block").forEach(section => {
+          const tags = section.dataset.section.split(" ");
+          section.style.display = (filter === "all" || tags.includes(filter)) ? "block" : "none";
+        });
+
+        renderPresentations(filter);
+        renderReviews();
+        renderMedia(filter);
+      }
+
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalClose = document.getElementById("modalClose");
+
+      function openModal(src, title) {
+        modalTitle.textContent = title || "Preview";
+        modalImg.src = src;
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        modalImg.src = "";
+        document.body.style.overflow = "";
+      }
+
+      function bindPreviewHandlers() {
+        document.querySelectorAll(".img-wrap").forEach(wrap => {
+          const open = () => openModal(wrap.dataset.full, wrap.dataset.title);
+          wrap.addEventListener("click", open);
+          wrap.addEventListener("keydown", e => {
+            if (e.key === "Enter" || e.key === " ") open();
+          });
+        });
+      }
+
+      document.querySelectorAll(".chip").forEach(chip => {
+        chip.addEventListener("click", () => {
+          document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+          chip.classList.add("active");
+          applyFilter(chip.dataset.filter);
+        });
+      });
+
+      modalClose.addEventListener("click", closeModal);
+      modal.addEventListener("click", e => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+      });
+
+      renderPresentations("all");
+      renderReviews();
+      renderMedia("all");
+    </script>
+  </main>
+</body>
+</html>
