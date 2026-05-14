@@ -5,46 +5,46 @@
   <title>Contact – Nandan Kumar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Shared site styles -->
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Contact Nandan Kumar for collaborations, invited talks, research discussions, mentoring, computational structural biology, molecular dynamics simulations, protein language models, peptide prediction, food protein modeling, and AI-driven biomolecular research.">
 
-  <!-- Font Awesome -->
+  <link rel="stylesheet" href="styles.css?v=34">
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
-  />
+  >
 
   <style>
-    /* PAGE LAYOUT */
-    .contact-page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2.2rem 1.4rem 3.4rem;
+    .contact-page p,
+    .contact-page li {
+      text-align: justify;
     }
 
-    .page-header {
-      margin-bottom: 28px;
+    .contact-hero {
+      margin-bottom: 1.5rem;
     }
 
-    .page-header h1 {
-      font-size: 2.1rem;
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.02em;
+    .contact-hero .lead {
+      max-width: 58rem;
     }
 
-    .page-header p {
-      max-width: 650px;
-      color: #6b7280;
-      font-size: 0.98rem;
+    .contact-note-highlight {
+      max-width: 54rem;
+      margin: 0.7rem 0 0;
+      color: var(--pro-muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      padding-left: 1rem;
+      border-left: 4px solid var(--pro-accent);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.95fr);
+      gap: 1.2rem;
+      margin-top: 1rem;
     }
 
     @media (max-width: 900px) {
@@ -53,284 +53,593 @@
       }
     }
 
-    .card {
+    .contact-card {
       background: #ffffff;
-      border-radius: 14px;
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
-      padding: 20px 18px;
+      border: 1px solid rgba(15, 76, 129, 0.10);
+      border-radius: 18px;
+      padding: 1.15rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
     }
 
-    .card h2 {
-      font-size: 1.15rem;
-      margin-bottom: 0.75rem;
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0f4c81, #2563eb, #3b82f6);
+    }
+
+    .contact-card h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.08rem;
+      color: var(--pro-heading);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
+      letter-spacing: -0.01em;
     }
 
-    .card-section-title {
-      font-weight: 600;
+    .contact-card h2 i {
+      color: #2563eb;
+    }
+
+    .contact-block {
+      display: grid;
+      gap: 0.65rem;
       margin-top: 0.75rem;
-      margin-bottom: 0.25rem;
-      font-size: 0.98rem;
     }
 
     .contact-line {
-      display: flex;
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 0.7rem;
       align-items: flex-start;
-      gap: 10px;
-      margin-top: 6px;
-      font-size: 0.95rem;
-      color: #111827;
+      padding: 0.72rem 0.8rem;
+      border-radius: 14px;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      background: linear-gradient(90deg, #ffffff, #f8fafc);
     }
 
-    .contact-line i {
-      margin-top: 2px;
-      color: #2563eb;
-      min-width: 16px;
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1d4ed8;
+      flex-shrink: 0;
     }
 
-    .contact-line a {
-      color: #2563eb;
-      text-decoration: none;
+    .contact-label {
+      margin: 0;
+      color: var(--pro-heading);
+      font-size: 0.86rem;
+      font-weight: 750;
+      line-height: 1.35;
     }
 
-    .contact-line a:hover {
-      text-decoration: underline;
-    }
-
-    .contact-note {
-      margin-top: 14px;
+    .contact-text {
+      margin-top: 0.18rem;
+      color: var(--pro-text);
       font-size: 0.9rem;
-      color: #6b7280;
+      line-height: 1.55;
     }
 
-    /* SOCIAL LINKS BLOCK */
-    .social-row {
-      margin-top: 10px;
+    .contact-text a {
+      font-weight: 650;
+    }
+
+    .contact-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
     }
 
-    .social-pill {
+    .contact-button {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
+      gap: 0.4rem;
+      padding: 0.44rem 0.85rem;
       border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      background: #f9fafb;
-      font-size: 0.86rem;
-      color: #111827;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--pro-border);
+      color: var(--pro-heading);
+      background: #ffffff;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+
+    .contact-button.primary {
+      background: var(--pro-heading);
+      border-color: var(--pro-heading);
+      color: #ffffff;
+    }
+
+    .contact-button:hover {
+      transform: translateY(-1px);
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
       text-decoration: none;
     }
 
-    .social-pill i {
-      color: #2563eb;
+    .contact-button.primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      color: #ffffff;
     }
 
-    .social-pill:hover {
-      background: #eef2ff;
-      border-color: #c7d2fe;
+    .contact-mini-title {
+      margin: 1rem 0 0.55rem;
+      font-size: 0.95rem;
+      color: var(--pro-heading);
+      font-weight: 760;
+      letter-spacing: -0.01em;
     }
 
-    /* FORM */
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.55rem;
+      margin-top: 0.6rem;
+    }
+
+    @media (max-width: 520px) {
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.62rem 0.7rem;
+      border-radius: 14px;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      background: #ffffff;
+      color: var(--pro-heading);
+      text-decoration: none;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .profile-link:hover {
+      transform: translateY(-1px);
+      background: #f8fafc;
+      border-color: rgba(37, 99, 235, 0.22);
+      box-shadow: 0 10px 22px rgba(15, 76, 129, 0.08);
+      text-decoration: none;
+    }
+
+    .profile-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(37, 99, 235, 0.08);
+      color: #1d4ed8;
+      flex-shrink: 0;
+    }
+
+    .profile-name {
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 750;
+      line-height: 1.25;
+    }
+
+    .profile-sub {
+      display: block;
+      margin-top: 0.08rem;
+      color: var(--pro-muted);
+      font-size: 0.74rem;
+      line-height: 1.3;
+    }
+
+    .collab-list {
+      margin: 0.45rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--pro-text);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .collab-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    .form-note {
+      margin: 0 0 0.85rem;
+      color: var(--pro-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
     .contact-form label {
       display: block;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 4px;
-      color: #111827;
+      font-size: 0.84rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--pro-heading);
     }
 
     .contact-form input,
-    .contact-form textarea {
+    .contact-form textarea,
+    .contact-form select {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #d1d5db;
-      padding: 8px 10px;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
+      padding: 0.62rem 0.72rem;
+      font-size: 0.88rem;
+      margin-bottom: 0.7rem;
       font-family: inherit;
       box-sizing: border-box;
+      background: #ffffff;
+      color: var(--pro-heading);
     }
 
     .contact-form textarea {
-      min-height: 120px;
+      min-height: 125px;
       resize: vertical;
     }
 
     .contact-form input:focus,
-    .contact-form textarea:focus {
+    .contact-form textarea:focus,
+    .contact-form select:focus {
       outline: none;
       border-color: #2563eb;
-      box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
     }
 
-    .contact-form button {
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    .form-submit {
       border: none;
       border-radius: 999px;
-      padding: 9px 18px;
-      font-size: 0.92rem;
-      font-weight: 500;
-      background: #2563eb;
+      padding: 0.52rem 0.95rem;
+      font-size: 0.88rem;
+      font-weight: 750;
+      background: var(--pro-heading);
       color: #ffffff;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 0.45rem;
+      transition: background 0.18s ease, transform 0.18s ease;
     }
 
-    .contact-form button:hover {
+    .form-submit:hover {
+      transform: translateY(-1px);
       background: #1d4ed8;
     }
 
     .small-muted {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--pro-muted);
+      margin-top: 0.55rem;
+      line-height: 1.55;
+    }
+
+    .availability-box {
+      margin-top: 1rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), #ffffff);
+      border-left: 4px solid #2563eb;
+      color: var(--pro-text);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .availability-box strong {
+      color: var(--pro-heading);
     }
   </style>
 </head>
 
 <body>
-  <!-- Top navigation (same as other pages) -->
   <div class="topbar">
     <div class="topbar-inner">
       <div class="site-title">
         <a href="index.html">NANDAN KUMAR</a>
       </div>
+
       <nav class="nav-links">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="publications.html">Publications</a>
         <a class="nav-link" href="research.html">Research</a>
-        <a class="nav-link" href="conferences.html">Conferences</a>
+        <a class="nav-link" href="databases.html">Databases</a>
         <a class="nav-link" href="activities.html">Activities</a>
         <a class="nav-link" href="gallery.html">Gallery</a>
-        <a class="nav-link" href="databases.html">Databases</a>
         <a class="nav-link active" href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
 
-  <main class="contact-page">
-    <header class="page-header">
-      <h1>Contact</h1>
-      <p>
-        For collaborations, student mentoring, invited talks, or enquiries related to bioinformatics,
-        protein language models, and food protein simulations, you are welcome to reach out by email.
+  <main class="page contact-page">
+
+    <section class="contact-hero">
+      <h1 class="hero-heading">Contact</h1>
+
+      <p class="lead">
+        I welcome research discussions, collaborations, invited talks, student mentoring, manuscript-related
+        communication, and academic networking in computational structural biology, molecular simulations,
+        protein language models, peptide science, food protein modeling, and AI-driven biomolecular research.
       </p>
-    </header>
+
+      <p class="contact-note-highlight">
+        Email is the best way to reach me. Please include a short subject line and a brief description of
+        your research interest, collaboration idea, seminar invitation, or academic query.
+      </p>
+    </section>
 
     <section class="contact-grid">
-      <!-- LEFT: DETAILS -->
-      <article class="card">
+
+      <!-- LEFT CARD -->
+      <article class="contact-card">
         <h2><i class="fa-solid fa-user"></i> Contact information</h2>
 
-        <div class="contact-line">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>
-            Department of Grain Science &amp; Industry<br>
-            Kansas State University<br>
-            Manhattan, KS, USA
+        <div class="contact-block">
+
+          <div class="contact-line">
+            <div class="contact-icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <div>
+              <p class="contact-label">Current affiliation</p>
+              <div class="contact-text">
+                Department of Grain Science &amp; Industry<br>
+                Kansas State University<br>
+                Manhattan, Kansas, USA
+              </div>
+            </div>
           </div>
+
+          <div class="contact-line">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <p class="contact-label">Email</p>
+              <div class="contact-text">
+                <a href="mailto:nandan@ksu.edu">nandan@ksu.edu</a><br>
+                <a href="mailto:mr.kumarnandan@gmail.com">mr.kumarnandan@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <p class="contact-label">Location</p>
+              <div class="contact-text">
+                Manhattan, KS, United States
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <div class="contact-line">
-          <i class="fa-solid fa-envelope"></i>
-          <div>
-            <a href="mailto:mr.kumarnandan@gmail.com">mr.kumarnandan@gmail.com</a><br>
-            <a href="mailto:nandan@ksu.edu">nandan@ksu.edu</a>
-          </div>
+        <div class="contact-actions">
+          <a class="contact-button primary" href="mailto:nandan@ksu.edu?subject=Research%20collaboration%20or%20academic%20query">
+            <i class="fa-solid fa-envelope-open-text"></i> Email me
+          </a>
+
+          <a class="contact-button" href="publications.html">
+            <i class="fa-solid fa-file-lines"></i> Publications
+          </a>
+
+          <a class="contact-button" href="research.html">
+            <i class="fa-solid fa-flask"></i> Research
+          </a>
         </div>
 
-        <div class="contact-line">
-          <i class="fa-solid fa-phone"></i>
-          <div>
-            <!-- If you want to add a phone later, put it here -->
-          </div>
-        </div>
+        <h3 class="contact-mini-title">Research profiles and professional links</h3>
 
-        <p class="contact-note">
-          Email is the best way to reach me. I am happy to discuss collaborative projects at the
-          interface of <strong>AI/ML, molecular simulations, and food/health applications</strong>.
-        </p>
-
-        <h3 class="card-section-title">Research profiles</h3>
-        <div class="social-row">
+        <div class="profile-grid">
           <a href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&hl=en&oi=ao"
-             target="_blank" rel="noopener" class="social-pill">
-            <i class="fa-solid fa-graduation-cap"></i> Google Scholar
+             target="_blank" rel="noopener" class="profile-link">
+            <span class="profile-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+            <span>
+              <span class="profile-name">Google Scholar</span>
+              <span class="profile-sub">Citations &amp; publications</span>
+            </span>
           </a>
+
           <a href="https://orcid.org/0000-0001-6915-708X"
-             target="_blank" rel="noopener" class="social-pill">
-            <i class="fa-brands fa-orcid"></i> ORCID
+             target="_blank" rel="noopener" class="profile-link">
+            <span class="profile-icon"><i class="fa-brands fa-orcid"></i></span>
+            <span>
+              <span class="profile-name">ORCID</span>
+              <span class="profile-sub">Researcher identifier</span>
+            </span>
           </a>
+
           <a href="https://www.scopus.com/authid/detail.uri?authorId=57214110355"
-             target="_blank" rel="noopener" class="social-pill">
-            <i class="fa-solid fa-database"></i> Scopus
+             target="_blank" rel="noopener" class="profile-link">
+            <span class="profile-icon"><i class="fa-solid fa-database"></i></span>
+            <span>
+              <span class="profile-name">Scopus</span>
+              <span class="profile-sub">Author profile</span>
+            </span>
           </a>
+
           <a href="https://github.com/drkumarnandan"
-             target="_blank" rel="noopener" class="social-pill">
-            <i class="fa-brands fa-github"></i> GitHub
+             target="_blank" rel="noopener" class="profile-link">
+            <span class="profile-icon"><i class="fa-brands fa-github"></i></span>
+            <span>
+              <span class="profile-name">GitHub</span>
+              <span class="profile-sub">Code &amp; protocols</span>
+            </span>
           </a>
+
           <a href="https://www.linkedin.com/in/nandan-kumar-ph-d-5574b5141/"
-             target="_blank" rel="noopener" class="social-pill">
-            <i class="fa-brands fa-linkedin"></i> LinkedIn
+             target="_blank" rel="noopener" class="profile-link">
+            <span class="profile-icon"><i class="fa-brands fa-linkedin"></i></span>
+            <span>
+              <span class="profile-name">LinkedIn</span>
+              <span class="profile-sub">Professional profile</span>
+            </span>
           </a>
+
+          <a href="https://drkumarnandan.github.io"
+             target="_blank" rel="noopener" class="profile-link">
+            <span class="profile-icon"><i class="fa-solid fa-globe"></i></span>
+            <span>
+              <span class="profile-name">Personal Website</span>
+              <span class="profile-sub">Research portfolio</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="availability-box">
+          <strong>Open to:</strong> collaborative research, invited seminars, manuscript discussions,
+          computational protocol development, AI/ML projects, molecular simulation studies, and
+          research networking.
         </div>
       </article>
 
-      <!-- RIGHT: FORM (front-end template) -->
-      <article class="card">
+      <!-- RIGHT CARD -->
+      <article class="contact-card">
         <h2><i class="fa-solid fa-paper-plane"></i> Send a message</h2>
-        <p class="contact-note" style="margin-top:0;">
-          You can use this form template on your site, or adapt it to any backend/email service.
-          For now, it serves as a structured way for visitors to see how to contact you.
+
+        <p class="form-note">
+          This form creates an email draft using your default email app. You can also email me directly
+          using the address listed on this page.
         </p>
 
-        <form class="contact-form" onsubmit="return false;">
-          <label for="name">Name</label>
-          <input id="name" type="text" placeholder="Your full name">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your full name">
+            </div>
 
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="your.email@example.com">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="your.email@example.com">
+            </div>
+          </div>
+
+          <label for="topic">Topic</label>
+          <select id="topic">
+            <option value="Research collaboration">Research collaboration</option>
+            <option value="Invited seminar or talk">Invited seminar or talk</option>
+            <option value="Student mentoring or academic guidance">Student mentoring or academic guidance</option>
+            <option value="Manuscript or editorial communication">Manuscript or editorial communication</option>
+            <option value="Computational modeling / AI project">Computational modeling / AI project</option>
+            <option value="Other academic query">Other academic query</option>
+          </select>
 
           <label for="subject">Subject</label>
-          <input id="subject" type="text" placeholder="Collaboration, student opportunity, talk, etc.">
+          <input id="subject" type="text" placeholder="Brief subject of your message">
 
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Briefly describe your query or idea..."></textarea>
+          <textarea id="message" placeholder="Briefly describe your query, idea, invitation, or collaboration interest..."></textarea>
 
-          <button type="submit">
-            <i class="fa-solid fa-envelope-open-text"></i> Send (template only)
+          <button class="form-submit" type="submit">
+            <i class="fa-solid fa-envelope-open-text"></i> Open email draft
           </button>
+
           <div class="small-muted">
-            This form is a front-end template. You can later connect it to an email service or backend of your choice.
+            The form does not store messages on this website. It opens an email draft addressed to
+            <strong>nandan@ksu.edu</strong>.
           </div>
         </form>
+
+        <h3 class="contact-mini-title">Possible collaboration areas</h3>
+
+        <ul class="collab-list">
+          <li>Protein language models and AI/ML frameworks for peptide and protein function prediction.</li>
+          <li>Molecular dynamics simulations of proteins, peptides, membranes, food proteins, and solvent systems.</li>
+          <li>Membrane-active peptides, antimicrobial peptides, CPPs, allergenicity, and bioactive peptide discovery.</li>
+          <li>Food protein structure–function relationships, processing effects, stability, and molecular functionality.</li>
+          <li>Computational drug discovery, non-covalent interactions, molecular informatics, and open web resources.</li>
+        </ul>
       </article>
+
     </section>
 
     <div class="footer">
-      <span>© 2025 Nandan Kumar.</span>
+      <span>© 2026 Nandan Kumar.</span>
       <span class="footer-sep">·</span>
-      <span>Visits (this browser): <span id="visitor-count">—</span></span>
+      <span>Visitors: <span id="visitor-count">0</span></span>
+      <span class="footer-sep">·</span>
+      <span>📊 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Graph</a></span>
+      <span class="footer-sep">·</span>
+      <span>🌍 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Map</a></span>
     </div>
 
-    <!-- simple local visitor counter -->
+    <script data-goatcounter="https://drnkumar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+
     <script>
-      (function () {
-        const el = document.getElementById('visitor-count');
-        if (!el) return;
-        const key = 'nk_site_visit_count';
-        let count = parseInt(localStorage.getItem(key) || '0', 10);
-        count += 1;
-        localStorage.setItem(key, String(count));
-        el.textContent = count.toLocaleString();
-      })();
+      fetch("https://drnkumar.goatcounter.com/counter//.json")
+        .then(function (response) {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && data.count !== undefined && data.count !== null) {
+            document.getElementById("visitor-count").textContent = data.count;
+          }
+        })
+        .catch(function () {
+          console.log("Visitor count unavailable");
+        });
     </script>
+
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const topic = document.getElementById("topic").value.trim();
+        const subjectInput = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        const subject = subjectInput || topic;
+
+        const body =
+          "Dear Dr. Kumar,%0D%0A%0D%0A" +
+          encodeURIComponent(message || "I am writing to contact you regarding " + topic + ".") +
+          "%0D%0A%0D%0A" +
+          "Name: " + encodeURIComponent(name || "Not provided") + "%0D%0A" +
+          "Email: " + encodeURIComponent(email || "Not provided") + "%0D%0A" +
+          "Topic: " + encodeURIComponent(topic) + "%0D%0A%0D%0A" +
+          "Best regards,%0D%0A" +
+          encodeURIComponent(name || "");
+
+        window.location.href =
+          "mailto:nandan@ksu.edu" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + body;
+      });
+    </script>
+
   </main>
 </body>
 </html>
