@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Databases, Servers & Molecular Informatics Platforms – Nandan Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Databases, web servers, AI predictors, and molecular informatics platforms developed or co-developed by Nandan Kumar, including pLM4CPPs, pLM4Alg, MPDS, A2ID, CAD 2.0, fragment libraries, and computational drug discovery resources.">
+
+  <link rel="stylesheet" href="styles.css?v=28">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+
+  <style>
+    .platform-page p,
+    .platform-page li {
+      text-align: justify;
+    }
+
+    .platform-hero {
+      margin-bottom: 1.6rem;
+    }
+
+    .platform-hero .lead {
+      max-width: 58rem;
+    }
+
+    .platform-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 850px) {
+      .platform-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .platform-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .platform-stat {
+      background: #ffffff;
+      border: 1px solid var(--pro-border);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .platform-stat-number {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--pro-accent-dark);
+      line-height: 1.1;
+    }
+
+    .platform-stat-label {
+      margin-top: 0.35rem;
+      font-size: 0.82rem;
+      color: var(--pro-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .platform-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .platform-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 1.25rem;
+      background: #ffffff;
+      border: 1px solid rgba(15, 76, 129, 0.10);
+      border-radius: 18px;
+      padding: 1.15rem;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(37, 99, 235, 0.25);
+      box-shadow: 0 14px 34px rgba(15, 76, 129, 0.10);
+    }
+
+    .platform-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0f4c81, #2563eb, #3b82f6);
+    }
+
+    .platform-img {
+      width: 100%;
+      height: 205px;
+      object-fit: contain;
+      background: #f8fafc;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      border-radius: 14px;
+      padding: 0.45rem;
+      display: block;
+    }
+
+    .platform-content {
+      min-width: 0;
+    }
+
+    .platform-topline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      color: #1e40af;
+      font-size: 0.74rem;
+      font-weight: 750;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .platform-title {
+      margin: 0 0 0.4rem;
+      font-size: 1.15rem;
+      color: var(--pro-heading);
+      line-height: 1.35;
+      font-weight: 760;
+      letter-spacing: -0.01em;
+    }
+
+    .platform-desc {
+      margin: 0 0 0.55rem;
+      color: var(--pro-text);
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .platform-role {
+      margin: 0.65rem 0;
+      padding: 0.65rem 0.8rem;
+      background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), rgba(248, 250, 252, 0.95));
+      border-left: 4px solid #2563eb;
+      border-radius: 12px;
+      color: #374151;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .platform-role strong {
+      color: #0f4c81;
+    }
+
+    .platform-meta {
+      margin: 0.4rem 0 0.7rem;
+      color: var(--pro-muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .platform-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.6rem;
+    }
+
+    .platform-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.34rem 0.75rem;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--pro-heading);
+      border: 1px solid var(--pro-border);
+      font-size: 0.84rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .platform-links a.primary {
+      background: var(--pro-heading);
+      color: #ffffff;
+      border-color: var(--pro-heading);
+    }
+
+    .platform-links a:hover {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    .platform-links a.primary:hover {
+      background: #1d4ed8;
+      color: #ffffff;
+      border-color: #1d4ed8;
+    }
+
+    .platform-note {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      background: linear-gradient(90deg, #f8fafc, #ffffff);
+      color: var(--pro-text);
+      line-height: 1.7;
+      box-shadow: var(--shadow-soft);
+    }
+
+    @media (max-width: 780px) {
+      .platform-card {
+        grid-template-columns: 1fr;
+      }
+
+      .platform-img {
+        height: auto;
+        max-height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="site-title">
+        <a href="index.html">NANDAN KUMAR</a>
+      </div>
+
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="publications.html">Publications</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link" href="conferences.html">Conferences</a>
+        <a class="nav-link active" href="databases.html">Databases</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="page platform-page">
+
+    <!-- HERO -->
+    <section class="platform-hero">
+      <h1 class="hero-heading">Databases, Servers &amp; Molecular Informatics Platforms</h1>
+
+      <p class="lead">
+        I have contributed as a <strong>developer, co-developer, and computational scientist</strong>
+        to AI predictors, molecular databases, web servers, and cheminformatics platforms for
+        peptide prediction, molecular interaction analysis, chemical-space exploration, and
+        structure-based drug discovery.
+      </p>
+
+      <p class="lead">
+        These platforms reflect my broader interest in building <strong>open, reproducible, and data-driven
+        computational resources</strong> that connect molecular modeling, bioinformatics, non-covalent
+        interactions, peptide science, and therapeutic discovery.
+      </p>
+
+      <div class="platform-stats">
+        <div class="platform-stat">
+          <div class="platform-stat-number">AI</div>
+          <div class="platform-stat-label">Peptide prediction servers</div>
+        </div>
+
+        <div class="platform-stat">
+          <div class="platform-stat-number">MPDS</div>
+          <div class="platform-stat-label">Molecular informatics suite</div>
+        </div>
+
+        <div class="platform-stat">
+          <div class="platform-stat-number">A2ID / CAD</div>
+          <div class="platform-stat-label">Protein interaction databases</div>
+        </div>
+
+        <div class="platform-stat">
+          <div class="platform-stat-number">Open</div>
+          <div class="platform-stat-label">Web resources and GitHub workflows</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM TAGS -->
+    <section class="section">
+      <h2 class="section-title">Platform focus</h2>
+
+      <div class="pill-row">
+        <span class="pill">AI peptide predictors</span>
+        <span class="pill">Protein language models</span>
+        <span class="pill">Molecular informatics</span>
+        <span class="pill">Interaction databases</span>
+        <span class="pill">Chemical-space exploration</span>
+        <span class="pill">Fragment libraries</span>
+        <span class="pill">Drug discovery portals</span>
+        <span class="pill">Open computational workflows</span>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="section">
+      <h2 class="section-title">Selected platforms and databases</h2>
+
+      <div class="platform-grid">
+
+        <!-- pLM4CPPs -->
+        <article class="platform-card">
+          <img src="plm4cpps.png" class="platform-img" alt="pLM4CPPs server screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-brain"></i> AI Predictor</span>
+              <span class="platform-badge"><i class="fa-solid fa-code"></i> Developer</span>
+            </div>
+
+            <h3 class="platform-title">pLM4CPPs — Protein Language Model-Based Predictor for Cell-Penetrating Peptides</h3>
+
+            <p class="platform-desc">
+              pLM4CPPs is a deep learning framework and web server for predicting cell-penetrating peptides.
+              The platform integrates protein language model embeddings with convolutional neural networks
+              to support high-performance CPP prediction and peptide bioactivity analysis.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Developed the prediction framework, model workflow, web-server concept,
+              and GitHub-accessible implementation for CPP prediction using protein language model embeddings.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> Kumar, N.; Du, Z.; Li, Y. <em>Journal of Chemical Information and Modeling</em>, 2025.
+            </p>
+
+            <div class="platform-links">
+              <a class="primary" href="https://ry2acnp6ep.us-east-1.awsapprunner.com" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Try server
+              </a>
+              <a href="https://doi.org/10.1021/acs.jcim.4c01338" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View article
+              </a>
+              <a href="https://github.com/drkumarnandan/pLM4CPPs" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- pLM4Alg -->
+        <article class="platform-card">
+          <img src="plm4alg.png" class="platform-img" alt="pLM4Alg protocol screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-dna"></i> Protocol</span>
+              <span class="platform-badge"><i class="fa-brands fa-github"></i> Open Workflow</span>
+            </div>
+
+            <h3 class="platform-title">pLM4Alg — Protein Language Model Protocol for Allergen Prediction</h3>
+
+            <p class="platform-desc">
+              pLM4Alg is a reproducible protocol framework for predicting allergenic proteins and peptides
+              using protein language model embeddings and deep learning. The workflow is designed for
+              practical use in Google Colab and can be adapted to related protein or peptide classification tasks.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Developed the protocol structure, ESM2 embedding workflow,
+              CNN-based model pipeline, reproducible notebooks, example datasets, and GitHub documentation.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Status:</strong> Protocol manuscript under preparation; GitHub workflow available.
+            </p>
+
+            <div class="platform-links">
+              <a class="primary" href="https://github.com/drkumarnandan/pLM4Alg_Protocol" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub protocol
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- UniDL4BioPep -->
+        <article class="platform-card">
+          <img src="unidl4biopep.png" class="platform-img" alt="UniDL4BioPep protocol screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-network-wired"></i> Deep Learning</span>
+              <span class="platform-badge"><i class="fa-solid fa-book"></i> Book Chapter</span>
+            </div>
+
+            <h3 class="platform-title">UniDL4BioPep — Unified Deep Learning Workflow for Peptide Bioactivity Prediction</h3>
+
+            <p class="platform-desc">
+              UniDL4BioPep is a unified deep learning framework for predicting peptide bioactivity using
+              protein language model-derived sequence representations. The workflow supports reproducible
+              peptide modeling and can be adapted to different bioactive peptide prediction tasks.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Co-developed and documented the protocol workflow for
+              peptide bioactivity prediction using protein language models and deep learning.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> Du, Z.; Kumar, N.; Li, Y. In <em>Large Language Models in Protein Bioinformatics</em>, Springer, 2025.
+            </p>
+
+            <div class="platform-links">
+              <a href="https://doi.org/10.1007/978-1-0716-4623-6_17" target="_blank" rel="noopener">
+                <i class="fa-solid fa-book-open"></i> View chapter
+              </a>
+              <a class="primary" href="https://github.com/drkumarnandan/LLM_book_chapter" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MPDS COVID-19 -->
+        <article class="platform-card">
+          <img src="mpds-covid.png" class="platform-img" alt="MPDS COVID-19 portal screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-virus-covid"></i> Drug Discovery Portal</span>
+              <span class="platform-badge"><i class="fa-solid fa-database"></i> MPDS Resource</span>
+            </div>
+
+            <h3 class="platform-title">MPDS COVID-19 — Disease-Specific Drug Discovery Portal</h3>
+
+            <p class="platform-desc">
+              MPDS COVID-19 is an open-access disease-specific molecular informatics portal designed to support
+              drug discovery research against SARS-CoV-2. It integrates molecular properties, compounds,
+              fragments, targets, pathways, and computational analysis resources.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Contributed to the MPDS COVID-19 portal as part of the molecular
+              informatics and computational drug discovery resource-development effort.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> <em>GigaByte</em>, 2024.
+            </p>
+
+            <div class="platform-links">
+              <a class="primary" href="https://mpds.neist.res.in:8085" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit portal
+              </a>
+              <a href="https://doi.org/10.46471/gigabyte.125" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MPDS TB -->
+        <article class="platform-card">
+          <img src="mpds-tb.png" class="platform-img" alt="MPDS TB portal screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-lungs-virus"></i> TB Resource</span>
+              <span class="platform-badge"><i class="fa-solid fa-database"></i> MPDS Suite</span>
+            </div>
+
+            <h3 class="platform-title">MPDS TB — Molecular Property Diagnostic Suite for Tuberculosis</h3>
+
+            <p class="platform-desc">
+              MPDS TB is a molecular property and cheminformatics platform for tuberculosis-focused
+              therapeutic exploration. It supports molecular property assessment, compound tracking,
+              computational analysis, and structure-based drug discovery workflows.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Contributed to the MPDS-based tuberculosis molecular informatics
+              resource for assessing therapeutic potential of molecules.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> <em>Journal of Chemical Sciences</em>, 2017.
+            </p>
+
+            <div class="platform-links">
+              <a class="primary" href="http://mpds.neist.res.in:8083" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit portal
+              </a>
+              <a href="https://doi.org/10.1007/s12039-017-1268-4" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MPDS Fragment Library -->
+        <article class="platform-card">
+          <img src="mpds-fragment-library.png" class="platform-img" alt="MPDS fragment library screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-cubes"></i> Fragment Library</span>
+              <span class="platform-badge"><i class="fa-solid fa-flask"></i> Drug Discovery</span>
+            </div>
+
+            <h3 class="platform-title">MPDS Fragment Library — Chemical-Space Exploration Resource</h3>
+
+            <p class="platform-desc">
+              The MPDS Fragment Library supports systematic exploration of chemical space through curated
+              molecular fragments. It enables fragment-based analysis, molecular property evaluation,
+              and structure-oriented drug discovery workflows.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Contributed to the development and publication of the MPDS
+              fragment library module for systematic chemical-space exploration.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> <em>Molecular Diversity</em>, 2022.
+            </p>
+
+            <div class="platform-links">
+              <a href="https://doi.org/10.1007/s11030-022-10506-5" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MPDS Compound Library -->
+        <article class="platform-card">
+          <img src="mpds-compound-library.png" class="platform-img" alt="MPDS compound library screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-vial"></i> Compound Library</span>
+              <span class="platform-badge"><i class="fa-solid fa-chart-simple"></i> Chemical Space</span>
+            </div>
+
+            <h3 class="platform-title">MPDS Compound Library — Structure-Based Classification of Chemical Space</h3>
+
+            <p class="platform-desc">
+              The MPDS Compound Library focuses on structure-based organization and classification of chemical
+              space. It supports compound-level exploration, molecular property analysis, and computational
+              drug discovery decision-making.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Contributed to the MPDS compound library effort for classification
+              and exploration of drug-like chemical space.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> <em>Molecular Diversity</em>, 2023.
+            </p>
+
+            <div class="platform-links">
+              <a href="https://doi.org/10.21203/rs.3.rs-3236523/v1" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View preprint
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- A2ID -->
+        <article class="platform-card">
+          <img src="a2id.png" class="platform-img" alt="A2ID database screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-ring"></i> Interaction Database</span>
+              <span class="platform-badge"><i class="fa-solid fa-protein"></i> Protein Structures</span>
+            </div>
+
+            <h3 class="platform-title">A2ID 2.0 — Aromatic–Aromatic Interactions Database</h3>
+
+            <p class="platform-desc">
+              A2ID 2.0 is a curated database for analyzing aromatic–aromatic interactions in proteins,
+              including interaction motifs involving aromatic residues and their geometric organization
+              in protein structures.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Contributed to the development and analysis of A2ID 2.0,
+              supporting systematic investigation of aromatic–aromatic interactions in proteins.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> <em>International Journal of Biological Macromolecules</em>, 2023.
+            </p>
+
+            <div class="platform-links">
+              <a class="primary" href="https://acds.neist.res.in/a2idv2/" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore database
+              </a>
+              <a href="https://doi.org/10.1016/j.ijbiomac.2023.127207" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View article
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CAD -->
+        <article class="platform-card">
+          <img src="cad.png" class="platform-img" alt="CAD 2.0 database screenshot">
+
+          <div class="platform-content">
+            <div class="platform-topline">
+              <span class="platform-badge"><i class="fa-solid fa-atom"></i> Interaction Database</span>
+              <span class="platform-badge"><i class="fa-solid fa-magnet"></i> Cation–π</span>
+            </div>
+
+            <h3 class="platform-title">CAD 2.0 — Cation–Aromatic Database</h3>
+
+            <p class="platform-desc">
+              CAD 2.0 is a comprehensive resource for analyzing cation–aromatic interactions in proteins,
+              including interaction geometry, residue preferences, interaction types, and structural patterns.
+            </p>
+
+            <p class="platform-role">
+              <strong>My contribution:</strong> Contributed to the development and analysis of CAD 2.0 for
+              systematic study of cation–aromatic interactions in protein structures.
+            </p>
+
+            <p class="platform-meta">
+              <strong>Publication:</strong> <em>Proteins: Structure, Function, and Bioinformatics</em>, 2023.
+            </p>
+
+            <div class="platform-links">
+              <a class="primary" href="https://acds.neist.res.in/cadv2/" target="_blank" rel="noopener">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Explore CAD
+              </a>
+              <a href="https://doi.org/10.1002/prot.26600" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> View article
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- NOTE -->
+    <section class="section">
+      <h2 class="section-title">Development philosophy</h2>
+
+      <div class="platform-note">
+        My platform-development work focuses on building resources that are not only computationally useful,
+        but also scientifically interpretable and reusable. Across peptide prediction, molecular interaction
+        analysis, chemical-space exploration, and drug discovery workflows, I aim to connect curated data,
+        molecular modeling, AI/ML methods, and open web-accessible tools for broader scientific use.
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <span>© 2026 Nandan Kumar.</span>
+      <span class="footer-sep">·</span>
+      <span>Visitors: <span id="visitor-count">0</span></span>
+      <span class="footer-sep">·</span>
+      <span>📊 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Graph</a></span>
+      <span class="footer-sep">·</span>
+      <span>🌍 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Map</a></span>
+    </div>
+
+    <script data-goatcounter="https://drnkumar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+
+    <script>
+      fetch("https://drnkumar.goatcounter.com/counter//.json")
+        .then(function (response) {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && data.count !== undefined && data.count !== null) {
+            document.getElementById("visitor-count").textContent = data.count;
+          }
+        })
+        .catch(function () {
+          console.log("Visitor count unavailable");
+        });
+    </script>
+
+  </main>
+</body>
+</html>
