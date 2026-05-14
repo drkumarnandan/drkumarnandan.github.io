@@ -5,70 +5,148 @@
   <title>Publications – Nandan Kumar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <meta name="description" content="Publications of Nandan Kumar, covering protein language models, molecular dynamics simulations, membrane biophysics, food protein modeling, non-covalent interactions, molecular informatics, and computational drug discovery.">
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css?v=22">
+
+  <style>
+    /* ============================================================
+       PUBLICATIONS PAGE REFINEMENT
+       ============================================================ */
+
+    .pub {
+      margin-bottom: 1rem;
+    }
+
+    .pub-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-heading .badge {
+      margin: 0;
+      flex-shrink: 0;
+    }
+
+    .pub-title {
+      color: var(--pro-heading);
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .pub-meta {
+      margin-top: 0.15rem;
+      color: var(--pro-text);
+      font-size: 0.9rem;
+    }
+
+    .pub-note {
+      margin-top: 0.25rem;
+      font-size: 0.87rem;
+      color: var(--pro-muted);
+      line-height: 1.55;
+    }
+
+    .journal-name {
+      color: var(--pro-accent-dark);
+      font-weight: 650;
+    }
+
+    .pub-link-inline::before {
+      content: " · ";
+      color: var(--pro-muted);
+    }
+
+    .pub-link-inline a {
+      font-weight: 650;
+    }
+
+    .section-card .pub:not(:last-child) {
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.75);
+    }
+  </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="topbar-inner">
       <div class="site-title"><a href="index.html">NANDAN KUMAR</a></div>
-<nav class="nav-links">
-  <a class="nav-link" href="index.html">Home</a>
-  <a class="nav-link active" href="publications.html">Publications</a>
-  <a class="nav-link" href="research.html">Research</a>
-  <a class="nav-link" href="conferences.html">Conferences</a>
-  <a class="nav-link" href="databases.html">Databases</a>
-  <a class="nav-link" href="activities.html">Activities</a>
-  <a class="nav-link" href="gallery.html">Gallery</a>
-  <a class="nav-link" href="contact.html">Contact</a>
-</nav>
 
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="publications.html">Publications</a>
+        <a class="nav-link" href="research.html">Research</a>
+        <a class="nav-link" href="conferences.html">Conferences</a>
+        <a class="nav-link" href="databases.html">Databases</a>
+        <a class="nav-link" href="activities.html">Activities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
   </div>
 
   <main class="page">
+
     <!-- HERO -->
     <section>
       <h1 class="hero-heading">Publications</h1>
+
       <p class="lead">
-        My work spans <strong>AI/ML for peptides and proteins</strong>, 
-        <strong>molecular simulations and non-covalent interactions</strong>, 
-        and <strong>food protein structure and functionality</strong>. 
-        Below is a complete list of manuscripts, peer-reviewed articles, book chapters, and patent.
+        My work spans <strong>protein language models and AI-guided peptide prediction</strong>,
+        <strong>molecular simulations and membrane biophysics</strong>,
+        <strong>food protein structure–function modeling</strong>,
+        <strong>non-covalent interaction chemistry</strong>, and
+        <strong>computational drug discovery platforms</strong>.
+        Below is a curated list of manuscripts, peer-reviewed journal articles, book chapters, databases, and intellectual property contributions.
       </p>
+
       <p class="muted">
-        Citation metrics (Google Scholar, since 2020): Citations ≈ 280 · h-index = 10 · i10-index = 10. 
+        Citation metrics: Citations 400+ · h-index 11 · i10-index 11.
         A live list is available on
         <a href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
           Google Scholar
         </a>.
       </p>
+
+      <div class="pill-row" style="margin-top:1rem;">
+        <a class="pill" href="https://scholar.google.com/citations?user=PL1BA5UAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+          <i class="fa-solid fa-graduation-cap"></i> Google Scholar
+        </a>
+
+        <a class="pill" href="https://orcid.org/0000-0001-6915-708X" target="_blank" rel="noopener">
+          <i class="fa-brands fa-orcid"></i> ORCID
+        </a>
+
+        <a class="pill" href="https://www.scopus.com/authid/detail.uri?authorId=57214110355" target="_blank" rel="noopener">
+          <i class="fa-solid fa-chart-line"></i> Scopus
+        </a>
+      </div>
     </section>
 
     <!-- QUICK STATS -->
     <section class="section">
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-number">30+</div>
-          <div class="stat-label">Publications</div>
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Peer-reviewed<br>articles</div>
         </div>
+
         <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Manuscripts<br>in progress</div>
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Submitted /<br>in preparation</div>
         </div>
+
         <div class="stat-card">
-          <div class="stat-number">7</div>
+          <div class="stat-number">8+</div>
           <div class="stat-label">Book<br>chapters</div>
         </div>
+
         <div class="stat-card">
           <div class="stat-number">1</div>
           <div class="stat-label">Patent</div>
@@ -83,6 +161,23 @@
       </div>
     </section>
 
+    <!-- RESEARCH THEMES -->
+    <section class="section">
+      <h2 class="section-title">Research themes</h2>
+
+      <div class="pill-row">
+        <span class="pill">Protein language models</span>
+        <span class="pill">Molecular dynamics simulations</span>
+        <span class="pill">Peptide–membrane biophysics</span>
+        <span class="pill">Food protein modeling</span>
+        <span class="pill">Non-covalent interactions</span>
+        <span class="pill">Quantum chemistry</span>
+        <span class="pill">Computational drug discovery</span>
+        <span class="pill">Molecular informatics</span>
+        <span class="pill">Chemical-space exploration</span>
+      </div>
+    </section>
+
     <!-- SELECTED HIGHLIGHTS -->
     <section class="section">
       <h2 class="section-title">Selected highlights</h2>
@@ -90,83 +185,184 @@
       <div class="home-two-col">
         <div class="section-card">
           <div class="badge">AI / ML</div>
+
           <div class="pub-title home-pub-title">
             pLM4CPPs: Protein Language Model-Based Predictor for Cell Penetrating Peptides
           </div>
+
           <div class="home-pub-meta">
-            Kumar, N.; Du, Z.; Li, Y. <em>J. Chem. Inf. Model.</em>, 2025, 65, 1128.
+            <strong>Kumar, N.</strong>; Du, Z.; Li, Y.
+            <span class="journal-name"><em>J. Chem. Inf. Model.</em></span>, 2025, 65, 1128
+            <span class="pub-link-inline"><a href="https://doi.org/10.1021/acs.jcim.4c01338" target="_blank" rel="noopener">View article</a></span>
           </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1021/acs.jcim.4c01338" target="_blank" rel="noopener">doi</a>
+
+          <div class="pub-note">
+            Introduced a protein language model-based deep learning framework for predicting cell-penetrating peptides.
           </div>
         </div>
 
         <div class="section-card">
           <div class="badge">Membranes</div>
+
           <div class="pub-title home-pub-title">
-            Membrane Selectivity Mechanisms of the Antimicrobial Peptide Snakin-Z Against Prokaryotic and Eukaryotic Membrane Models 
+            Membrane Selectivity Mechanisms of the Antimicrobial Peptide Snakin-Z Against Prokaryotic and Eukaryotic Membrane Models
           </div>
+
           <div class="home-pub-meta">
-            Kumar, N.; Du, Z.; Amachawadi, R. G.; Guo, X.; Zhao, J.; Li, Y.
-            <em>J. Phys. Chem. B</em>, 2025, 129, 4409.
+            <strong>Kumar, N.</strong>; Du, Z.; Amachawadi, R. G.; Guo, X.; Zhao, J.; Li, Y.
+            <span class="journal-name"><em>J. Phys. Chem. B</em></span>, 2025, 129, 4409
+            <span class="pub-link-inline"><a href="https://doi.org/10.1021/acs.jpcb.5c01013" target="_blank" rel="noopener">View article</a></span>
           </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1021/acs.jpcb.5c01013" target="_blank" rel="noopener">doi</a>
+
+          <div class="pub-note">
+            Provided atomistic insight into how antimicrobial peptides discriminate between bacterial and mammalian membrane models.
           </div>
         </div>
 
         <div class="section-card">
           <div class="badge">Food proteins</div>
+
           <div class="pub-title home-pub-title">
-            Solvent-dependent structural and dynamic behavior of α-gliadin in aqueous ethanol systems: Insights from molecular dynamics simulations
+            Solvent-Dependent Structural and Dynamic Behavior of α-Gliadin in Aqueous Ethanol Systems: Insights from Molecular Dynamics Simulations
           </div>
+
           <div class="home-pub-meta">
-            Kumar, N.; Li, Y. <em>Food Chemistry</em>, 2025, 497, 147044.
+            <strong>Kumar, N.</strong>; Li, Y.
+            <span class="journal-name"><em>Food Chemistry</em></span>, 2025, 497, 147044
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.foodchem.2025.147044" target="_blank" rel="noopener">View article</a></span>
           </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.foodchem.2025.147044" target="_blank" rel="noopener">doi</a>
+
+          <div class="pub-note">
+            Used molecular simulations to connect ethanol–water environments with α-gliadin structural dynamics and aggregation-relevant behavior.
           </div>
         </div>
 
         <div class="section-card">
           <div class="badge">Non-covalent</div>
+
           <div class="pub-title home-pub-title">
             Towards Developing a Criterion to Characterize Non-Covalent Bonds
           </div>
+
           <div class="home-pub-meta">
-            Kumar, N.; Saha, S.; Sastry, G. N.
-            <em>Phys. Chem. Chem. Phys.</em>, 2021, 23(14), 8478.
+            <strong>Kumar, N.</strong>; Saha, S.; Sastry, G. N.
+            <span class="journal-name"><em>Phys. Chem. Chem. Phys.</em></span>, 2021, 23(14), 8478
+            <span class="pub-link-inline"><a href="https://doi.org/10.1039/d0cp05689h" target="_blank" rel="noopener">View article</a></span>
           </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1039/d0cp05689h" target="_blank" rel="noopener">doi</a>
+
+          <div class="pub-note">
+            Developed quantum mechanical insight into the characterization and interpretation of non-covalent bonding.
           </div>
         </div>
 
         <div class="section-card">
           <div class="badge">Databases</div>
+
           <div class="pub-title home-pub-title">
             Analyzing the Aromatic–Aromatic Interactions in Proteins: A2ID 2.0
           </div>
+
           <div class="home-pub-meta">
-            Kumar, Y. B.; Kumar, N.; Vaikundamani, S.; et al.
-            <em>Int. J. Biol. Macromol.</em>, 2023, 127207.
+            Kumar, Y. B.; <strong>Kumar, N.</strong>; Vaikundamani, S.; et al.
+            <span class="journal-name"><em>Int. J. Biol. Macromol.</em></span>, 2023, 127207
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.ijbiomac.2023.127207" target="_blank" rel="noopener">View article</a></span>
           </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.ijbiomac.2023.127207" target="_blank" rel="noopener">doi</a>
+
+          <div class="pub-note">
+            Contributed to a protein interaction database supporting systematic analysis of aromatic–aromatic interactions.
           </div>
         </div>
 
         <div class="section-card">
           <div class="badge">Review</div>
+
           <div class="pub-title home-pub-title">
-            Comprehensive review of chickpea (Cicer arietinum): Nutritional significance, health benefits, techno‐functionalities, and food applications
+            Comprehensive Review of Chickpea (Cicer arietinum): Nutritional Significance, Health Benefits, Techno‐functionalities, and Food Applications
           </div>
+
           <div class="home-pub-meta">
-            Kumar, N.; Hong, S.; Zhu, Y.; et al.
-            <em>Compr. Rev. Food Sci. Food Saf.</em>, 2025, 24, e70152.
+            <strong>Kumar, N.</strong>; Hong, S.; Zhu, Y.; et al.
+            <span class="journal-name"><em>Compr. Rev. Food Sci. Food Saf.</em></span>, 2025, 24, e70152
+            <span class="pub-link-inline"><a href="https://doi.org/10.1111/1541-4337.70152" target="_blank" rel="noopener">View article</a></span>
           </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/1541-4337.70152" target="_blank" rel="noopener">doi</a>
+
+          <div class="pub-note">
+            Synthesized current knowledge on chickpea nutrition, functionality, health relevance, and food applications.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED HIGHLY CITED WORKS -->
+    <section class="section">
+      <h2 class="section-title">Selected highly cited works</h2>
+
+      <div class="section-card">
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">HC</div>
+            <div class="pub-title">Towards Developing a Criterion to Characterize Non-Covalent Bonds: A Quantum Mechanical Study</div>
+          </div>
+
+          <div class="pub-meta">
+            <strong>Kumar, N.</strong>; Saha, S.; Sastry, G. N.
+            <span class="journal-name"><em>Phys. Chem. Chem. Phys.</em></span>, 2021, 23(14), 8478
+            <span class="pub-link-inline"><a href="https://doi.org/10.1039/d0cp05689h" target="_blank" rel="noopener">View article</a></span>
+          </div>
+
+          <div class="pub-note">
+            A major contribution to quantum mechanical interpretation of non-covalent bond characterization.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">HC</div>
+            <div class="pub-title">A Perspective on the Nature of Cation-π Interactions</div>
+          </div>
+
+          <div class="pub-meta">
+            <strong>Kumar, N.</strong>; Gaur, A. S.; Sastry, G. N.
+            <span class="journal-name"><em>J. Chem. Sci.</em></span>, 2021, 133, 97
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s12039-021-01959-6" target="_blank" rel="noopener">View article</a></span>
+          </div>
+
+          <div class="pub-note">
+            Summarized mechanistic and energetic features of cation–π interactions relevant to biomolecular recognition.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">HC</div>
+            <div class="pub-title">Comprehensive Review of Chickpea: Nutritional Significance, Health Benefits, Functionalities, and Food Applications</div>
+          </div>
+
+          <div class="pub-meta">
+            <strong>Kumar, N.</strong>; Hong, S.; Zhu, Y.; et al.
+            <span class="journal-name"><em>Compr. Rev. Food Sci. Food Saf.</em></span>, 2025, 24, e70152
+            <span class="pub-link-inline"><a href="https://doi.org/10.1111/1541-4337.70152" target="_blank" rel="noopener">View article</a></span>
+          </div>
+
+          <div class="pub-note">
+            A broad review covering nutritional, functional, and food application aspects of chickpea.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">HC</div>
+            <div class="pub-title">Study of Lipid Heterogeneity on Bilayer Membranes Using Molecular Dynamics Simulations</div>
+          </div>
+
+          <div class="pub-meta">
+            <strong>Kumar, N.</strong>; Sastry, G. N.
+            <span class="journal-name"><em>J. Mol. Graph. Model.</em></span>, 2021, 108, 108000
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.jmgm.2021.108000" target="_blank" rel="noopener">View article</a></span>
+          </div>
+
+          <div class="pub-note">
+            Demonstrated molecular simulation-based analysis of lipid heterogeneity and membrane organization.
           </div>
         </div>
       </div>
@@ -177,35 +373,128 @@
       <h2 class="section-title">Manuscripts submitted / under preparation</h2>
 
       <div class="section-card">
+
         <div class="pub">
-          <div class="badge">[1]</div>
-          <div class="pub-title">
-            pLM4G-CPPs: Protein Language Model-Guided Graph Learning for Cell-Penetrating Peptides Prediction
+          <div class="pub-heading">
+            <div class="badge">[1]</div>
+            <div class="pub-title">
+              Molecular Mechanisms of Ice Recognition in Wild-Type and Disulfide-Stabilized FfIBP Variants: An All-Atom Molecular Dynamics Study
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Li, Y. 2026. (Under preparation)
+            <strong>Kumar, N.</strong>; Li, Y. 2026. (Under preparation)
+          </div>
+
+          <div class="pub-note">
+            Focuses on atomistic mechanisms of ice recognition and structural stabilization in ice-binding protein variants.
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[2]</div>
-          <div class="pub-title">
-            Concentration-Dependent Mechanisms of Melittin-Induced Pore Formation in Eukaryotic and Prokaryotic Membranes
+          <div class="pub-heading">
+            <div class="badge">[2]</div>
+            <div class="pub-title">
+              Atomistic Insights into α-Gliadin Dimerization and Early Aggregation in Mixed Ethanol–Water Environments
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Li, Y. 2026. (Under preparation)
+            <strong>Kumar, N.</strong>; Li, Y. 2026. (Under preparation)
+          </div>
+
+          <div class="pub-note">
+            Investigates early protein–protein association and aggregation behavior of α-gliadin in mixed solvent environments.
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[3]</div>
-          <div class="pub-title">
-            All-atom to Coarse-grained Simulations of Food Proteins: Principles, Force fields, and Applications
+          <div class="pub-heading">
+            <div class="badge">[3]</div>
+            <div class="pub-title">
+              pLM4G-CPPs: Protein Language Model-Guided Graph Learning for Cell-Penetrating Peptides Prediction
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kwon, H.; Kumar, N.; Comer, J; Li, Y. <em>Food Chemistry</em>, 2026, (Under revision)
+            <strong>Kumar, N.</strong>; Li, Y. 2026. (Under preparation)
+          </div>
+
+          <div class="pub-note">
+            Extends protein language model-based peptide prediction toward graph-based sequence and structure representation learning.
           </div>
         </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">[4]</div>
+            <div class="pub-title">
+              Concentration-Dependent Mechanisms of Melittin-Induced Pore Formation in Eukaryotic and Prokaryotic Membranes
+            </div>
+          </div>
+
+          <div class="pub-meta">
+            <strong>Kumar, N.</strong>; Li, Y. 2026. (Under preparation)
+          </div>
+
+          <div class="pub-note">
+            Examines how peptide concentration regulates pore formation and membrane disruption across different membrane models.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">[5]</div>
+            <div class="pub-title">
+              Machine Learning-Driven NIR Spectroscopy for Rapid Prediction and Classification of Wheat Baking Quality
+            </div>
+          </div>
+
+          <div class="pub-meta">
+            Zhou, J.; <strong>Kumar, N.</strong>; Wu, X.; Tilley, M.; Zhang, G.; Fritz, A.; Li, Y.
+            <span class="journal-name"><em>Food Chemistry</em></span>, 2026. (Submitted)
+          </div>
+
+          <div class="pub-note">
+            Applies machine learning to NIR spectroscopy for rapid wheat quality prediction and classification.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">[6]</div>
+            <div class="pub-title">
+              All-Atom to Coarse-Grained Simulations of Food Proteins: Principles, Force Fields, and Applications
+            </div>
+          </div>
+
+          <div class="pub-meta">
+            Kwon, H.; <strong>Kumar, N.</strong>; Comer, J.; Li, Y.
+            <span class="journal-name"><em>Food Chemistry</em></span>, 2026. (Submitted)
+          </div>
+
+          <div class="pub-note">
+            Reviews simulation strategies connecting all-atom and coarse-grained models for food protein applications.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">[7]</div>
+            <div class="pub-title">
+              Charge-Mediated Cryoprotective Behaviors of Oligosaccharides to Myosin Denaturation: Molecular Insights from Protein-Saccharide Interactions
+            </div>
+          </div>
+
+          <div class="pub-meta">
+            Teng, Y.; Tao, T.; Shao, Y.; <strong>Kumar, N.</strong>; Li, Y.; Li, B.; Zhu, X. 2026. (Submitted)
+          </div>
+
+          <div class="pub-note">
+            Explores molecular mechanisms of protein–saccharide interactions underlying cryoprotection.
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -214,358 +503,382 @@
       <h2 class="section-title">Peer-reviewed journal articles</h2>
 
       <div class="section-card">
+
         <div class="pub">
-          <div class="badge">[4]</div>
-          <div class="pub-title">
-            Solvent-Dependent Structural and Dynamic Behavior of α-Gliadin in Aqueous Ethanol Systems:
-            Insights from Molecular Dynamics Simulations
-          </div>
-          <div class="pub-meta">
-            Kumar, N.; Li, Y. <em>Food Chemistry</em>, 2025, 497, 147044.
+          <div class="pub-heading">
+            <div class="badge">[8]</div>
+            <div class="pub-title">
+              Solvent-Dependent Structural and Dynamic Behavior of α-Gliadin in Aqueous Ethanol Systems: Insights from Molecular Dynamics Simulations
             </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.foodchem.2025.147044" target="_blank" rel="noopener">doi</a>
+          </div>
+
+          <div class="pub-meta">
+            <strong>Kumar, N.</strong>; Li, Y.
+            <span class="journal-name"><em>Food Chemistry</em></span>, 2025, 497, 147044
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.foodchem.2025.147044" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[5]</div>
-          <div class="pub-title">
-            Ferrichrysin Siderophore from Gangetic Aspergillus japonicus: Isolation, Characterization, and Role in Sustained Arsenic Tolerance
-          </div>
-          <div class="pub-meta">
-            Singh, A.; Kumar, R.; Kumar, N.; Barvkar, V. T.; Kumari, S.; Kumar, Y. B.; Pable, A. A.; Shukla, E.; Srivastava, A.
-            <em>World Journal of Microbiology and Biotechnology</em>, 2025, 41, 477.
+          <div class="pub-heading">
+            <div class="badge">[9]</div>
+            <div class="pub-title">
+              Ferrichrysin Siderophore from Gangetic Aspergillus japonicus: Isolation, Characterization, and Role in Sustained Arsenic Tolerance
             </div>
-          <div class="pub-links">
-            <a href="https://link.springer.com/article/10.1007/s11274-025-04672-5" target="_blank" rel="noopener">doi</a>
+          </div>
+
+          <div class="pub-meta">
+            Singh, A.; Kumar, R.; <strong>Kumar, N.</strong>; Barvkar, V. T.; Kumari, S.; Kumar, Y. B.; Pable, A. A.; Shukla, E.; Srivastava, A.
+            <span class="journal-name"><em>World Journal of Microbiology and Biotechnology</em></span>, 2025, 41, 477
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s11274-025-04672-5" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[6]</div>
-          <div class="pub-title">
-            Modification of Structural Properties and Potential Allergenicity of Ovalbumin Induced by Ultrasound Treatment During in vitro Digestion
+          <div class="pub-heading">
+            <div class="badge">[10]</div>
+            <div class="pub-title">
+              Modification of Structural Properties and Potential Allergenicity of Ovalbumin Induced by Ultrasound Treatment During in vitro Digestion
+            </div>
           </div>
+
           <div class="pub-meta">
-            Yang, J.; Kumar, N.; Kuang, H.; Li, Y.; Song, J.
-            <em>Food Chemistry</em>, 2025, 493, 146015.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.foodchem.2025.146015" target="_blank" rel="noopener">doi</a>
+            Yang, J.; <strong>Kumar, N.</strong>; Kuang, H.; Li, Y.; Song, J.
+            <span class="journal-name"><em>Food Chemistry</em></span>, 2025, 493, 146015
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.foodchem.2025.146015" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[7]</div>
-          <div class="pub-title">
-            Membrane Selectivity Mechanisms of Antimicrobial Peptide Snakin-Z against Prokaryotic and Eukaryotic Membrane Models
+          <div class="pub-heading">
+            <div class="badge">[11]</div>
+            <div class="pub-title">
+              Membrane Selectivity Mechanisms of Antimicrobial Peptide Snakin-Z against Prokaryotic and Eukaryotic Membrane Models
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Du, Z.; Amachawadi, R. G.; Guo, X.; Zhao, J.; Li, Y.
-            <em>J. Phys. Chem. B</em>, 2025, 129, 4409.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1021/acs.jpcb.5c01013" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Du, Z.; Amachawadi, R. G.; Guo, X.; Zhao, J.; Li, Y.
+            <span class="journal-name"><em>J. Phys. Chem. B</em></span>, 2025, 129, 4409
+            <span class="pub-link-inline"><a href="https://doi.org/10.1021/acs.jpcb.5c01013" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[8]</div>
-          <div class="pub-title">
-            pLM4CPPs: Protein Language Model-Based Predictor for Cell Penetrating Peptides
+          <div class="pub-heading">
+            <div class="badge">[12]</div>
+            <div class="pub-title">
+              pLM4CPPs: Protein Language Model-Based Predictor for Cell Penetrating Peptides
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Du, Z.; Li, Y.
-            <em>J. Chem. Inf. Model.</em>, 2025, 65, 1128.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1021/acs.jcim.4c01338" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Du, Z.; Li, Y.
+            <span class="journal-name"><em>J. Chem. Inf. Model.</em></span>, 2025, 65, 1128
+            <span class="pub-link-inline"><a href="https://doi.org/10.1021/acs.jcim.4c01338" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[9]</div>
-          <div class="pub-title">
-            Comprehensive Review of Chickpea (Cicer arietinum): Nutritional Significance, Health Benefits, Functionalities, and Food Applications
+          <div class="pub-heading">
+            <div class="badge">[13]</div>
+            <div class="pub-title">
+              Comprehensive Review of Chickpea (Cicer arietinum): Nutritional Significance, Health Benefits, Functionalities, and Food Applications
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Hong, S.; Zhu, Y.; Garay, A.; Yang, J.; Henderson, D.; Zhang, X.; Xu, Y.; Li, Y.
-            <em>Compr. Rev. Food Sci. Food Saf.</em>, 2025, 24, e70152.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1111/1541-4337.70152" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Hong, S.; Zhu, Y.; Garay, A.; Yang, J.; Henderson, D.; Zhang, X.; Xu, Y.; Li, Y.
+            <span class="journal-name"><em>Compr. Rev. Food Sci. Food Saf.</em></span>, 2025, 24, e70152
+            <span class="pub-link-inline"><a href="https://doi.org/10.1111/1541-4337.70152" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[10]</div>
-          <div class="pub-title">
-            Changes of Digestive Stability and Potential Allergenicity of High Hydrostatic Pressure-Treated Ovalbumin During in vitro Digestion
+          <div class="pub-heading">
+            <div class="badge">[14]</div>
+            <div class="pub-title">
+              Changes of Digestive Stability and Potential Allergenicity of High Hydrostatic Pressure-Treated Ovalbumin During in vitro Digestion
+            </div>
           </div>
+
           <div class="pub-meta">
-            Yang, J.; Kumar, N.; Kuang, H.; Song, J.; Li, Y.
-            <em>Food Chemistry</em>, 2025, 473, 142962.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.foodchem.2025.142962" target="_blank" rel="noopener">doi</a>
+            Yang, J.; <strong>Kumar, N.</strong>; Kuang, H.; Song, J.; Li, Y.
+            <span class="journal-name"><em>Food Chemistry</em></span>, 2025, 473, 142962
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.foodchem.2025.142962" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[11]</div>
-          <div class="pub-title">
-            Changes of Structure Properties and Potential Allergenicity of Ovalbumin under High Hydrostatic Pressures
+          <div class="pub-heading">
+            <div class="badge">[15]</div>
+            <div class="pub-title">
+              Changes of Structure Properties and Potential Allergenicity of Ovalbumin under High Hydrostatic Pressures
+            </div>
           </div>
+
           <div class="pub-meta">
-            Yang, J.; Kuang, H.; Kumar, N.; Song, J.; Li, Y.
-            <em>Food Research International</em>, 2024, 190, 114658.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.foodres.2024.114658" target="_blank" rel="noopener">doi</a>
+            Yang, J.; Kuang, H.; <strong>Kumar, N.</strong>; Song, J.; Li, Y.
+            <span class="journal-name"><em>Food Research International</em></span>, 2024, 190, 114658
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.foodres.2024.114658" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[12]</div>
-          <div class="pub-title">
-            Pea Protein-Stabilized Emulsion as a High-Performance Cryoprotectant in Frozen Dough: Effects on the Strong Stability and Baking Performance
+          <div class="pub-heading">
+            <div class="badge">[16]</div>
+            <div class="pub-title">
+              Pea Protein-Stabilized Emulsion as a High-Performance Cryoprotectant in Frozen Dough: Effects on the Storage Stability and Baking Performance
+            </div>
           </div>
+
           <div class="pub-meta">
-            Chen, Y.; […]; Kumar, N.; […]; Zhu, X.
-            <em>Foods</em>, 2024, 13, 3840.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.3390/foods13233840" target="_blank" rel="noopener">doi</a>
+            Chen, Y.; […]; <strong>Kumar, N.</strong>; […]; Zhu, X.
+            <span class="journal-name"><em>Foods</em></span>, 2024, 13, 3840
+            <span class="pub-link-inline"><a href="https://doi.org/10.3390/foods13233840" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[13]</div>
-          <div class="pub-title">
-            Co-Stabilization Effects of Gluten/Carrageenan to the Over-Heated Myofibrillar Protein:
-            Inhibit the Undesirable Gel Weakening and Protein Over-Aggregations
+          <div class="pub-heading">
+            <div class="badge">[17]</div>
+            <div class="pub-title">
+              Co-Stabilization Effects of Gluten/Carrageenan to the Over-Heated Myofibrillar Protein: Inhibit the Undesirable Gel Weakening and Protein Over-Aggregations
+            </div>
           </div>
+
           <div class="pub-meta">
-            Zhu, X.; […]; Kumar, N.; Li, Y.; […]; Dong, Z.
-            <em>Int. J. Biol. Macromol.</em>, 2024, 282, 136722.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.ijbiomac.2024.136722" target="_blank" rel="noopener">doi</a>
+            Zhu, X.; […]; <strong>Kumar, N.</strong>; Li, Y.; […]; Dong, Z.
+            <span class="journal-name"><em>Int. J. Biol. Macromol.</em></span>, 2024, 282, 136722
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.ijbiomac.2024.136722" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[14]</div>
-          <div class="pub-title">
-            Molecular Property Diagnostic Suite for COVID-19 (MPDS COVID-19): An Open Access Disease-Specific Drug Discovery Portal
+          <div class="pub-heading">
+            <div class="badge">[18]</div>
+            <div class="pub-title">
+              Molecular Property Diagnostic Suite for COVID-19 (MPDS COVID-19): An Open Access Disease-Specific Drug Discovery Portal
+            </div>
           </div>
+
           <div class="pub-meta">
-            Priyadarshinee, L.; […]; Kumar, N.; […]; Sastry, G. N.
-            <em>GigaByte</em>, 2024, 1–17.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1101/2023.08.29.555437" target="_blank" rel="noopener">doi</a>
+            Priyadarshinee, L.; […]; <strong>Kumar, N.</strong>; […]; Sastry, G. N.
+            <span class="journal-name"><em>GigaByte</em></span>, 2024, 1–17
+            <span class="pub-link-inline"><a href="https://doi.org/10.46471/gigabyte.125" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[15]</div>
-          <div class="pub-title">
-            Analyzing the Aromatic–Aromatic Interactions in Proteins: A2ID 2.0
+          <div class="pub-heading">
+            <div class="badge">[19]</div>
+            <div class="pub-title">
+              Analyzing the Aromatic–Aromatic Interactions in Proteins: A2ID 2.0
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, Y. B.; Kumar, N.; Vaikundamani, S.; Nagamani, S.; Mahanta, H. J.; Sastry, G. M.; Sastry, G. N.
-            <em>Int. J. Biol. Macromol.</em>, 2023, 127207.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.ijbiomac.2023.127207" target="_blank" rel="noopener">doi</a>
+            Kumar, Y. B.; <strong>Kumar, N.</strong>; Vaikundamani, S.; Nagamani, S.; Mahanta, H. J.; Sastry, G. M.; Sastry, G. N.
+            <span class="journal-name"><em>Int. J. Biol. Macromol.</em></span>, 2023, 127207
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.ijbiomac.2023.127207" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[16]</div>
-          <div class="pub-title">
-            Analyzing the Cation–Aromatic Interactions in Proteins: Cation-Aromatic Database V2.0
+          <div class="pub-heading">
+            <div class="badge">[20]</div>
+            <div class="pub-title">
+              Analyzing the Cation–Aromatic Interactions in Proteins: Cation-Aromatic Database V2.0
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, Y. B.; Kumar, N.; John, L.; Mahanta, H. J.; Vaikundamani, S.; Nagamani, S.; Sastry, G. M.; Sastry, G. N.
-            <em>Proteins</em>, 2023, 92, 179–191.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1002/prot.26600" target="_blank" rel="noopener">doi</a>
+            Kumar, Y. B.; <strong>Kumar, N.</strong>; John, L.; Mahanta, H. J.; Vaikundamani, S.; Nagamani, S.; Sastry, G. M.; Sastry, G. N.
+            <span class="journal-name"><em>Proteins</em></span>, 2023, 92, 179–191
+            <span class="pub-link-inline"><a href="https://doi.org/10.1002/prot.26600" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[17]</div>
-          <div class="pub-title">
-            Molecular Property Diagnostic Suite Compound Library (MPDS-CL): A Structure Based Classification of the Chemical Space
+          <div class="pub-heading">
+            <div class="badge">[21]</div>
+            <div class="pub-title">
+              Molecular Property Diagnostic Suite Compound Library (MPDS-CL): A Structure-Based Classification of the Chemical Space
+            </div>
           </div>
+
           <div class="pub-meta">
-            Jhon, L.; […]; Kumar, N.; […]; Sastry, G. N.
-            <em>Molecular Diversity</em>, 2023. (Under revision)
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.21203/rs.3.rs-3236523/v1" target="_blank" rel="noopener">preprint</a>
+            Jhon, L.; […]; <strong>Kumar, N.</strong>; […]; Sastry, G. N.
+            <span class="journal-name"><em>Molecular Diversity</em></span>, 2023
+            <span class="pub-link-inline"><a href="https://doi.org/10.21203/rs.3.rs-3236523/v1" target="_blank" rel="noopener">View preprint</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[18]</div>
-          <div class="pub-title">
-            Tracing the Transition from Covalent to Non-Covalent Functionalization of Pyrene through C-, N-, and O-Based Ionic and Radical Substrates Using Quantum Mechanical Calculations
+          <div class="pub-heading">
+            <div class="badge">[22]</div>
+            <div class="pub-title">
+              Tracing the Transition from Covalent to Non-Covalent Functionalization of Pyrene through C-, N-, and O-Based Ionic and Radical Substrates Using Quantum Mechanical Calculations
+            </div>
           </div>
+
           <div class="pub-meta">
-            Pandey, A.;* Kumar, N.* <em>RSC Advances</em>, 2023, 13, 14119.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1039/D3RA01457F" target="_blank" rel="noopener">doi</a>
+            Pandey, A.; <strong>Kumar, N.</strong>
+            <span class="journal-name"><em>RSC Advances</em></span>, 2023, 13, 14119
+            <span class="pub-link-inline"><a href="https://doi.org/10.1039/D3RA01457F" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[19]</div>
-          <div class="pub-title">
-            First Principle Calculations on the Micro-Solvation of 3d-Transition Metal Ions: Solvation vs Splitting Water
+          <div class="pub-heading">
+            <div class="badge">[23]</div>
+            <div class="pub-title">
+              First Principle Calculations on the Micro-Solvation of 3d-Transition Metal Ions: Solvation vs Splitting Water
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, Y. B.; Kumar, N.; Sharma, H.; Sastry, G. N.
-            <em>Theor. Chem. Acc.</em>, 2023, 142, 35.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/s00214-023-02974-1" target="_blank" rel="noopener">doi</a>
+            Kumar, Y. B.; <strong>Kumar, N.</strong>; Sharma, H.; Sastry, G. N.
+            <span class="journal-name"><em>Theor. Chem. Acc.</em></span>, 2023, 142, 35
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s00214-023-02974-1" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[20]</div>
-          <div class="pub-title">
-            Binding Propensity and Selectivity of Cationic, Anionic and Neutral Guests with Model Hydrophobic Hosts:
-            A First Principles Study
+          <div class="pub-heading">
+            <div class="badge">[24]</div>
+            <div class="pub-title">
+              Binding Propensity and Selectivity of Cationic, Anionic and Neutral Guests with Model Hydrophobic Hosts: A First Principles Study
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, Y. B.; Pandey, A.; Kumar, N.; Sastry, G. N.*
-            <em>J. Comput. Chem.</em>, 2022, 1–10.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1002/jcc.26977" target="_blank" rel="noopener">doi</a>
+            Kumar, Y. B.; Pandey, A.; <strong>Kumar, N.</strong>; Sastry, G. N.
+            <span class="journal-name"><em>J. Comput. Chem.</em></span>, 2022, 44, 432–441
+            <span class="pub-link-inline"><a href="https://doi.org/10.1002/jcc.26977" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[21]</div>
-          <div class="pub-title">
-            Towards Systematic Exploration of Chemical Space: Building the Fragment Library Module in Molecular Property Diagnostic Suite
+          <div class="pub-heading">
+            <div class="badge">[25]</div>
+            <div class="pub-title">
+              Towards Systematic Exploration of Chemical Space: Building the Fragment Library Module in Molecular Property Diagnostic Suite
+            </div>
           </div>
+
           <div class="pub-meta">
-            Gaur, A. S.; John, L.; Kumar, N.; Vivek, R. M.; Nagamani, S.; Mahanta, H. J.; Sastry, G. N.
-            <em>Molecular Diversity</em>, 2022, 1–10.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/s11030-022-10506-5" target="_blank" rel="noopener">doi</a>
+            Gaur, A. S.; John, L.; <strong>Kumar, N.</strong>; Vivek, R. M.; Nagamani, S.; Mahanta, H. J.; Sastry, G. N.
+            <span class="journal-name"><em>Molecular Diversity</em></span>, 2022
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s11030-022-10506-5" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[22]</div>
-          <div class="pub-title">
-            6-Ethoxy-4-N-(2-Morpholin-4-Ylethyl)-2-N-Propan-2-yl-1,3,5-Triazine-2,4-Diamine Endows Herbicidal Activity Against Phalaris Minor a Weed of Wheat Crop Field:
-            An in-Silico and Experimental Approaches of Herbicide Discovery
+          <div class="pub-heading">
+            <div class="badge">[26]</div>
+            <div class="pub-title">
+              6-Ethoxy-4-N-(2-Morpholin-4-Ylethyl)-2-N-Propan-2-yl-1,3,5-Triazine-2,4-Diamine Endows Herbicidal Activity Against Phalaris Minor a Weed of Wheat Crop Field: An in-Silico and Experimental Approaches of Herbicide Discovery
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Rani, P.; Agarwal, S.; Singh, D. V.
-            <em>J. Mol. Model.</em>, 2022, 28, 77.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/s00894-021-05006-6" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Rani, P.; Agarwal, S.; Singh, D. V.
+            <span class="journal-name"><em>J. Mol. Model.</em></span>, 2022, 28, 77
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s00894-021-05006-6" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[23]</div>
-          <div class="pub-title">
-            Repurposing of Approved Drugs to Predict New Inhibitors for Viral Infectious Diseases:
-            A Molecular Modelling Approaches
+          <div class="pub-heading">
+            <div class="badge">[27]</div>
+            <div class="pub-title">
+              Repurposing of Approved Drugs to Predict New Inhibitors for Viral Infectious Diseases: A Molecular Modelling Approach
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Sharma, H.; Sastry, G. N.
-            <em>J. Biomol. Struct. Dyn.</em>, 2022, 40, 8056–8073.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1080/07391102.2021.1905558" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Sharma, H.; Sastry, G. N.
+            <span class="journal-name"><em>J. Biomol. Struct. Dyn.</em></span>, 2022, 40, 8056–8073
+            <span class="pub-link-inline"><a href="https://doi.org/10.1080/07391102.2021.1905558" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[24]</div>
-          <div class="pub-title">
-            Towards Developing a Criterion to Characterize Non-Covalent Bonds: A Quantum Mechanical Study
+          <div class="pub-heading">
+            <div class="badge">[28]</div>
+            <div class="pub-title">
+              Towards Developing a Criterion to Characterize Non-Covalent Bonds: A Quantum Mechanical Study
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Saha, S.; Sastry, G. N.
-            <em>Phys. Chem. Chem. Phys.</em>, 2021, 23(14), 8478.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1039/d0cp05689h" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Saha, S.; Sastry, G. N.
+            <span class="journal-name"><em>Phys. Chem. Chem. Phys.</em></span>, 2021, 23(14), 8478
+            <span class="pub-link-inline"><a href="https://doi.org/10.1039/d0cp05689h" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[25]</div>
-          <div class="pub-title">
-            Fate of Sc-Ion Interaction with Water: A Computational Study to Address Splitting Water Versus Solvating Sc Ion
+          <div class="pub-heading">
+            <div class="badge">[29]</div>
+            <div class="pub-title">
+              Fate of Sc-Ion Interaction with Water: A Computational Study to Address Splitting Water Versus Solvating Sc Ion
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Kumar, Y. B.; Sharma, H.; Sastry, G. N.
-            <em>Frontiers in Chemistry</em>, 2021, 9, 738852.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.3389/fchem.2021.738852" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Kumar, Y. B.; Sharma, H.; Sastry, G. N.
+            <span class="journal-name"><em>Frontiers in Chemistry</em></span>, 2021, 9, 738852
+            <span class="pub-link-inline"><a href="https://doi.org/10.3389/fchem.2021.738852" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[26]</div>
-          <div class="pub-title">
-            Study of Lipid Heterogeneity on Bilayer Membranes Using Molecular Dynamics Simulations
+          <div class="pub-heading">
+            <div class="badge">[30]</div>
+            <div class="pub-title">
+              Study of Lipid Heterogeneity on Bilayer Membranes Using Molecular Dynamics Simulations
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Sastry, G. N.
-            <em>J. Mol. Graph. Model.</em>, 2021, 108, 108000.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.jmgm.2021.108000" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Sastry, G. N.
+            <span class="journal-name"><em>J. Mol. Graph. Model.</em></span>, 2021, 108, 108000
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/j.jmgm.2021.108000" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[27]</div>
-          <div class="pub-title">
-            A Perspective on the Nature of Cation-π Interactions
+          <div class="pub-heading">
+            <div class="badge">[31]</div>
+            <div class="pub-title">
+              A Perspective on the Nature of Cation-π Interactions
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Gaur, A. S.; Sastry, G. N.
-            <em>J. Chem. Sci.</em>, 2021, 133, 97.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/s12039-021-01959-6" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Gaur, A. S.; Sastry, G. N.
+            <span class="journal-name"><em>J. Chem. Sci.</em></span>, 2021, 133, 97
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s12039-021-01959-6" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[28]</div>
-          <div class="pub-title">
-            Assessing Therapeutic Potential of Molecules: Molecular Property Diagnostic Suite for Tuberculosis
+          <div class="pub-heading">
+            <div class="badge">[32]</div>
+            <div class="pub-title">
+              Assessing Therapeutic Potential of Molecules: Molecular Property Diagnostic Suite for Tuberculosis
+            </div>
           </div>
+
           <div class="pub-meta">
-            Gaur, A. S.; […]; Kumar, N.; […]; Sastry, G. N.
-            <em>J. Chem. Sci.</em>, 2017, 129, 515.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/s12039-017-1268-4" target="_blank" rel="noopener">doi</a>
+            Gaur, A. S.; […]; <strong>Kumar, N.</strong>; […]; Sastry, G. N.
+            <span class="journal-name"><em>J. Chem. Sci.</em></span>, 2017, 129, 515
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/s12039-017-1268-4" target="_blank" rel="noopener">View article</a></span>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -574,104 +887,132 @@
       <h2 class="section-title">Book chapters</h2>
 
       <div class="section-card">
+
         <div class="pub">
-          <div class="badge">[1]</div>
-          <div class="pub-title">
-            Advances in Bioactive Peptide Discovery: From Machine Learning to Protein Language Models
+          <div class="pub-heading">
+            <div class="badge">[1]</div>
+            <div class="pub-title">
+              Artificial Intelligence (AI)-Driven Optimization of Enzymatic Release of Bioactive Peptides
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Li, Y. (2025). In: G. Narahari Sastry, H. J. Mahanta, N. Selvaraman, &amp; T. C. Dinadayalane (eds.),
-            <em>Metamorphosis in Computational Chemistry Driven by Artificial Intelligence and Industry 5.0</em>.
-            Elsevier. (Submitted)
+            <strong>Kumar, N.</strong>; Li, Y. (2026).
+            In: C. C. Undeigwe &amp; S. Selby-Pham (Eds.),
+            <span class="journal-name"><em>Enzymes in Production of Bioactive Peptides and Their Functions</em></span>. Elsevier. (Under preparation)
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[2]</div>
-          <div class="pub-title">
-            Chemical Processing – Wet Extraction and Improvement Strategies
+          <div class="pub-heading">
+            <div class="badge">[2]</div>
+            <div class="pub-title">
+              Advances in Bioactive Peptide Discovery: From Machine Learning to Protein Language Models
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Rajpurohit, B.; Li, Y. (2025).
-            In: F. Boukid, M. C. Tulbek, S. Ganeshan, &amp; Y. Wang (eds.),
-            <em>Pulse Breeding, Processing, Functionality, and Products</em>, Elsevier. (Accepted)
+            <strong>Kumar, N.</strong>; Li, Y. (2025).
+            In: G. Narahari Sastry, H. J. Mahanta, N. Selvaraman, &amp; T. C. Dinadayalane (Eds.),
+            <span class="journal-name"><em>Metamorphosis in Computational Chemistry Driven by Artificial Intelligence and Industry 5.0</em></span>. Elsevier. (Submitted)
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[3]</div>
-          <div class="pub-title">
-            Predicting Peptide Bioactivity Using the Unified Model Architecture UniDL4BioPep
+          <div class="pub-heading">
+            <div class="badge">[3]</div>
+            <div class="pub-title">
+              Chemical Processing – Wet Extraction and Improvement Strategies
+            </div>
           </div>
+
           <div class="pub-meta">
-            Du, Z.; Kumar, N.; Li, Y. (2025).
-            In: KC, D. B. (Ed.), <em>Large Language Models (LLMs) in Protein Bioinformatics</em>.
-            Springer US, New York, NY, pp. 279–292.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-1-0716-4623-6_17" target="_blank" rel="noopener">doi</a>
+            <strong>Kumar, N.</strong>; Rajpurohit, B.; Li, Y. (2025).
+            In: F. Boukid, M. C. Tulbek, S. Ganeshan, &amp; Y. Wang (Eds.),
+            <span class="journal-name"><em>Pulse Breeding, Processing, Functionality, and Products</em></span>. Elsevier. (Accepted)
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[4]</div>
-          <div class="pub-title">
-            Applications of Molecular Dynamics Simulation and MM-PBSA Methods in Discovery of Veterinary Drugs
+          <div class="pub-heading">
+            <div class="badge">[4]</div>
+            <div class="pub-title">
+              Predicting Peptide Bioactivity Using the Unified Model Architecture UniDL4BioPep
+            </div>
           </div>
+
           <div class="pub-meta">
-            Kumar, N.; Mandal, P.; Kumar, B.; Rani, P.; Singh, D. V. (2025).
-            In: Kim, J.-M.; Pathak, R. K. (Eds.), <em>Bioinformatics in Veterinary Science: Vetinformatics</em>.
-            Springer Nature, Singapore, pp. 325–366.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-981-97-7395-4_14" target="_blank" rel="noopener">doi</a>
+            Du, Z.; <strong>Kumar, N.</strong>; Li, Y. (2025).
+            In: KC, D. B. (Ed.), <span class="journal-name"><em>Large Language Models (LLMs) in Protein Bioinformatics</em></span>.
+            Springer US, New York, NY, pp. 279–292
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/978-1-0716-4623-6_17" target="_blank" rel="noopener">View chapter</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[5]</div>
-          <div class="pub-title">
-            Chapter 9 – Protein Chemistry, Structure, Synthesis, and Functional Properties
+          <div class="pub-heading">
+            <div class="badge">[5]</div>
+            <div class="pub-title">
+              Applications of Molecular Dynamics Simulation and MM-PBSA Methods in Discovery of Veterinary Drugs
+            </div>
           </div>
+
           <div class="pub-meta">
-            Bean, S. R.; Ioerger, B. P.; Tilley, M.; […]; Kumar, N.; Li, Y. (2025).
+            <strong>Kumar, N.</strong>; Mandal, P.; Kumar, B.; Rani, P.; Singh, D. V. (2025).
+            In: Kim, J.-M.; Pathak, R. K. (Eds.), <span class="journal-name"><em>Bioinformatics in Veterinary Science: Vetinformatics</em></span>.
+            Springer Nature, Singapore, pp. 325–366
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/978-981-97-7395-4_14" target="_blank" rel="noopener">View chapter</a></span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-heading">
+            <div class="badge">[6]</div>
+            <div class="pub-title">
+              Chapter 9 – Protein Chemistry, Structure, Synthesis, and Functional Properties
+            </div>
+          </div>
+
+          <div class="pub-meta">
+            Bean, S. R.; Ioerger, B. P.; Tilley, M.; […]; <strong>Kumar, N.</strong>; Li, Y. (2025).
             In: Taylor, J. R. N.; Bean, S. R.; Duodu, K. G. (Eds.),
-            <em>Sorghum and Millets</em>, 3rd ed., Elsevier, pp. 233–269.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1016/B978-0-443-23954-0.00012-4" target="_blank" rel="noopener">doi</a>
+            <span class="journal-name"><em>Sorghum and Millets</em></span>, 3rd ed., Elsevier, pp. 233–269
+            <span class="pub-link-inline"><a href="https://doi.org/10.1016/B978-0-443-23954-0.00012-4" target="_blank" rel="noopener">View chapter</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[6]</div>
-          <div class="pub-title">
-            Overview of Plant-Based Proteins
+          <div class="pub-heading">
+            <div class="badge">[7]</div>
+            <div class="pub-title">
+              Overview of Plant-Based Proteins
+            </div>
           </div>
+
           <div class="pub-meta">
-            Du, Z.; Rajpurohit, B.; Kumar, N.; Li, Y. (2025).
-            In: Li, Y. (Ed.), <em>Plant-Based Proteins: Production, Physicochemical, Functional, and Sensory Properties</em>.
-            Springer US, New York, NY, pp. 3–19.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-1-0716-4272-6_1" target="_blank" rel="noopener">doi</a>
+            Du, Z.; Rajpurohit, B.; <strong>Kumar, N.</strong>; Li, Y. (2025).
+            In: Li, Y. (Ed.), <span class="journal-name"><em>Plant-Based Proteins: Production, Physicochemical, Functional, and Sensory Properties</em></span>.
+            Springer US, New York, NY, pp. 3–19
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/978-1-0716-4272-6_1" target="_blank" rel="noopener">View chapter</a></span>
           </div>
         </div>
 
         <div class="pub">
-          <div class="badge">[7]</div>
-          <div class="pub-title">
-            Free Amino and Sulfhydryl Group Content
+          <div class="pub-heading">
+            <div class="badge">[8]</div>
+            <div class="pub-title">
+              Free Amino and Sulfhydryl Group Content
+            </div>
           </div>
+
           <div class="pub-meta">
-            Xiao, R.; Hu, R.; Kumar, N.; Li, Y. (2025).
-            In: Li, Y. (Ed.), <em>Plant-Based Proteins: Production, Physicochemical, Functional, and Sensory Properties</em>.
-            Springer US, New York, NY, pp. 123–132.
-          </div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/978-1-0716-4272-6_10" target="_blank" rel="noopener">doi</a>
+            Xiao, R.; Hu, R.; <strong>Kumar, N.</strong>; Li, Y. (2025).
+            In: Li, Y. (Ed.), <span class="journal-name"><em>Plant-Based Proteins: Production, Physicochemical, Functional, and Sensory Properties</em></span>.
+            Springer US, New York, NY, pp. 123–132
+            <span class="pub-link-inline"><a href="https://doi.org/10.1007/978-1-0716-4272-6_10" target="_blank" rel="noopener">View chapter</a></span>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -681,38 +1022,51 @@
 
       <div class="section-card">
         <div class="pub">
-          <div class="badge">[1]</div>
-          <div class="pub-title">
-            6-Ethoxy-4-N-(2-Morpholin-4-Ylethyl)-2-N-Propan-2-yl-1,3,5-Triazine-2,4-Diamine Endowed with Herbicidal Activity Against Susceptible and Resistant Biotypes of Phalaris minor
+          <div class="pub-heading">
+            <div class="badge">[1]</div>
+            <div class="pub-title">
+              6-Ethoxy-4-N-(2-Morpholin-4-Ylethyl)-2-N-Propan-2-yl-1,3,5-Triazine-2,4-Diamine Endowed with Herbicidal Activity Against Susceptible and Resistant Biotypes of Phalaris minor
+            </div>
           </div>
+
           <div class="pub-meta">
             Patent Application Publication No.: 202031045338 A. Application Filing Date: 18/10/2020.
-            Publication Date: 04/12/2020. Inventors: Durg Vijay Singh, Priyanka Rani, Nandan Kumar, Shikha Agarwal.
+            Publication Date: 04/12/2020. Inventors: Durg Vijay Singh, Priyanka Rani, <strong>Nandan Kumar</strong>, Shikha Agarwal.
             Assignee: Central University of South Bihar, Gaya, India.
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <div class="footer">
-      <span>© 2025 Nandan Kumar.</span>
+      <span>© 2026 Nandan Kumar.</span>
       <span class="footer-sep">·</span>
-      <span>Visits (this browser): <span id="visitor-count">—</span></span>
+      <span>Visitors: <span id="visitor-count">0</span></span>
+      <span class="footer-sep">·</span>
+      <span>📊 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Graph</a></span>
+      <span class="footer-sep">·</span>
+      <span>🌍 <a href="https://drnkumar.goatcounter.com" target="_blank" rel="noopener">Visitor Map</a></span>
     </div>
 
-    <!-- simple local visitor counter -->
+    <script data-goatcounter="https://drnkumar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+
     <script>
-      (function () {
-        const el = document.getElementById('visitor-count');
-        if (!el) return;
-        const key = 'nk_site_visit_count';
-        let count = parseInt(localStorage.getItem(key) || '0', 10);
-        count += 1;
-        localStorage.setItem(key, String(count));
-        el.textContent = count.toLocaleString();
-      })();
+      fetch("https://drnkumar.goatcounter.com/counter//.json")
+        .then(function (response) {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then(function (data) {
+          if (data && data.count !== undefined && data.count !== null) {
+            document.getElementById("visitor-count").textContent = data.count;
+          }
+        })
+        .catch(function () {
+          console.log("Visitor count unavailable");
+        });
     </script>
+
   </main>
 </body>
 </html>
-
