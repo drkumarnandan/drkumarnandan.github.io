@@ -7,7 +7,7 @@
 
   <meta name="description" content="Gallery of Nandan Kumar showing selected academic moments, conferences, invited talks, awards, mentors, collaborators, research visits, outreach, and professional activities.">
 
-  <link rel="stylesheet" href="styles.css?v=33">
+  <link rel="stylesheet" href="styles.css?v=41">
 
   <link
     rel="stylesheet"
@@ -294,6 +294,38 @@
       font-size: 0.7rem;
     }
 
+
+    .gallery-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+    }
+
+    .gallery-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.32rem;
+      padding: 0.28rem 0.58rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.16s ease, transform 0.16s ease, border-color 0.16s ease;
+    }
+
+    .gallery-link:hover {
+      transform: translateY(-1px);
+      background: rgba(37, 99, 235, 0.72);
+      border-color: rgba(147, 197, 253, 0.55);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     .modal {
       position: fixed;
       inset: 0;
@@ -371,6 +403,208 @@
         height: 235px;
       }
     }
+
+
+    /* ============================================================
+       GALLERY POLISH: narrative intro, compact timeline, featured row
+       ============================================================ */
+
+    .gallery-intro-card {
+      margin: 1rem 0 1.1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(15, 76, 129, 0.10);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: var(--shadow-soft);
+      padding: 1.05rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-intro-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #0f4c81, #2563eb, #3b82f6);
+    }
+
+    .gallery-intro-title {
+      margin: 0 0 0.35rem;
+      color: var(--pro-heading);
+      font-size: 1.02rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .gallery-intro-text {
+      margin: 0;
+      color: var(--pro-text);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      max-width: 58rem;
+    }
+
+    .gallery-timeline-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.85rem;
+    }
+
+    .timeline-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.38rem 0.68rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      color: var(--pro-heading);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+      font-size: 0.78rem;
+      line-height: 1.25;
+    }
+
+    .timeline-chip strong {
+      color: #1d4ed8;
+      font-weight: 850;
+    }
+
+    .featured-moments-card {
+      margin: 1rem 0 1rem;
+      background: #ffffff;
+      border: 1px solid rgba(15, 76, 129, 0.10);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-moments-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #f59e0b, #2563eb, #0f4c81);
+    }
+
+    .featured-moments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 950px) {
+      .featured-moments-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .featured-moments-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .featured-mini-card {
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 0.7rem;
+      align-items: center;
+      padding: 0.6rem;
+      border-radius: 15px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .featured-mini-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.22);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.10);
+      text-decoration: none;
+    }
+
+    .featured-mini-card img {
+      width: 74px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 11px;
+      background: #111827;
+      border: 1px solid #e5e7eb;
+    }
+
+    .featured-mini-meta {
+      min-width: 0;
+    }
+
+    .featured-mini-meta span {
+      display: inline-flex;
+      margin-bottom: 0.2rem;
+      padding: 0.14rem 0.42rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      color: #1d4ed8;
+      font-size: 0.66rem;
+      font-weight: 800;
+    }
+
+    .featured-mini-meta strong {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: var(--pro-heading);
+      font-size: 0.78rem;
+      line-height: 1.22;
+      font-weight: 800;
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent 28%);
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+
+    .gallery-card:hover::after {
+      opacity: 1;
+    }
+
+    .gallery-year-corner {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      padding: 0.22rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.90);
+      color: #0f172a;
+      font-size: 0.72rem;
+      font-weight: 850;
+      border: 1px solid rgba(255,255,255,0.45);
+      backdrop-filter: blur(8px);
+    }
+
+
   </style>
 </head>
 
@@ -399,8 +633,8 @@
       <h1 class="hero-heading">Gallery</h1>
 
       <p class="lead">
-        Selected academic moments with mentors, collaborators, colleagues, and scientific leaders across
-        conferences, research visits, invited talks, outreach activities, and professional milestones.
+        Selected academic moments with mentors, collaborators, colleagues, research-group members, and scientific leaders across
+        conferences, research visits, invited talks, awards, laboratory activities, team gatherings, outreach activities, and professional milestones.
       </p>
 
 
@@ -408,11 +642,30 @@
         <div class="chip active" data-filter="all">All</div>
         <div class="chip" data-filter="conference">Conferences</div>
         <div class="chip" data-filter="award">Awards</div>
+        <div class="chip" data-filter="research">Research &amp; Media</div>
+        <div class="chip" data-filter="team">Team &amp; Collaborations</div>
         <div class="chip" data-filter="talk">Talks</div>
+        <div class="chip" data-filter="academic">Academic Journey</div>
+        <div class="chip" data-filter="culture">International &amp; Culture</div>
         <div class="chip" data-filter="mentor">Mentors &amp; Scientists</div>
         <div class="chip" data-filter="visit">Research Visits</div>
         <div class="chip" data-filter="outreach">Outreach</div>
       </div>
+    </section>
+
+    
+
+    <section class="featured-moments-card">
+      <div class="section-head">
+        <div>
+          <h2><i class="fa-solid fa-star"></i> Featured academic moments</h2>
+          <p>
+            A compact highlight row for the strongest recognition, research visibility, conference, and academic milestone images.
+          </p>
+        </div>
+        <span class="section-pill"><i class="fa-solid fa-award"></i> Key highlights</span>
+      </div>
+      <div class="featured-moments-grid" id="featuredMomentsGrid"></div>
     </section>
 
     <section class="gallery-section-card">
@@ -423,7 +676,8 @@
             Click any photo to view it in full without cropping.
           </p>
         </div>
-        
+        <span class="section-pill"><i class="fa-solid fa-layer-group"></i> Curated academic gallery</span>
+      </div>
 
       <div class="gallery-grid" id="galleryGrid"></div>
     </section>
@@ -492,112 +746,493 @@
 
       const galleryItems = [
         {
-          title: "With eminent scientists during CM3 conference",
-          desc: "Academic interaction during the International Conference on Computational Modeling of Molecules and Materials.",
-          year: "2016",
-          place: "Nainital, India",
-          tag: "Conference",
-          icon: "fa-people-group",
-          img: "CM3.jpg",
-          filters: ["conference", "mentor"],
-          featured: false
+                "title": "Appreciation Lunch",
+                "desc": "Appreciation lunch and informal team discussion with members of the Wheat Quality Laboratory and collaborators at Kansas State University.",
+                "year": "2026",
+                "place": "Manhattan, KS, USA",
+                "tag": "Team activity",
+                "icon": "fa-utensils",
+                "img": "gallery-wql-appreciation-lunch-2026.png",
+                "filters": [
+                        "team",
+                        "research"
+                ],
+                "featured": true
         },
         {
-          title: "With Bharat Ratna Prof. C. N. R. Rao during CRSI-ACS",
-          desc: "A memorable interaction with one of India’s most distinguished scientists during CRSI-ACS.",
-          year: "2017",
-          place: "India",
-          tag: "Inspiration",
-          icon: "fa-award",
-          img: "CRSI.jpg",
-          filters: ["conference", "mentor"],
-          featured: true
+                "title": "Departmental Recognition Ceremony",
+                "desc": "Academic recognition ceremony with faculty, students, and research associates at Kansas State University.",
+                "year": "2025",
+                "place": "Kansas State University, USA",
+                "tag": "Recognition",
+                "icon": "fa-medal",
+                "img": "gallery-departmental-recognition-2025.jpeg",
+                "filters": [
+                        "award",
+                        "team",
+                        "academic"
+                ],
+                "featured": true
         },
         {
-          title: "With Nobel laureate Prof. Kurt Wüthrich at CSIR-IICT",
-          desc: "Scientific interaction during an outreach and academic event featuring Nobel Laureate Prof. Kurt Wüthrich.",
-          year: "2017",
-          place: "Hyderabad, India",
-          tag: "Nobel laureate",
-          icon: "fa-medal",
-          img: "Nobel.jpg",
-          filters: ["mentor", "outreach"],
-          featured: true
+                "title": "Graduate Celebration Dinner",
+                "desc": "Research-group gathering celebrating graduating students and academic milestones within Prof. Yonghui Li’s research group.",
+                "year": "2025",
+                "place": "Manhattan, KS, USA",
+                "tag": "Celebration",
+                "icon": "fa-user-graduate",
+                "img": "gallery-graduate-celebration-dinner.jpeg",
+                "filters": [
+                        "team",
+                        "academic"
+                ],
+                "featured": false
         },
         {
-          title: "Invited talk at Ibaraki University, Japan",
-          desc: "Invited presentation during the Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences.",
-          year: "2019",
-          place: "Mito, Japan",
-          tag: "Invited talk",
-          icon: "fa-chalkboard-user",
-          img: "Ibaraki.jpg",
-          filters: ["talk", "conference", "visit"],
-          featured: true
+                "title": "Outstanding Postdoctoral Research Recognition",
+                "desc": "Recognition for excellence in research contributions as an Outstanding Postdoctoral Research Associate at Kansas State University.",
+                "year": "2024",
+                "place": "Kansas State University, USA",
+                "tag": "Award",
+                "icon": "fa-trophy",
+                "img": "gallery-award-2024.png",
+                "filters": [
+                        "award",
+                        "team"
+                ],
+                "featured": true
         },
         {
-          title: "Receiving award during PSDD-2017, University of Hyderabad",
-          desc: "Award recognition during the Protein Structure and Drug Discovery conference.",
-          year: "2017",
-          place: "Hyderabad, India",
-          tag: "Award",
-          icon: "fa-trophy",
-          img: "PSDD.jpg",
-          filters: ["award", "conference"],
-          featured: true
+                "title": "Outstanding Postdoctoral Research Associate Award Plaque",
+                "desc": "Award plaque recognizing Nandan Kumar as Outstanding Post-Doctoral Research Associate for excellence in research in the Department of Grain Science and Industry.",
+                "year": "2024",
+                "place": "Kansas State University, USA",
+                "tag": "Award",
+                "icon": "fa-award",
+                "img": "gallery-award-plaque-2024.jpeg",
+                "filters": [
+                        "award",
+                        "research"
+                ],
+                "featured": true
         },
         {
-          title: "Receiving award at CSIR-NEIST",
-          desc: "Award moment at CSIR-NEIST in the presence of Prof. R. Sangwan and Prof. G. N. Sastry.",
-          year: "2020",
-          place: "Jorhat, India",
-          tag: "Award",
-          icon: "fa-trophy",
-          img: "neist-award-2020.jpg",
-          filters: ["award", "mentor"],
-          featured: true
+                "title": "Cereals & Grains 2024 Conference",
+                "desc": "Attended the 2024 Cereals & Grains Chemistry, Quality, and Technology Conference with colleagues.",
+                "year": "2024",
+                "place": "Cereals & Grains Conference",
+                "tag": "Conference",
+                "icon": "fa-people-group",
+                "img": "gallery-cereals-grains-2024.png",
+                "filters": [
+                        "conference",
+                        "team"
+                ],
+                "featured": true
         },
         {
-          title: "APCTCC-8, IIT Bombay",
-          desc: "Participation in the Asia-Pacific Conference of Theoretical and Computational Chemistry.",
-          year: "2017",
-          place: "IIT Bombay, India",
-          tag: "Conference",
-          icon: "fa-flask",
-          img: "apctcc8-iitb-2017.jpg",
-          filters: ["conference"],
-          featured: false
+                "title": "Cereals & Grains Scientific Networking",
+                "desc": "Participation in scientific networking and technical sessions with colleagues during the Cereals & Grains conference.",
+                "year": "2024",
+                "place": "Cereals & Grains Conference",
+                "tag": "Conference",
+                "icon": "fa-comments",
+                "img": "gallery-cereals-grains-networking.jpeg",
+                "filters": [
+                        "conference",
+                        "team"
+                ],
+                "featured": false
         },
         {
-          title: "Quantum Beam Molecular Science Workshop",
-          desc: "Participation in the Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences.",
-          year: "2019",
-          place: "Mito, Japan",
-          tag: "Conference",
-          icon: "fa-atom",
-          img: "quantum-beam-2019.jpg",
-          filters: ["conference", "visit"],
-          featured: false
+                "title": "Oral Presentation at Cereals & Grains Conference",
+                "desc": "Oral presentation on computational modeling and molecular dynamics simulations of α-gliadin systems at the Cereals & Grains conference.",
+                "year": "2024",
+                "place": "Cereals & Grains Conference",
+                "tag": "Oral presentation",
+                "icon": "fa-chalkboard-user",
+                "img": "gallery-cereals-grains-oral-presentation.jpeg",
+                "filters": [
+                        "conference",
+                        "talk",
+                        "research"
+                ],
+                "featured": true
         },
         {
-          title: "J-PARC Center, Tokai, Japan",
-          desc: "Research visit associated with quantum beam molecular science activities in Japan.",
-          year: "2019",
-          place: "Tokai, Japan",
-          tag: "Research visit",
-          icon: "fa-building-columns",
-          img: "jparc-2019.jpg",
-          filters: ["visit"],
-          featured: false
+                "title": "Research Highlighted in K-State Seek Magazine",
+                "desc": "Research activities from Prof. Yonghui Li’s group at Kansas State University featured in the Fall 2024 issue of K-State Seek Research Magazine, highlighting wheat, cereal grain, and food science research initiatives.",
+                "year": "2024",
+                "place": "Kansas State University, USA",
+                "tag": "Media highlight",
+                "icon": "fa-newspaper",
+                "img": "gallery-kstate-seek-2024.png",
+                "link": "https://www.k-state.edu/seek/fall-2024/wheat-cereal-grain-pet-food-research/?_gl=1*1slvuio*_gcl_au*MjA4NjIxNzM1My4xNzc4MDI1NzE4",
+                "linkText": "View Magazine Feature",
+                "filters": [
+                        "research",
+                        "team"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Welcoming New International PhD Students to Prof. Li’s Group",
+                "desc": "Welcoming new graduate students from around the world who joined Prof. Yonghui Li’s research group during Fall 2024 at Kansas State University.",
+                "year": "2024",
+                "place": "Kansas State University, USA",
+                "tag": "Research group",
+                "icon": "fa-user-graduate",
+                "img": "gallery-new-phd-students-fall-2024.png",
+                "filters": [
+                        "team",
+                        "research"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Research Group Outdoor Activity",
+                "desc": "Outdoor team-building and recreational activities with students and researchers from the academic community.",
+                "year": "2024",
+                "place": "Manhattan, KS",
+                "tag": "Team activity",
+                "icon": "fa-person-hiking",
+                "img": "gallery-research-group-outdoor.jpeg",
+                "filters": [
+                        "team",
+                        "outreach"
+                ],
+                "featured": false
+        },
+        {
+                "title": "International Student Parade",
+                "desc": "Participation in international cultural and diversity celebrations representing India at Kansas State University.",
+                "year": "2024",
+                "place": "Kansas State University, USA",
+                "tag": "International",
+                "icon": "fa-earth-americas",
+                "img": "gallery-international-parade-india.jpeg",
+                "filters": [
+                        "culture",
+                        "outreach",
+                        "academic"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Academic Seminar and Research Presentation",
+                "desc": "Delivering a departmental invited talk at the Department of Bioinformatics, Central University of South Bihar (2024), discussing computational biology, molecular modeling, molecular dynamics simulations, and AI-driven bioinformatics research.",
+                "year": "2024",
+                "place": "Central University of South Bihar, India",
+                "tag": "Invited talk",
+                "icon": "fa-chalkboard-user",
+                "img": "gallery-academic-seminar-india.jpeg",
+                "filters": [
+                        "talk",
+                        "academic"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Academic Seminar and Research Presentation",
+                "desc": "Delivered a departmental invited talk at the Department of Biotechnology, IIT Hyderabad in 2024, with Prof. G. Narahari Sastry, on computational biology, molecular modeling, MD simulations, bioinformatics, and AI workflows.",
+                "year": "2024",
+                "place": "IIT Hyderabad, India",
+                "tag": "Academic training",
+                "icon": "fa-laptop-code",
+                "img": "gallery-iit-hyderabad-invited-talk-2024.jpeg",
+                "filters": [
+                        "talk",
+                        "academic",
+                        "outreach"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Academic Interaction and Research Discussions",
+                "desc": "Research interaction and academic discussions with Prof. G. Narahai Sastry and Prof. Peter Comba during scientific visits.",
+                "year": "2024",
+                "place": "India",
+                "tag": "Collaboration",
+                "icon": "fa-handshake-angle",
+                "img": "gallery-academic-discussion-senior-researchers-2024.jpeg",
+                "filters": [
+                        "mentor",
+                        "visit",
+                        "academic"
+                ],
+                "featured": false
+        },
+        {
+                "title": "Joining Prof. Yonghui Li’s Research Group at Kansas State University",
+                "desc": "Introduction of new members joining Prof. Yonghui Li’s research group during the 2023 academic year, including my postdoctoral appointment along with PhD students, research staff, and student workers.",
+                "year": "2023",
+                "place": "Kansas State University, USA",
+                "tag": "Lab members",
+                "icon": "fa-users",
+                "img": "gallery-new-members-2023.png",
+                "filters": [
+                        "team",
+                        "research",
+                        "academic"
+                ],
+                "featured": false
+        },
+        {
+                "title": "Research Group Gathering",
+                "desc": "Informal group gathering with students, postdoctoral researchers, and collaborators outside the laboratory environment.",
+                "year": "2023",
+                "place": "Manhattan, KS",
+                "tag": "Team culture",
+                "icon": "fa-handshake",
+                "img": "gallery-research-group-gathering.png",
+                "filters": [
+                        "team",
+                        "research"
+                ],
+                "featured": false
+        },
+        {
+                "title": "Receiving award at CSIR-NEIST",
+                "desc": "Award moment at CSIR-NEIST in the presence of Prof. R. Sangwan and Prof. G. N. Sastry.",
+                "year": "2020",
+                "place": "Jorhat, India",
+                "tag": "Award",
+                "icon": "fa-trophy",
+                "img": "neist-award-2020.jpg",
+                "filters": [
+                        "award",
+                        "mentor"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Invited talk at Ibaraki University, Japan",
+                "desc": "Invited presentation during the Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences.",
+                "year": "2019",
+                "place": "Mito, Japan",
+                "tag": "Invited talk",
+                "icon": "fa-chalkboard-user",
+                "img": "Ibaraki.jpg",
+                "filters": [
+                        "talk",
+                        "conference",
+                        "visit"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Quantum Beam Molecular Science Workshop",
+                "desc": "Participation in the Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences.",
+                "year": "2019",
+                "place": "Mito, Japan",
+                "tag": "Conference",
+                "icon": "fa-atom",
+                "img": "quantum-beam-2019.jpg",
+                "filters": [
+                        "conference",
+                        "visit"
+                ],
+                "featured": false
+        },
+        {
+                "title": "J-PARC Center, Tokai, Japan",
+                "desc": "Research visit associated with quantum beam molecular science activities in Japan.",
+                "year": "2019",
+                "place": "Tokai, Japan",
+                "tag": "Research visit",
+                "icon": "fa-building-columns",
+                "img": "jparc-2019.jpg",
+                "filters": [
+                        "visit"
+                ],
+                "featured": false
+        },
+
+        {
+                "title": "Certificate of Achievement in Scientific Training",
+                "desc": "Receiving a certificate of achievement after successfully completing scientific training focused on molecular simulation and computational molecular science methods.",
+                "year": "2019",
+                "place": "Japan",
+                "tag": "Certificate",
+                "icon": "fa-certificate",
+                "img": "gallery-sifl-certificate-achievement-2019.png",
+                "filters": [
+                        "award",
+                        "academic",
+                        "visit"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Academic Event at Central University of South Bihar",
+                "desc": "Participation in an academic and student activity event during earlier training years at Central University of South Bihar, India.",
+                "year": "2014",
+                "place": "Central University of South Bihar, India",
+                "tag": "Academic journey",
+                "icon": "fa-building-columns",
+                "img": "gallery-academic-event-cusb-2014.png",
+                "filters": [
+                        "academic",
+                        "culture"
+                ],
+                "featured": false
+        },
+        {
+                "title": "Research Group Interaction at CSIR-IICT",
+                "desc": "Academic interaction with research group members and visiting scientist Prof. Sason Shaik at CSIR-IICT, Hyderabad, during my doctoral research years.",
+                "year": "2020",
+                "place": "CSIR-IICT, Hyderabad, India",
+                "tag": "Research group",
+                "icon": "fa-people-group",
+                "img": "gallery-csir-iict-research-group-2020.png",
+                "filters": [
+                        "team",
+                        "mentor",
+                        "academic"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Asian Workshop on Quantum Beam Molecular Sciences",
+                "desc": "Group photo from the Asian Workshop of Experiment and Theory in Quantum Beam Molecular Sciences, reflecting international scientific exchange and research training.",
+                "year": "2019",
+                "place": "Japan",
+                "tag": "Workshop",
+                "icon": "fa-atom",
+                "img": "gallery-quantum-beam-workshop-japan-2019.png",
+                "filters": [
+                        "conference",
+                        "visit",
+                        "academic"
+                ],
+                "featured": false
+        },
+        {
+                "title": "Convocation Ceremony and Gold Medal Recognition",
+                "desc": "Convocation ceremony at Central University of South Bihar (2018), marking an important academic milestone and recognition with a departmental gold medal for academic excellence.",
+                "year": "2018",
+                "place": "Central University of South Bihar, India",
+                "tag": "Convocation",
+                "icon": "fa-user-graduate",
+                "img": "gallery-cusb-convocation-2018.png",
+                "filters": [
+                        "academic",
+                        "culture"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Convocation Ceremony with Academic Batchmates",
+                "desc": "Group photograph from the 2018 convocation ceremony at Central University of South Bihar with fellow graduates and academic colleagues.",
+                "year": "2018",
+                "place": "Central University of South Bihar, India",
+                "tag": "Convocation",
+                "icon": "fa-users",
+                "img": "gallery-cusb-convocation-group-2018.png",
+                "filters": [
+                        "academic",
+                        "culture"
+                ],
+                "featured": false
+        },
+        {
+                "title": "With Bharat Ratna Prof. C. N. R. Rao during CRSI-ACS",
+                "desc": "A memorable interaction with one of India’s most distinguished scientists during CRSI-ACS.",
+                "year": "2017",
+                "place": "India",
+                "tag": "Inspiration",
+                "icon": "fa-award",
+                "img": "CRSI.jpg",
+                "filters": [
+                        "conference",
+                        "mentor"
+                ],
+                "featured": true
+        },
+        {
+                "title": "With Nobel laureate Prof. Kurt Wüthrich at CSIR-IICT",
+                "desc": "Scientific interaction during an outreach and academic event featuring Nobel Laureate Prof. Kurt Wüthrich.",
+                "year": "2017",
+                "place": "Hyderabad, India",
+                "tag": "Nobel laureate",
+                "icon": "fa-medal",
+                "img": "Nobel.jpg",
+                "filters": [
+                        "mentor",
+                        "outreach"
+                ],
+                "featured": true
+        },
+        {
+                "title": "Receiving award during PSDD-2017, University of Hyderabad",
+                "desc": "Award recognition during the Protein Structure and Drug Discovery conference.",
+                "year": "2017",
+                "place": "Hyderabad, India",
+                "tag": "Award",
+                "icon": "fa-trophy",
+                "img": "PSDD.jpg",
+                "filters": [
+                        "award",
+                        "conference"
+                ],
+                "featured": true
+        },
+        {
+                "title": "APCTCC-8, IIT Bombay",
+                "desc": "Participation in the Asia-Pacific Conference of Theoretical and Computational Chemistry.",
+                "year": "2017",
+                "place": "IIT Bombay, India",
+                "tag": "Conference",
+                "icon": "fa-flask",
+                "img": "apctcc8-iitb-2017.jpg",
+                "filters": [
+                        "conference"
+                ],
+                "featured": false
+        },
+        {
+                "title": "With eminent scientists during CM3 conference",
+                "desc": "Academic interaction during the International Conference on Computational Modeling of Molecules and Materials.",
+                "year": "2016",
+                "place": "Nainital, India",
+                "tag": "Conference",
+                "icon": "fa-people-group",
+                "img": "CM3.jpg",
+                "filters": [
+                        "conference",
+                        "mentor"
+                ],
+                "featured": false
+        },
+        {
+                "title": "University Sports Achievement",
+                "desc": "Winning university-level cricket competitions during academic training years at Central University of South Bihar, India (2013), representing student participation in sports and extracurricular activities.",
+                "year": "2013",
+                "place": "Central University of South Bihar, India",
+                "tag": "Academic journey",
+                "icon": "fa-medal",
+                "img": "gallery-university-sports-india.jpeg",
+                "filters": [
+                        "academic",
+                        "culture"
+                ],
+                "featured": false
         }
-      ];
+];
 
       const grid = document.getElementById("galleryGrid");
+
+      function yearRank(year) {
+        const match = String(year || "").match(/\d{4}/);
+        return match ? Number(match[0]) : 0;
+      }
 
       function renderGallery(filter = "all") {
         grid.innerHTML = "";
 
-        const data = galleryItems.filter(item => filter === "all" || item.filters.includes(filter));
+        const data = galleryItems
+          .filter(item => filter === "all" || item.filters.includes(filter))
+          .sort((a, b) => yearRank(b.year) - yearRank(a.year));
 
         data.forEach(item => {
           const card = document.createElement("article");
@@ -619,6 +1254,8 @@
                 ${featuredBadge}
               </div>
 
+              <span class="gallery-year-corner">${escapeHtml(item.year)}</span>
+
               <div class="zoom-hint" title="View full">
                 <i class="fa-solid fa-magnifying-glass-plus"></i>
               </div>
@@ -634,6 +1271,14 @@
                 <span class="gallery-pill"><i class="fa-regular fa-calendar"></i> ${escapeHtml(item.year)}</span>
                 <span class="gallery-pill"><i class="fa-solid fa-location-dot"></i> ${escapeHtml(item.place)}</span>
               </div>
+
+              ${item.link ? `
+                <div class="gallery-actions">
+                  <a class="gallery-link" href="${escapeHtml(item.link)}" target="_blank" rel="noopener" onclick="event.stopPropagation();">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> ${escapeHtml(item.linkText || "View feature")}
+                  </a>
+                </div>
+              ` : ""}
             </div>
           `;
 
@@ -689,6 +1334,46 @@
         if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
       });
 
+
+
+      function renderFeaturedMoments() {
+        const holder = document.getElementById("featuredMomentsGrid");
+        if (!holder) return;
+
+        const featuredTitles = [
+          "Outstanding Postdoctoral Research Recognition",
+          "Research Highlighted in K-State Seek Magazine",
+          "Oral Presentation at Cereals & Grains Conference",
+          "Convocation Ceremony and Gold Medal Recognition"
+        ];
+
+        holder.innerHTML = "";
+        featuredTitles
+          .map(title => galleryItems.find(item => item.title === title))
+          .filter(Boolean)
+          .forEach(item => {
+            const card = document.createElement("article");
+            card.className = "featured-mini-card";
+            card.setAttribute("role", "button");
+            card.setAttribute("tabindex", "0");
+            card.setAttribute("aria-label", "Open " + item.title);
+            card.innerHTML = `
+              <img src="${escapeHtml(item.img)}" alt="${escapeHtml(item.title)}" loading="lazy">
+              <div class="featured-mini-meta">
+                <span>${escapeHtml(item.year)}</span>
+                <strong>${escapeHtml(item.title)}</strong>
+              </div>
+            `;
+            const open = () => openModal(item.img, item.title);
+            card.addEventListener("click", open);
+            card.addEventListener("keydown", e => {
+              if (e.key === "Enter" || e.key === " ") open();
+            });
+            holder.appendChild(card);
+          });
+      }
+
+      renderFeaturedMoments();
       renderGallery("all");
     </script>
   </main>
