@@ -2533,3 +2533,1674 @@ a:hover {
     font-size: 1.55rem;
   }
 }
+
+
+/* ============================================================
+   HOMEPAGE RESEARCH FRAMEWORK + CARD SCHEMATICS UPDATE
+   ============================================================ */
+
+/* Justified text across content cards and paragraph blocks */
+.intro-paragraph,
+.identity-line,
+.featured-card p,
+.program-card p,
+.hero-card p,
+.vision-box,
+.home-interests li,
+.news-list li,
+.home-highlights li,
+.publication-feature-text,
+.home-pubs li,
+.lead,
+.section-card p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Keep small labels/headings clean */
+.featured-kicker,
+.program-number,
+.impact-label,
+.section-title,
+.hero-card-title,
+.stat-label,
+.metric-label {
+  text-align: left;
+}
+
+/* Research framework */
+.research-framework-section {
+  margin-top: 2.8rem;
+}
+
+.research-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: stretch;
+  padding: 1.05rem;
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.10), transparent 28%),
+    radial-gradient(circle at 92% 18%, rgba(16, 185, 129, 0.10), transparent 26%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+}
+
+.research-flow::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.18), rgba(30, 64, 175, 0.55), rgba(16, 185, 129, 0.24));
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.flow-card {
+  position: relative;
+  z-index: 1;
+  min-height: 155px;
+  padding: 1rem 0.85rem 0.95rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.flow-card:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.11);
+}
+
+.flow-card i {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.72rem;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  color: var(--pro-accent-dark);
+  border: 1px solid #dbeafe;
+  font-size: 1.1rem;
+}
+
+.flow-card strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--pro-heading);
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.flow-card p {
+  margin: 0;
+  color: var(--pro-text);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.flow-line {
+  display: none;
+}
+
+/* Schematic image inside Featured work and Current research directions cards */
+.featured-card,
+.program-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.card-schematic {
+  width: 100%;
+  height: 116px;
+  object-fit: cover;
+  object-position: center;
+  margin-top: auto;
+  padding: 0.35rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+}
+
+.featured-card p,
+.program-card p {
+  margin-bottom: 0.9rem;
+}
+
+/* Slightly stronger visual hierarchy for these cards */
+.featured-card,
+.program-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.featured-card h3,
+.program-card h3 {
+  min-height: 2.7em;
+}
+
+@media (max-width: 900px) {
+  .research-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-flow::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .research-flow {
+    grid-template-columns: 1fr;
+    padding: 0.85rem;
+  }
+
+  .flow-card {
+    min-height: auto;
+  }
+
+  .card-schematic {
+    height: 150px;
+  }
+
+  .featured-card h3,
+  .program-card h3 {
+    min-height: auto;
+  }
+}
+
+
+/* ============================================================
+   PROFESSIONAL REVISION — CLEARER SCHEMATICS + FRAMEWORK
+   ============================================================ */
+
+/* Better balance: justified text without large visual gaps in narrow cards */
+.featured-card p,
+.program-card p {
+  text-align: left;
+  hyphens: auto;
+}
+
+/* Keep longer page paragraphs justified */
+.intro-paragraph,
+.identity-line,
+.vision-box,
+.home-interests li,
+.news-list li,
+.home-highlights li,
+.publication-feature-text,
+.home-pubs li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Clearer schematic presentation in small cards */
+.schematic-link {
+  display: block;
+  margin-top: auto;
+  border-radius: 16px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.schematic-link:hover {
+  text-decoration: none;
+}
+
+.schematic-link::after {
+  content: "Open full schematic";
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.55rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.78);
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
+}
+
+.schematic-link:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-schematic {
+  height: 155px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 0.28rem;
+  margin-top: 0;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.schematic-link:hover .card-schematic {
+  transform: scale(1.035);
+  filter: contrast(1.03) saturate(1.04);
+}
+
+.featured-card,
+.program-card {
+  padding: 1.05rem 1.05rem 1rem;
+}
+
+.featured-card h3,
+.program-card h3 {
+  min-height: auto;
+}
+
+/* Professional research framework */
+.research-framework-panel {
+  position: relative;
+  padding: 1.15rem;
+  border-radius: 24px;
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.11), transparent 30%),
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.11), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.075);
+  overflow: hidden;
+}
+
+.research-framework-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.framework-lead,
+.professional-flow,
+.framework-output-row {
+  position: relative;
+  z-index: 1;
+}
+
+.framework-lead {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.framework-badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.72rem;
+  border-radius: 999px;
+  background: #0b1f3a;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+}
+
+.framework-lead p {
+  margin: 0;
+  color: var(--pro-text);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.research-flow.professional-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr);
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.research-flow.professional-flow::before {
+  display: none;
+}
+
+.professional-flow .flow-card {
+  min-height: 175px;
+  padding: 0.95rem 0.85rem 0.9rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+.flow-step {
+  align-self: flex-end;
+  margin-bottom: 0.15rem;
+  color: #93a4bc;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.professional-flow .flow-card i {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  margin-bottom: 0.65rem;
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  color: #1d4ed8;
+  border: 1px solid #dbeafe;
+}
+
+.professional-flow .flow-card strong {
+  font-size: 0.98rem;
+}
+
+.professional-flow .flow-card p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e40af;
+  opacity: 0.72;
+  font-size: 1.05rem;
+}
+
+.framework-output-row {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.framework-output-row div {
+  padding: 0.75rem 0.85rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+.framework-output-row strong {
+  display: block;
+  color: var(--pro-heading);
+  font-size: 0.82rem;
+  margin-bottom: 0.12rem;
+}
+
+.framework-output-row span {
+  display: block;
+  color: var(--pro-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 950px) {
+  .research-flow.professional-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    min-height: 18px;
+  }
+
+  .framework-lead,
+  .framework-output-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .card-schematic {
+    height: 180px;
+  }
+
+  .research-framework-panel {
+    padding: 0.9rem;
+  }
+}
+
+
+/* ============================================================
+   FINAL CLEAN HOMEPAGE UPDATE
+   - Removed repetitive Current Research Directions section
+   - Polished Research Framework icon alignment
+   - Renamed Featured Work to Research Focus Areas
+   ============================================================ */
+
+.research-framework-panel {
+  padding: 1.25rem 1.25rem 1.15rem;
+}
+
+.professional-flow .flow-card {
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 182px;
+  padding: 1rem 0.9rem 0.95rem;
+}
+
+.professional-flow .flow-card i {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 18px;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.38rem;
+  line-height: 1;
+  background: linear-gradient(135deg, #eff6ff 0%, #eef2ff 100%);
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.13);
+}
+
+.professional-flow .flow-card strong {
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.professional-flow .flow-card p {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--pro-text);
+}
+
+.flow-step {
+  align-self: flex-end;
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.15rem;
+}
+
+.flow-arrow {
+  color: #1d4ed8;
+  font-size: 1.25rem;
+  opacity: 0.78;
+}
+
+.framework-lead {
+  align-items: flex-start;
+}
+
+.framework-badge {
+  margin-top: 0.1rem;
+}
+
+.framework-output-row div {
+  min-height: 84px;
+}
+
+.framework-output-row strong {
+  font-size: 0.86rem;
+}
+
+.framework-output-row span {
+  font-size: 0.8rem;
+}
+
+/* Research focus cards */
+.featured-section {
+  margin-top: 2.6rem;
+}
+
+.featured-card {
+  padding: 1.08rem 1.08rem 1rem;
+}
+
+.featured-kicker {
+  color: var(--pro-accent-dark);
+  letter-spacing: 0.09em;
+}
+
+.featured-card h3 {
+  margin-bottom: 0.65rem;
+}
+
+.featured-card p {
+  text-align: left;
+  line-height: 1.72;
+}
+
+.featured-card .card-schematic {
+  height: 160px;
+}
+
+@media (max-width: 950px) {
+  .professional-flow .flow-card {
+    min-height: auto;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    padding: 0.15rem 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .professional-flow .flow-card i {
+    width: 52px;
+    height: 52px;
+    font-size: 1.25rem;
+  }
+
+  .featured-card .card-schematic {
+    height: 185px;
+  }
+}
+
+
+/* ============================================================
+   FINAL METRICS SECTION RESTORE — COMPACT ACADEMIC STYLE
+   ============================================================ */
+
+.metrics-section {
+  margin-top: 2.15rem;
+  padding: 0;
+}
+
+.metrics-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.metric-card {
+  min-height: 92px;
+  padding: 0.95rem 0.85rem 0.85rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-number {
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: -0.03em;
+  color: var(--pro-accent-dark);
+  margin-bottom: 0.35rem;
+}
+
+.metric-label {
+  font-size: 0.76rem;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--pro-heading);
+}
+
+.metrics-note {
+  max-width: 900px;
+  margin: 0.65rem auto 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--pro-muted);
+  line-height: 1.45;
+}
+
+.metrics-note a {
+  font-weight: 700;
+}
+
+@media (max-width: 850px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .metric-card {
+    min-height: 86px;
+    padding: 0.82rem 0.55rem;
+  }
+
+  .metric-number {
+    font-size: 1.65rem;
+  }
+
+  .metric-label {
+    font-size: 0.66rem;
+  }
+}
+
+
+/* ============================================================
+   HOMEPAGE REFINEMENT — VISION, TOOLS, COMPACT NEWS
+   ============================================================ */
+
+.research-vision-box {
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--pro-accent-dark);
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 35%),
+    linear-gradient(90deg, #f8fafc, #ffffff);
+  border-radius: 14px;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.tools-highlight-section {
+  margin-top: 2.35rem;
+}
+
+.tools-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.tool-highlight-card {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  min-height: 138px;
+  padding: 0.95rem 0.9rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.07), transparent 35%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.065);
+  color: var(--pro-text);
+  text-decoration: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.tool-highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.11);
+  border-color: #bfdbfe;
+  text-decoration: none;
+}
+
+.tool-highlight-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  color: var(--pro-accent-dark);
+  border: 1px solid #dbeafe;
+  font-size: 1.05rem;
+}
+
+.tool-highlight-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  line-height: 1.25;
+  color: var(--pro-heading);
+}
+
+.tool-highlight-card p {
+  margin: 0;
+  font-size: 0.81rem;
+  line-height: 1.55;
+  color: var(--pro-text);
+  text-align: left;
+}
+
+.news-card {
+  padding: 0.85rem 1rem;
+}
+
+.news-list li {
+  line-height: 1.62;
+  padding: 0.45rem 0;
+}
+
+@media (max-width: 950px) {
+  .tools-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .tools-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-highlight-card {
+    min-height: auto;
+  }
+}
+
+
+/* ============================================================
+   SIGNATURE CONTRIBUTIONS — VISUAL CARD LAYOUT
+   ============================================================ */
+
+.signature-section {
+  margin-top: 2.45rem;
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.signature-card {
+  position: relative;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.05rem 1.05rem 1rem;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.signature-card:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.11);
+}
+
+.signature-card-featured {
+  grid-column: 1 / -1;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.13), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(20, 184, 166, 0.10), transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.signature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--pro-accent-dark), #60a5fa);
+}
+
+.signature-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  color: var(--pro-accent-dark);
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.12);
+  font-size: 1.18rem;
+}
+
+.signature-content {
+  min-width: 0;
+}
+
+.signature-label {
+  margin-bottom: 0.22rem;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pro-accent-dark);
+}
+
+.signature-card h3 {
+  margin: 0 0 0.35rem;
+  color: var(--pro-heading);
+  font-size: 1rem;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+}
+
+.signature-card p {
+  margin: 0;
+  color: var(--pro-text);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.signature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.7rem;
+}
+
+.signature-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.52rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  color: var(--pro-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.news-card {
+  padding: 0.95rem 1.1rem;
+}
+
+.news-list li {
+  line-height: 1.7;
+  padding: 0.42rem 0;
+}
+
+@media (max-width: 850px) {
+  .signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-card-featured {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .signature-card {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .signature-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* ============================================================
+   SIGNATURE CONTRIBUTIONS — CLICKABLE RESEARCH HIGHLIGHTS
+   ============================================================ */
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.signature-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.signature-card:hover {
+  text-decoration: none;
+}
+
+.signature-card-featured {
+  grid-column: 1 / -1;
+}
+
+.signature-card p + p {
+  margin-top: 0.7rem;
+}
+
+.signature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  color: var(--pro-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.signature-link i {
+  font-size: 0.78rem;
+  transition: transform 0.16s ease;
+}
+
+.signature-card:hover .signature-link i {
+  transform: translateX(3px);
+}
+
+.signature-card h3 {
+  margin-bottom: 0.55rem;
+}
+
+.signature-card p {
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+
+.signature-tags {
+  margin-top: 0.8rem;
+}
+
+.signature-tags span {
+  background: rgba(255,255,255,0.9);
+}
+
+@media (max-width: 850px) {
+  .signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-card-featured {
+    grid-column: auto;
+  }
+}
+
+
+/* ============================================================
+   FINAL COMPACT REFINEMENT
+   ============================================================ */
+
+/* Compact research framework */
+.research-framework-panel {
+  padding: 1rem 1rem 0.95rem;
+  border-radius: 22px;
+}
+
+.framework-lead {
+  margin-bottom: 0.8rem;
+  gap: 0.8rem;
+}
+
+.framework-lead p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.framework-badge {
+  font-size: 0.68rem;
+  padding: 0.32rem 0.62rem;
+}
+
+.research-flow.professional-flow {
+  gap: 0.38rem;
+}
+
+.professional-flow .flow-card {
+  min-height: 158px;
+  padding: 0.82rem 0.72rem 0.78rem;
+  border-radius: 18px;
+}
+
+.professional-flow .flow-card i {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  margin-bottom: 0.62rem;
+  font-size: 1.18rem;
+}
+
+.professional-flow .flow-card strong {
+  font-size: 0.92rem;
+  margin-bottom: 0.28rem;
+}
+
+.professional-flow .flow-card p {
+  font-size: 0.77rem;
+  line-height: 1.45;
+}
+
+.flow-step {
+  font-size: 0.68rem;
+}
+
+.flow-arrow {
+  font-size: 1rem;
+}
+
+.framework-output-row {
+  margin-top: 0.82rem;
+  gap: 0.6rem;
+}
+
+.framework-output-row div {
+  padding: 0.62rem 0.7rem;
+  min-height: 74px;
+  border-radius: 14px;
+}
+
+.framework-output-row strong {
+  font-size: 0.78rem;
+}
+
+.framework-output-row span {
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+/* Compact signature contributions */
+.signature-grid {
+  gap: 0.82rem;
+}
+
+.signature-card {
+  padding: 0.88rem 0.9rem 0.84rem;
+  border-radius: 18px;
+}
+
+.signature-card-featured {
+  padding: 0.95rem 0.95rem 0.9rem;
+}
+
+.signature-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 14px;
+  font-size: 1.05rem;
+}
+
+.signature-label {
+  margin-bottom: 0.18rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.075em;
+}
+
+.signature-card h3 {
+  font-size: 0.94rem;
+  margin-bottom: 0.42rem;
+  line-height: 1.28;
+}
+
+.signature-card p {
+  font-size: 0.84rem;
+  line-height: 1.58;
+}
+
+.signature-card p + p {
+  margin-top: 0.5rem;
+}
+
+.signature-tags {
+  gap: 0.28rem;
+  margin-top: 0.62rem;
+}
+
+.signature-tags span {
+  padding: 0.12rem 0.45rem;
+  font-size: 0.66rem;
+}
+
+.signature-link {
+  margin-top: 0.68rem;
+  font-size: 0.76rem;
+}
+
+@media (max-width: 850px) {
+  .professional-flow .flow-card {
+    min-height: auto;
+  }
+}
+
+
+/* ============================================================
+   SIGNATURE CONTRIBUTIONS — FINAL CONCISE VERSION
+   ============================================================ */
+
+.signature-section {
+  margin-top: 2.3rem;
+}
+
+.signature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.signature-card {
+  min-height: 245px;
+  padding: 0.82rem 0.85rem;
+  border-radius: 18px;
+  display: flex;
+  gap: 0.72rem;
+  align-items: flex-start;
+  color: inherit;
+  text-decoration: none;
+}
+
+.signature-card-featured {
+  grid-column: 1 / -1;
+  min-height: 180px;
+}
+
+.signature-card:hover {
+  text-decoration: none;
+}
+
+.signature-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 14px;
+  font-size: 1rem;
+}
+
+.signature-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  flex: 1;
+}
+
+.signature-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.14rem;
+}
+
+.signature-card h3 {
+  font-size: 0.9rem;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+}
+
+.signature-card p {
+  font-size: 0.8rem;
+  line-height: 1.48;
+  margin: 0;
+  color: var(--pro-text);
+  text-align: left;
+}
+
+.signature-card p + p {
+  margin-top: 0.42rem;
+}
+
+.signature-bottom {
+  margin-top: auto;
+  padding-top: 0.55rem;
+}
+
+.signature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0;
+}
+
+.signature-tags span {
+  padding: 0.1rem 0.38rem;
+  font-size: 0.61rem;
+  line-height: 1.2;
+}
+
+.signature-link {
+  margin-top: 0.52rem;
+  font-size: 0.7rem;
+  font-weight: 850;
+}
+
+.signature-link i {
+  font-size: 0.68rem;
+}
+
+/* Featured first card uses a compact two-column inner rhythm */
+.signature-card-featured .signature-content {
+  display: block;
+}
+
+.signature-card-featured p {
+  max-width: 920px;
+}
+
+.signature-card-featured .signature-bottom {
+  margin-top: 0.65rem;
+  padding-top: 0;
+}
+
+@media (max-width: 950px) {
+  .signature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-card,
+  .signature-card-featured {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .signature-card {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .signature-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* ============================================================
+   SIGNATURE CONTRIBUTIONS — ELEGANT RESEARCH MAP STYLE
+   ============================================================ */
+
+.signature-map-section {
+  margin-top: 2.45rem;
+}
+
+.signature-map {
+  position: relative;
+  padding: 1rem;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(37, 99, 235, 0.10), transparent 28%),
+    radial-gradient(circle at 92% 14%, rgba(20, 184, 166, 0.10), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.075);
+  overflow: hidden;
+}
+
+.signature-map::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+.signature-map-feature,
+.signature-map-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.signature-map-feature {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  align-items: center;
+  padding: 1rem 1.05rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.93);
+  border: 1px solid rgba(191, 219, 254, 0.95);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.10);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.signature-map-feature:hover,
+.signature-map-card:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.signature-map-feature:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 20px 42px rgba(37, 99, 235, 0.15);
+}
+
+.signature-map-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+  font-size: 1.25rem;
+}
+
+.signature-map-label {
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--pro-accent-dark);
+}
+
+.signature-map-body h3,
+.signature-map-card h3 {
+  margin: 0.18rem 0 0.32rem;
+  color: var(--pro-heading);
+  letter-spacing: -0.01em;
+}
+
+.signature-map-body h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.signature-map-body p {
+  margin: 0;
+  max-width: 790px;
+  color: var(--pro-text);
+  font-size: 0.86rem;
+  line-height: 1.58;
+  text-align: left;
+}
+
+.signature-map-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+  margin-top: 0.62rem;
+}
+
+.signature-map-tags span {
+  display: inline-flex;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: var(--pro-accent-dark);
+  font-size: 0.65rem;
+  font-weight: 750;
+}
+
+.signature-map-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: var(--pro-accent-dark);
+  font-size: 0.76rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.signature-map-action i {
+  font-size: 0.72rem;
+  transition: transform 0.16s ease;
+}
+
+.signature-map-feature:hover .signature-map-action i,
+.signature-map-card:hover .signature-map-action i {
+  transform: translateX(3px);
+}
+
+.signature-map-grid {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.signature-map-card {
+  min-height: 190px;
+  padding: 0.9rem 0.9rem 0.82rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.90);
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.065);
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.signature-map-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.105);
+}
+
+.signature-map-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.signature-mini-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  border: 1px solid #bfdbfe;
+  color: var(--pro-accent-dark);
+  font-size: 0.95rem;
+}
+
+.signature-map-card h3 {
+  font-size: 0.91rem;
+  line-height: 1.28;
+}
+
+.signature-map-card p {
+  margin: 0;
+  color: var(--pro-text);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.signature-map-card .signature-map-action {
+  margin-top: auto;
+  padding-top: 0.72rem;
+}
+
+@media (max-width: 950px) {
+  .signature-map-feature {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .signature-map-feature > .signature-map-action {
+    grid-column: 2;
+  }
+
+  .signature-map-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-map-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .signature-map {
+    padding: 0.8rem;
+  }
+
+  .signature-map-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-map-feature > .signature-map-action {
+    grid-column: auto;
+  }
+
+  .signature-map-icon {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+
+/* ============================================================
+   RESEARCH FRAMEWORK — MORE COMPACT & BALANCED
+   ============================================================ */
+
+.research-framework-panel {
+  padding: 0.82rem 0.82rem 0.78rem;
+}
+
+.framework-lead {
+  margin-bottom: 0.62rem;
+  gap: 0.7rem;
+}
+
+.framework-lead p {
+  font-size: 0.84rem;
+  line-height: 1.42;
+  max-width: 820px;
+}
+
+.framework-badge {
+  padding: 0.28rem 0.58rem;
+  font-size: 0.64rem;
+  border-radius: 999px;
+}
+
+.research-flow.professional-flow {
+  grid-template-columns:
+    minmax(0,1fr) 18px
+    minmax(0,1fr) 18px
+    minmax(0,1fr) 18px
+    minmax(0,1fr) 18px
+    minmax(0,1fr);
+  gap: 0.18rem;
+  align-items: stretch;
+}
+
+.professional-flow .flow-card {
+  min-height: 142px;
+  padding: 0.62rem 0.62rem 0.58rem;
+  border-radius: 16px;
+  position: relative;
+}
+
+.flow-step {
+  position: absolute;
+  top: 0.48rem;
+  right: 0.55rem;
+  margin: 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  opacity: 0.72;
+}
+
+.professional-flow .flow-card i {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  margin-bottom: 0.48rem;
+  border-radius: 14px;
+  font-size: 1rem;
+}
+
+.professional-flow .flow-card strong {
+  font-size: 0.86rem;
+  line-height: 1.18;
+  margin-bottom: 0.2rem;
+}
+
+.professional-flow .flow-card p {
+  font-size: 0.72rem;
+  line-height: 1.36;
+  margin: 0;
+}
+
+.flow-arrow {
+  font-size: 0.9rem;
+  opacity: 0.65;
+}
+
+.framework-output-row {
+  margin-top: 0.58rem;
+  gap: 0.42rem;
+}
+
+.framework-output-row div {
+  min-height: 62px;
+  padding: 0.48rem 0.58rem;
+  border-radius: 12px;
+}
+
+.framework-output-row strong {
+  font-size: 0.72rem;
+  margin-bottom: 0.08rem;
+}
+
+.framework-output-row span {
+  font-size: 0.66rem;
+  line-height: 1.25;
+}
+
+@media (max-width: 950px) {
+  .research-flow.professional-flow {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    min-height: 10px;
+  }
+
+  .professional-flow .flow-card {
+    min-height: auto;
+  }
+}
